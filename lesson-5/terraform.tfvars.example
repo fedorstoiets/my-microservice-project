@@ -1,0 +1,4 @@
+aws_region          = "us-east-2"
+bucket_name         = "fedorstoiets-neoversity-tfstate-REPLACE_WITH_AWS_ACCOUNT_ID"
+table_name          = "terraform-locks"
+nat_gateway_enabled = true
