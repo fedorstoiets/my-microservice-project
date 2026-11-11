@@ -1,0 +1,44 @@
+nameOverride: ""
+fullnameOverride: ""
+image:
+  repository: "" # Set via --set image.repository=<ECR_URL>
+  tag: "lesson-7"
+  pullPolicy: IfNotPresent
+replicaCount: 2
+service:
+  type: LoadBalancer
+  port: 80
+  targetPort: 8000
+config:
+  DJANGO_DEBUG: "0"
+  DJANGO_ALLOWED_HOSTS: "*" # For temporary lab access; restrict for production.
+  POSTGRES_DB: "neoversity_db"
+  POSTGRES_USER: "neoversity"
+  POSTGRES_HOST: "django-app-postgresql"
+  POSTGRES_PORT: "5432"
+secretName: django-app-secrets # must be created separately with kubectl
+resources:
+  requests: { cpu: 100m, memory: 128Mi }
+  limits: { cpu: 500m, memory: 512Mi }
+autoscaling:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 6
+  targetCPUUtilizationPercentage: 70
+postgresql:
+  enabled: true
+  image: postgres:16-alpine
+  # emptyDir is ephemeral; strictly for short-lived coursework only.
+  storage: ephemeral
+  resources:
+    requests: { cpu: 100m, memory: 128Mi }
+    limits: { cpu: 500m, memory: 512Mi }
+ingress:
+  enabled: false
+  className: nginx
+  host: example.com
+  path: /
+  pathType: Prefix
+  tls: false
+  tlsSecretName: django-app-tls
+  clusterIssuer: letsencrypt-prod

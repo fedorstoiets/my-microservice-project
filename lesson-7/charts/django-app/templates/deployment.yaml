@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "django-app.fullname" . }}
+  labels:
+    {{- include "django-app.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      app: {{ include "django-app.fullname" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "django-app.fullname" . }}
+    spec:
+      containers:
+        - name: django
+          image: "{{ required "Provide image.repository with the ECR URI" .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          # Bypass lesson-4 entrypoint (which runs migrate in every replica).
+          command: ["gunicorn"]
+          args: ["config.wsgi:application", "--bind", "0.0.0.0:8000", "--workers", "2"]
+          ports:
+            - name: http
+              containerPort: 8000
+          envFrom:
+            - configMapRef:
+                name: {{ include "django-app.fullname" . }}-config
+            - secretRef:
+                name: {{ .Values.secretName }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          readinessProbe:
+            httpGet: { path: /health/, port: http }
+            initialDelaySeconds: 8
+            periodSeconds: 10
+          livenessProbe:
+            httpGet: { path: /health/, port: http }
+            initialDelaySeconds: 25
+            periodSeconds: 20

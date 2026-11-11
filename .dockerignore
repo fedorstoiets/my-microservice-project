@@ -7,3 +7,22 @@ __pycache__
 *.pyc
 staticfiles
 *.zip
+
+# Exclude unnecessary files from Docker build context
+.git
+.terraform
+**/.terraform
+**/*.tfstate
+**/*.tfstate.*
+**/*.tfplan
+**/terraform.tfvars
+**/backend.hcl
+.venv
+venv
+**/__pycache__
+**/*.pyc
+node_modules
+**/node_modules
+dist
+build
+*.zip

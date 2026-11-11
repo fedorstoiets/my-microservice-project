@@ -1,0 +1,54 @@
+{{- if .Values.postgresql.enabled }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "django-app.fullname" . }}-postgresql
+spec:
+  selector:
+    app: {{ include "django-app.fullname" . }}-postgresql
+  ports:
+    - port: 5432
+      targetPort: 5432
+      name: postgres
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "django-app.fullname" . }}-postgresql
+spec:
+  replicas: 1
+  strategy: { type: Recreate }
+  selector:
+    matchLabels:
+      app: {{ include "django-app.fullname" . }}-postgresql
+  template:
+    metadata:
+      labels:
+        app: {{ include "django-app.fullname" . }}-postgresql
+    spec:
+      containers:
+        - name: postgres
+          image: {{ .Values.postgresql.image }}
+          ports: [{ containerPort: 5432, name: postgres }]
+          envFrom:
+            - configMapRef:
+                name: {{ include "django-app.fullname" . }}-config
+            - secretRef:
+                name: {{ .Values.secretName }}
+          env:
+            - name: PGDATA
+              value: /var/lib/postgresql/data/pgdata
+          resources:
+            {{- toYaml .Values.postgresql.resources | nindent 12 }}
+          volumeMounts:
+            - name: data
+              mountPath: /var/lib/postgresql/data
+          readinessProbe:
+            exec:
+              command: ["sh", "-c", 'pg_isready -U "$POSTGRES_USER" -d "$POSTGRES_DB"']
+            initialDelaySeconds: 5
+            periodSeconds: 5
+      volumes:
+        - name: data
+          emptyDir: {} # LAB ONLY: data vanishes if this pod is replaced.
+{{- end }}
