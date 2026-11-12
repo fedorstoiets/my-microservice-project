@@ -9,11 +9,11 @@ resource "helm_release" "argocd" {
 }
 
 resource "helm_release" "applications" {
-  name       = "neoversity-apps"
-  namespace  = var.namespace
-  chart      = "${path.module}/charts/applications"
-  timeout    = 600
-  wait       = true
+  name      = "neoversity-apps"
+  namespace = var.namespace
+  chart     = "${path.module}/charts/applications"
+  timeout   = 600
+  wait      = true
   values = [yamlencode({
     repoURL        = var.gitops_repo
     targetRevision = var.gitops_branch

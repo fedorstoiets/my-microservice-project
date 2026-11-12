@@ -1,6 +1,6 @@
 resource "kubernetes_service_account_v1" "builder" {
   metadata {
-    name = "kaniko-builder"
+    name      = "kaniko-builder"
     namespace = var.namespace
   }
 }
@@ -10,9 +10,9 @@ resource "aws_iam_role" "kaniko" {
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
     Statement = [{
-      Effect = "Allow"
+      Effect    = "Allow"
       Principal = { Service = "pods.eks.amazonaws.com" }
-      Action = ["sts:AssumeRole", "sts:TagSession"]
+      Action    = ["sts:AssumeRole", "sts:TagSession"]
     }]
   })
 }
@@ -27,8 +27,8 @@ resource "aws_iam_role_policy" "ecr_push" {
   })
 }
 resource "aws_eks_addon" "pod_identity" {
-  cluster_name = var.cluster_name
-  addon_name   = "eks-pod-identity-agent"
+  cluster_name                = var.cluster_name
+  addon_name                  = "eks-pod-identity-agent"
   resolve_conflicts_on_update = "OVERWRITE"
 }
 resource "aws_eks_pod_identity_association" "kaniko" {
