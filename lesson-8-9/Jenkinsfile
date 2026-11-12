@@ -1,0 +1,111 @@
+pipeline {
+  agent {
+    kubernetes {
+      defaultContainer 'git'
+      yaml '''
+apiVersion: v1
+kind: Pod
+spec:
+  serviceAccountName: kaniko-builder
+  containers:
+  - name: git
+    image: alpine/git:2.47.2
+    command: ["sleep", "99d"]
+    tty: true
+  - name: kaniko
+    image: gcr.io/kaniko-project/executor:v1.23.2-debug
+    command: ["/busybox/cat"]
+    tty: true
+    env:
+    - name: AWS_SDK_LOAD_CONFIG
+      value: "true"
+    - name: AWS_EC2_METADATA_DISABLED
+      value: "true"
+    - name: AWS_REGION
+      value: "us-east-2"
+    - name: PATH
+      value: "/busybox:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+    volumeMounts:
+    - name: docker-config
+      mountPath: /kaniko/.docker
+  volumes:
+  - name: docker-config
+    configMap:
+      name: kaniko-docker-config
+'''
+    }
+  }
+  environment {
+    AWS_ACCOUNT = '227281812993'
+    AWS_REGION = 'us-east-2'
+    ECR_REPOSITORY = 'lesson-7-django'
+    SOURCE_REPO = 'https://github.com/fedorstoiets/my-microservice-project.git'
+    GITOPS_REPO = 'https://github.com/fedorstoiets/neoversity-django-gitops.git'
+    ECR_URL = "${AWS_ACCOUNT}.dkr.ecr.${AWS_REGION}.amazonaws.com/${ECR_REPOSITORY}"
+  }
+  options { timestamps(); disableConcurrentBuilds() }
+  stages {
+    stage('Checkout Django source') {
+      steps {
+        container('git') {
+          sh '''
+            set -eu
+            git clone --depth 1 --branch lesson-8-9 "$SOURCE_REPO" source
+          '''
+          script { env.IMAGE_TAG = sh(script: 'git -C source rev-parse --short=12 HEAD', returnStdout: true).trim() }
+        }
+      }
+    }
+    stage('Kaniko build and ECR push') {
+      steps {
+        container('kaniko') {
+          sh '''
+            set -eu
+            mkdir -p /kaniko/.docker
+            /kaniko/executor \
+              --context "${WORKSPACE}/source" \
+              --dockerfile "${WORKSPACE}/source/Dockerfile" \
+              --destination "${ECR_URL}:${IMAGE_TAG}" \
+              --cache=false
+          '''
+        }
+      }
+    }
+    stage('Update GitOps main') {
+      steps {
+        container('git') {
+          withCredentials([string(credentialsId: 'github-gitops-pat', variable: 'GITHUB_TOKEN')]) {
+            sh '''
+              set +x
+              set -eu
+              cat > /tmp/git-askpass <<'ASKPASS'
+#!/bin/sh
+case "$1" in
+  *Username*) printf 'x-access-token' ;;
+  *Password*) printf '%s' "$GITHUB_TOKEN" ;;
+esac
+ASKPASS
+              chmod 700 /tmp/git-askpass
+              export GIT_ASKPASS=/tmp/git-askpass
+              export GIT_TERMINAL_PROMPT=0
+              git clone --depth 1 --branch main "$GITOPS_REPO" gitops
+              cd gitops
+              sed -i "s/^  tag: .*/  tag: \"${IMAGE_TAG}\"/" charts/django-app/values.yaml
+              grep -F "tag: \"${IMAGE_TAG}\"" charts/django-app/values.yaml
+              git config user.name 'neoversity-jenkins'
+              git config user.email 'jenkins@users.noreply.github.com'
+              git add charts/django-app/values.yaml
+              if git diff --cached --quiet; then
+                echo 'Image tag already current'
+              else
+                git commit -m "ci: deploy Django image ${IMAGE_TAG}"
+                git push origin HEAD:main
+              fi
+              rm -f /tmp/git-askpass
+            '''
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,4 @@
+apiVersion: v2
+name: neoversity-applications
+version: 0.1.0
+description: Argo CD Application for the external Django GitOps chart
