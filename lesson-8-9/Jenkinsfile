@@ -43,7 +43,7 @@ spec:
     GITOPS_REPO = 'https://github.com/fedorstoiets/neoversity-django-gitops.git'
     ECR_URL = "${AWS_ACCOUNT}.dkr.ecr.${AWS_REGION}.amazonaws.com/${ECR_REPOSITORY}"
   }
-  options { timestamps(); disableConcurrentBuilds() }
+  options { disableConcurrentBuilds() }
   stages {
     stage('Checkout Django source') {
       steps {
