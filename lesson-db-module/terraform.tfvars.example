@@ -1,0 +1,35 @@
+# Safe default: no billable database is created.
+aws_region      = "us-east-2"
+deploy_database = false
+
+# Toggle ONLY this flag between standard RDS and Aurora (when deploying to a FRESH state):
+use_aurora = false
+engine     = "postgres" # or "mysql"
+
+# Pin engine_version for production after checking AWS version support in your region.
+# engine_version = "16.6"
+instance_class = "db.t4g.medium"
+multi_az       = false
+
+name            = "neoversity-db-lab"
+db_name         = "appdb"
+master_username = "dbadmin"
+
+# Reuses existing Lesson 5 private subnets automatically. Alternatively provide both:
+# vpc_id = "vpc-xxxxxxxxxxxxxxxxx"
+# private_subnet_ids = ["subnet-aaa", "subnet-bbb"]
+
+# This prevents any network access by default; set a trusted application SG to use it.
+allowed_security_group_ids = []
+allowed_cidr_blocks        = []
+
+parameter_max_connections = null # AWS-calculated default for small instance sizes
+parameter_log_statement   = "ddl" # PostgreSQL only
+parameter_work_mem_kb     = 4096  # PostgreSQL only
+parameter_general_log     = 0     # MySQL only
+parameter_sort_buffer_size = 262144 # MySQL only
+
+# Lab teardown settings, NOT suitable for production workloads with real data:
+backup_retention_period = 1
+# deletion_protection = false
+# skip_final_snapshot = true
