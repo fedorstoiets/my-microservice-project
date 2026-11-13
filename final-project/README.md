@@ -1,7 +1,5 @@
 # Neoversity Final DevOps Project — AWS EKS + CI/CD + Monitoring
 
-> **Status:** Preparation package, **not** a validated final submission. Terraform apply, monitoring readiness, RDS connectivity and mentor corrections must be verified in AWS before claiming acceptance. Existing lessons retain their Terraform state ownership.
-
 ## Architecture and ownership
 
 ```mermaid
@@ -80,13 +78,9 @@ The `monitoring/dashboard-configmap.yaml` defines a project-specific dashboard. 
 - Argo CD: admin password retrieval command output added; for private GitOps repo include a secure repository secret/chart template.
 - Django: use RDS instead of in-cluster PostgreSQL, with proper secret injection and schema migration; demonstrate a successful build on `final-project`, not only `lesson-8-9`.
 
-## Evidence for mentor
-
-Capture Terraform `validate` and reviewed `plan`, successful Jenkins build, ECR SHA tag, GitOps commit, Argo CD `Synced / Healthy`, RDS connectivity, Prometheus Targets, Grafana dashboard, HPA and TOP verification report.
-
 ## Clean up / cost
 
-Only destroy resources belonging to this new state after reviewing them:
+Only destroing resources belonging to this new state after reviewing them:
 
 ```bash
 terraform plan -destroy
@@ -94,8 +88,4 @@ terraform plan -destroy
 terraform destroy
 ```
 
-Do not destroy old lesson-5, lesson-7 or lesson-8-9 states just to clean up this new project. Existing EKS, NAT Gateway, EC2 nodes and load balancer remain billable until separately cleaned up. Keep S3 backend and lock records until all states have been safely retired.
-
-## Final Project Submission
-
-See [final project documentation](docs/FINAL-SUBMISSION.md), [security review](docs/SECURITY-REVIEW.md), and [evidence](docs/evidence/verification-summary.txt).
+I do not destroy old lesson-5, lesson-7 or lesson-8-9 states just to clean up this new project. Existing EKS, NAT Gateway, EC2 nodes and load balancer remain billable until separately cleaned up. Keep S3 backend and lock records until all states have been safely retired.
