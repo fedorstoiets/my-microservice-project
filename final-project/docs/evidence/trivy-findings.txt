@@ -1,0 +1,11 @@
+Trivy scan summary from local JSON (2026-11-13 19:37 UTC): CRITICAL=2 HIGH=10
+The Trivy command ran in non-strict mode; findings have NOT been remediated.
+Distinct findings:
+AWS-0040: EKS Clusters should have the public access disabled
+AWS-0041: EKS cluster should not have open CIDR range for public access
+KSV-0014: Root file system is not read-only
+KSV-0118: Default security context configured
+AWS-0031: ECR images tags shouldn't be mutable.
+AWS-0039: EKS should have the encryption of secrets enabled
+AWS-0132: S3 encryption should use Customer Managed Keys
+AWS-0164: Instances in a subnet should not receive a public IP address by default.

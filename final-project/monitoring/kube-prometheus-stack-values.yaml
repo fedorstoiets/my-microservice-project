@@ -1,0 +1,23 @@
+# Used with prometheus-community/kube-prometheus-stack Helm chart.
+grafana:
+  enabled: true
+  service:
+    type: ClusterIP
+  sidecar:
+    dashboards:
+      enabled: true
+      label: grafana_dashboard
+      labelValue: "1"
+  defaultDashboardsEnabled: true
+prometheus:
+  enabled: true
+  prometheusSpec:
+    retention: 2d
+    resources:
+      requests:
+        cpu: 200m
+        memory: 600Mi
+      limits:
+        memory: 1500Mi
+alertmanager:
+  enabled: false

@@ -1,0 +1,42 @@
+controller:
+  serviceType: ClusterIP
+  numExecutors: 0
+  resources:
+    requests:
+      cpu: "200m"
+      memory: "768Mi"
+    limits:
+      cpu: "1500m"
+      memory: "2Gi"
+  installPlugins:
+    - kubernetes
+    - workflow-aggregator
+    - git
+    - configuration-as-code
+    - job-dsl
+    - credentials-binding
+  JCasC:
+    defaultConfig: true
+    configScripts:
+      seed-job: |
+        jobs:
+          - script: >
+              pipelineJob('django-ecr-gitops') {
+                description('Build Django with Kaniko, push to ECR, update GitOps main')
+                definition {
+                  cpsScm {
+                    scm {
+                      git {
+                        remote { url('${source_repo}') }
+                        branches('*/lesson-8-9')
+                      }
+                    }
+                    scriptPath('lesson-8-9/Jenkinsfile')
+                    lightweight(true)
+                  }
+                }
+              }
+agent:
+  enabled: true
+persistence:
+  enabled: false

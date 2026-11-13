@@ -1,0 +1,5 @@
+Executed: 2026-11-13 19:37 UTC
+Checking http://a2048a3404b0743559390f11375a5ce8-833438172.us-east-2.elb.amazonaws.com/health/
+PASS: Django health endpoint and PostgreSQL SELECT 1
+Checking http://a2048a3404b0743559390f11375a5ce8-833438172.us-east-2.elb.amazonaws.com/
+PASS: Django homepage HTTP 2xx; smoke test completed

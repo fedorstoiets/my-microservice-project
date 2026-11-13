@@ -1,0 +1,7 @@
+# Safe defaults: review plans before enabling billable infrastructure.
+aws_region = "us-east-2"
+cluster_name = "neoversity-lesson-7"
+deploy_database = false
+deploy_monitoring = false
+# Set deploy_database=true to create a NEW private RDS instance.
+# Set deploy_monitoring=true to install Prometheus/Grafana on existing EKS.

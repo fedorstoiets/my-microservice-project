@@ -1,0 +1,3 @@
+repoURL: "https://github.com/fedorstoiets/neoversity-django-gitops.git"
+targetRevision: main
+appNamespace: neoversity
