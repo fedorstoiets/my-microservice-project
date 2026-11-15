@@ -20,3 +20,6 @@ dist/
 
 # Local Terraform working directories
 **/.terraform
+
+# Public AWS RDS trust bundle only
+!Django/certs/rds-global-bundle.pem
