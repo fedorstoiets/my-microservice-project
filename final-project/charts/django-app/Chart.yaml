@@ -1,6 +1,6 @@
 apiVersion: v2
 name: django-app
-description: Neoversity Django Helm deployment with PostgreSQL and HPA
+description: Neoversity Django Helm deployment with private RDS, ordered migrations and HPA
 type: application
-version: 0.1.0
-appVersion: "5.2"
+version: 0.2.0
+appVersion: "5.2.19"

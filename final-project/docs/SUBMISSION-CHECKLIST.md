@@ -1,15 +1,18 @@
 # Submission checklist
 
-- [x] Source on `final-project` branch (after running the packaging script)
-- [x] AWS infrastructure deployed: VPC / EKS / RDS / ECR / Jenkins / Argo CD / Prometheus / Grafana
-- [x] Django uses private RDS; health query and HTTP smoke tests pass
-- [x] HPA and Prometheus metric queries demonstrated
-- [x] Custom Grafana dashboard ConfigMap provisioned
-- [x] `terraform fmt` and `terraform validate` passed
-- [x] Trivy was run; residual findings disclosed
-- [x] Operational verification report: 11 passed / 0 failed / 0 skipped
-- [x] Documentation and sanitized evidence included
-- [ ] Jenkins persistence to EBS and IRSA (open mentor-feedback improvements; not implemented)
-- [ ] Remediate all Trivy HIGH/CRITICAL findings (not completed)
+- [x] Connected Terraform source, independent offline bootstrap/infra/platform path.
+- [x] Existing-cluster additive CSI/IRSA/ESO/storage source; no 39-resource migration.
+- [x] Five Terraform validations, 14 mocked plans, three chart lints, Python/Django tests.
+- [x] Strict source scans: zero HIGH/CRITICAL; runtime/image exceptions remain separate.
+- [x] Existing RDS/HTTP, Argo, 19 Prometheus targets, custom dashboard and HPA metric evidence.
+- [x] Local Jenkins archive restore: 79 files and zero hash mismatches; scope is file integrity only.
+- [ ] Resolve administrator OIDC SCP restriction and refresh authenticated access.
+- [ ] Approve/apply additive CSI/IAM/retained storage; verify real provisioning.
+- [ ] Obtain consistent complete Jenkins backup and functional recovery before storage cutover.
+- [ ] Verify actual scoped secrets/IRSA, DB role/TLS and final-project pipeline build/deployment.
+- [ ] Capture controlled HPA scaling and persistent Jenkins replacement survival.
+- [ ] Independently review source, publish matching final-project commit without overwriting remote work.
+- [ ] Final acceptance and matching final_DevOps_Стоєцький_Федір.zip with manifest/SHA256.
 
-**Submit:** the repository link to the `final-project` branch plus the ZIP produced by the packaging script. Attach screenshots if the grading portal specifically requires screenshots; none are invented or included by this script.
+Existing working services and state are preserved. Source success, historical
+lesson evidence and a candidate ZIP do not prove the remaining runtime boxes.

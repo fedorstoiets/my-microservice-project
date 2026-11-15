@@ -1,0 +1,19 @@
+{
+  "checked_at": "2026-11-15T13:37:53.418276+00:00",
+  "code_sha256": "9ab25eaf8b5940a24f3ad4dcf87b4a70f7a812afe831f7d5f6137313c35c08bb",
+  "results": {
+    "source": {
+      "exit_code": 0,
+      "status": "passed",
+      "report": "reports/source-check.txt"
+    },
+    "security": {
+      "exit_code": 0,
+      "status": "passed",
+      "report": "reports/security-check.txt"
+    }
+  },
+  "infrastructure_mutated": false,
+  "terraform_tests": "AWS/Kubernetes/Helm mocked; plan only",
+  "live_database_used": false
+}

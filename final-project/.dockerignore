@@ -1,0 +1,16 @@
+.git
+.aws
+**/.aws
+**/.terraform
+**/.env
+**/.env.*
+**/*.tfstate*
+**/*.tfplan
+**/*.tfvars
+**/backend.hcl
+**/*.key
+**/__pycache__
+**/*.py[cod]
+**/.venv
+reports
+dist

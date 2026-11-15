@@ -1,0 +1,37 @@
+{
+  "rds_ca": {
+    "url": "https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem",
+    "sha256": "90a6f1a7978a1b1b096dca6c57511ca48d3b8cf052f8e704baf358f34ea2f21b"
+  },
+  "images": {
+    "library/python:3.12-slim": "sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b",
+    "alpine/git:2.47.2": "sha256:062a01ad7a0eb17cff382bc5e26086b4d710e56dfdfdf001109a49b6d9bd378c",
+    "aquasec/trivy:0.76.2": "sha256:8f6bb947dbc528902e11f2f5be52f7b519f6a39d5d148f41166f2040499768fb",
+    "gcr.io/kaniko-project/executor:v1.23.2-debug": "sha256:c3109d5926a997b100c4343944e06c6b30a6804b2f9abe0994d3de6ef92b028e",
+    "ghcr.io/osscontainertools/kaniko:v1.29.1-debug": "sha256:ebc38a988e5aa1aaea99240e931aeeeff9d8e6bb5a0bd0e00eaf79973bf0a773",
+    "library/python:3.12-alpine": "sha256:c5ba3deef00c7758561a0f03c26f44f10589263d40e732b8748e0d1f38f6dd89"
+  },
+  "preferred_builder": {
+    "reference": "ghcr.io/osscontainertools/kaniko@sha256:ebc38a988e5aa1aaea99240e931aeeeff9d8e6bb5a0bd0e00eaf79973bf0a773",
+    "release": "https://github.com/osscontainertools/kaniko/releases/tag/v1.29.1",
+    "published_at": "2026-11-08T23:48:52Z",
+    "deployment_platform": "linux/amd64",
+    "scan_evidence": "docs/evidence/builder-image-review.json"
+  },
+  "preferred_python_base": {
+    "reference": "python:3.12-alpine@sha256:c5ba3deef00c7758561a0f03c26f44f10589263d40e732b8748e0d1f38f6dd89",
+    "digest": "sha256:c5ba3deef00c7758561a0f03c26f44f10589263d40e732b8748e0d1f38f6dd89",
+    "wheel_support": {
+      "psycopg-binary": [
+        "psycopg_binary-3.3.9-cp312-cp312-musllinux_1_2_aarch64.whl",
+        "psycopg_binary-3.3.9-cp312-cp312-musllinux_1_2_ppc64le.whl",
+        "psycopg_binary-3.3.9-cp312-cp312-musllinux_1_2_riscv64.whl",
+        "psycopg_binary-3.3.9-cp312-cp312-musllinux_1_2_x86_64.whl"
+      ],
+      "PyYAML": [
+        "pyyaml-6.0.3-cp312-cp312-musllinux_1_2_aarch64.whl",
+        "pyyaml-6.0.3-cp312-cp312-musllinux_1_2_x86_64.whl"
+      ]
+    }
+  }
+}

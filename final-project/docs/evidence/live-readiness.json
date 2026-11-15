@@ -1,0 +1,1647 @@
+{
+  "checked_at": "2026-11-15T03:10:00.402823+00:00",
+  "finished_at": "2026-11-15T03:12:15.737232+00:00",
+  "profile": "default",
+  "environment_credential_overrides_removed": true,
+  "migration_hold": "active",
+  "live_mutations": false,
+  "identity": {
+    "UserId": "AROATJ2YNHYAYRBXZBL2J:9478f4d8-60a1-708b-3da4-e21ae3a26c37",
+    "Account": "227281812993",
+    "Arn": "arn:aws:sts::227281812993:assumed-role/AccountFullAccessRole/9478f4d8-60a1-708b-3da4-e21ae3a26c37"
+  },
+  "checks": {
+    "identity": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "bucket_versioning": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "bucket_encryption": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "state_locks": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "nodegroups": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "eks": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "addons": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "oidc": {
+      "exit_code": 254,
+      "status": "blocked",
+      "reason": "AccessDenied"
+    },
+    "roles": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "pod_identities": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "rds": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "automated_backups": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "snapshots": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "secrets": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "kube_context": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "ecr": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "subnets": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "state_inventory": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "nodes": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "pods": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "external_secrets": {
+      "exit_code": 1,
+      "status": "blocked",
+      "reason": "Read failed; private diagnostic retained"
+    },
+    "storage": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "applications": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "controllers": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "serviceaccounts": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "networkpolicies": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "services": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "kubectl_read_rbac": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "nodegroup_neoversity-lesson-7-nodes": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "helm_releases": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "addon_eks-pod-identity-agent": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "inline_neoversity-lesson-7-cluster-role": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "attached_neoversity-lesson-7-cluster-role": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "attached_neoversity-lesson-7-node-role": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "inline_neoversity-lesson-7-node-role": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "attached_neoversity-lesson-89-kaniko-pod-role": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "inline_neoversity-lesson-89-kaniko-pod-role": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "secret_metadata_4734b450493d": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "root_refresh_only": {
+      "exit_code": 1,
+      "status": "blocked",
+      "reason": "Authentication",
+      "resolved_by": "Profile-to-process credential bridge; subsequent plan authenticated but failed on pre-consolidation configuration dependencies"
+    },
+    "policy_10c51a8e57a0": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "managed_58348d38cd7e": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "managed_ee7a07817754": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "managed_5f9eff482e6e": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "managed_a33a37c7a711": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "dynamodb_locks": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "rds_key_policy": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "rds_secret_key": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "prometheus_ready": {
+      "exit_code": 0,
+      "status": "verified_read",
+      "detail": "Plain-text response: Prometheus Server is Ready. (JSON parser limitation corrected in evidence only)"
+    },
+    "app_config": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "custom_resources": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "prometheus_targets": {
+      "exit_code": 0,
+      "status": "verified_read"
+    },
+    "root_refresh_profile_bridge": {
+      "exit_code": 1,
+      "status": "blocked",
+      "reason": "Read failed; private diagnostic retained"
+    },
+    "root_refresh_profile_json": {
+      "exit_code": 0,
+      "status": "verified_read"
+    }
+  },
+  "states": {
+    "checked_at": "2026-11-15T03:10:00.437104+00:00",
+    "status": "inventory_complete",
+    "states": [
+      {
+        "key": "final-project/terraform.tfstate",
+        "version_id": "b6i9qOXP0xgd.23RZnukXTz0IY8h0.HW",
+        "serial": 3,
+        "lineage": "1f6fe0e5-2745-71ae-e983-641f5c3353df",
+        "sha256": "ab6edfdcbfc608f7d9941163d3f8ed349f7538317f443fab3e954d4117ca291f",
+        "matches_historical_backup_sha256": true
+      },
+      {
+        "key": "lesson-5/terraform.tfstate",
+        "version_id": "3GoEfpgRiDjCmBhU0rg_fRPZM.ZQvtBn",
+        "serial": 7,
+        "lineage": "f95dcb4c-6c91-b1cb-1a5e-b4dc6783f1ac",
+        "sha256": "32d30d7155250d7f5a03b3d7a37a4599380ee58bda5d593a3e9e1a64a6d0f8c5",
+        "matches_historical_backup_sha256": true
+      },
+      {
+        "key": "lesson-7/terraform.tfstate",
+        "version_id": "pmMVXLk57kw73LLj2NvthAtwx_efwN.Q",
+        "serial": 2,
+        "lineage": "edf8ddf6-83fa-eb27-c2c3-9005430dd657",
+        "sha256": "2e160cb3a4e43d5b4df526d5cec07670fc12c9e7566f10a5584f118dd11b86af",
+        "matches_historical_backup_sha256": true
+      },
+      {
+        "key": "lesson-8-9/terraform.tfstate",
+        "version_id": "PWWaZMYzP5gaT5FtnMTUmZXisbg_rZy2",
+        "serial": 4,
+        "lineage": "5dbb0b14-90bf-f05a-db34-553365cf690a",
+        "sha256": "1e7dfd6c7a6e830936ade299258d5dcba8f1debd86e13a9e4b1a007719aa5be5",
+        "matches_historical_backup_sha256": true
+      }
+    ],
+    "duplicate_candidates": [],
+    "keys_checked": [
+      "final-project/terraform.tfstate",
+      "lesson-5/terraform.tfstate",
+      "lesson-7/terraform.tfstate",
+      "lesson-8-9/terraform.tfstate"
+    ],
+    "discovery_requested": true,
+    "duplicate_scope": "Requested/discovered state objects; owner review must distinguish active states and archived copies"
+  },
+  "managed_instances": 52,
+  "owner_counts": {
+    "final-project/terraform.tfstate": 6,
+    "lesson-5/terraform.tfstate": 26,
+    "lesson-7/terraform.tfstate": 10,
+    "lesson-8-9/terraform.tfstate": 10
+  },
+  "deposed_instances": 0,
+  "bucket_versioning": {
+    "Status": "Enabled"
+  },
+  "bucket_encryption": {
+    "ServerSideEncryptionConfiguration": {
+      "Rules": [
+        {
+          "ApplyServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+          },
+          "BucketKeyEnabled": false,
+          "BlockedEncryptionTypes": {
+            "EncryptionType": [
+              "SSE-C"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "lock_objects": [],
+  "eks": {
+    "name": "neoversity-lesson-7",
+    "arn": "arn:aws:eks:us-east-2:227281812993:cluster/neoversity-lesson-7",
+    "status": "ACTIVE",
+    "version": "1.37",
+    "health": null,
+    "accessConfig": {
+      "authenticationMode": "API_AND_CONFIG_MAP"
+    },
+    "encryptionConfig": null,
+    "resourcesVpcConfig": {
+      "subnetIds": [
+        "subnet-0d2217efb5f48b784",
+        "subnet-022c84365ae824938",
+        "subnet-0cc524f0e3eca1973",
+        "subnet-0ad5aef5dda82ef10",
+        "subnet-0b0825a543907b71e",
+        "subnet-0f20b776df8a53388"
+      ],
+      "securityGroupIds": [],
+      "clusterSecurityGroupId": "sg-0072c2bc38f9d15bc",
+      "vpcId": "vpc-095e91bfc26069232",
+      "endpointPublicAccess": true,
+      "endpointPrivateAccess": true,
+      "publicAccessCidrs": [
+        "0.0.0.0/0"
+      ]
+    }
+  },
+  "oidc_issuer": "https://oidc.eks.us-east-2.amazonaws.com/id/DDF930235860D5B13B8F3342191ED95F",
+  "rds": [
+    {
+      "DBInstanceIdentifier": "fp-rds-db",
+      "DBInstanceArn": "arn:aws:rds:us-east-2:227281812993:db:fp-rds-db",
+      "DBInstanceStatus": "available",
+      "Engine": "postgres",
+      "EngineVersion": "18.3",
+      "PubliclyAccessible": false,
+      "StorageEncrypted": true,
+      "BackupRetentionPeriod": 0,
+      "LatestRestorableTime": null,
+      "DeletionProtection": false,
+      "MasterUserSecret": null,
+      "PendingModifiedValues": {}
+    },
+    {
+      "DBInstanceIdentifier": "hw6-rds-db",
+      "DBInstanceArn": "arn:aws:rds:us-east-2:227281812993:db:hw6-rds-db",
+      "DBInstanceStatus": "available",
+      "Engine": "postgres",
+      "EngineVersion": "18.3",
+      "PubliclyAccessible": true,
+      "StorageEncrypted": true,
+      "BackupRetentionPeriod": 0,
+      "LatestRestorableTime": null,
+      "DeletionProtection": false,
+      "MasterUserSecret": null,
+      "PendingModifiedValues": {}
+    },
+    {
+      "DBInstanceIdentifier": "neoversity-final-db",
+      "DBInstanceArn": "arn:aws:rds:us-east-2:227281812993:db:neoversity-final-db",
+      "DBInstanceStatus": "available",
+      "Engine": "postgres",
+      "EngineVersion": "18.6",
+      "PubliclyAccessible": false,
+      "StorageEncrypted": true,
+      "BackupRetentionPeriod": 1,
+      "LatestRestorableTime": "2026-11-15T03:03:01+00:00",
+      "DeletionProtection": false,
+      "MasterUserSecret": {
+        "SecretArn": "arn:aws:secretsmanager:us-east-2:227281812993:secret:rds!db-c5983ece-8c54-4b0e-81c4-a1bfe324f6b9-Ds0iCD",
+        "SecretStatus": "active",
+        "KmsKeyId": "arn:aws:kms:us-east-2:227281812993:key/97886a30-dc4d-4403-b314-3ae7452dbb45"
+      },
+      "PendingModifiedValues": {}
+    }
+  ],
+  "snapshots": [
+    {
+      "DBSnapshotIdentifier": "fp-rds-snapshot",
+      "DBInstanceIdentifier": "hw6-rds-db",
+      "Status": "available",
+      "SnapshotCreateTime": "2026-10-11T14:33:28.929000+00:00",
+      "Encrypted": true,
+      "SnapshotType": "manual"
+    },
+    {
+      "DBSnapshotIdentifier": "rds:neoversity-final-db-2026-11-13-16-47",
+      "DBInstanceIdentifier": "neoversity-final-db",
+      "Status": "available",
+      "SnapshotCreateTime": "2026-11-13T16:47:28.823000+00:00",
+      "Encrypted": true,
+      "SnapshotType": "automated"
+    },
+    {
+      "DBSnapshotIdentifier": "rds:neoversity-final-db-2026-11-14-07-59",
+      "DBInstanceIdentifier": "neoversity-final-db",
+      "Status": "available",
+      "SnapshotCreateTime": "2026-11-14T07:59:10.609000+00:00",
+      "Encrypted": true,
+      "SnapshotType": "automated"
+    }
+  ],
+  "automated_backups": [
+    {
+      "DBInstanceIdentifier": "neoversity-final-db",
+      "Status": "active",
+      "BackupRetentionPeriod": 1,
+      "RestoreWindow": {
+        "EarliestTime": "2026-11-14T03:03:01+00:00",
+        "LatestTime": "2026-11-15T03:03:01+00:00"
+      }
+    }
+  ],
+  "secrets": [
+    {
+      "ARN": "arn:aws:secretsmanager:us-east-2:227281812993:secret:rds!db-c5983ece-8c54-4b0e-81c4-a1bfe324f6b9-Ds0iCD",
+      "Name": "rds!db-c5983ece-8c54-4b0e-81c4-a1bfe324f6b9",
+      "KmsKeyId": null,
+      "DeletedDate": null,
+      "RotationEnabled": true,
+      "LastChangedDate": "2026-11-13T11:43:44.737000-05:00",
+      "SecretVersionsToStages": {
+        "4fcaddc4-6a9f-42c0-ab1a-c349a49a49bc": [
+          "AWSCURRENT"
+        ]
+      }
+    }
+  ],
+  "ecr": [
+    {
+      "repositoryName": "lesson-7-django",
+      "imageTagMutability": "MUTABLE",
+      "imageScanningConfiguration": {
+        "scanOnPush": true
+      }
+    },
+    {
+      "repositoryName": "nginx-repo",
+      "imageTagMutability": "MUTABLE",
+      "imageScanningConfiguration": {
+        "scanOnPush": false
+      }
+    },
+    {
+      "repositoryName": "lesson-5-ecr",
+      "imageTagMutability": "MUTABLE",
+      "imageScanningConfiguration": {
+        "scanOnPush": true
+      }
+    }
+  ],
+  "helm_releases": [
+    {
+      "name": "argocd",
+      "namespace": "argocd",
+      "revision": "1",
+      "updated": "2026-11-11 19:51:45.466491263 -0500 EST",
+      "status": "deployed",
+      "chart": "argo-cd-10.18.0",
+      "app_version": "v3.6.1"
+    },
+    {
+      "name": "jenkins",
+      "namespace": "jenkins",
+      "revision": "1",
+      "updated": "2026-11-11 19:50:39.044068103 -0500 EST",
+      "status": "deployed",
+      "chart": "jenkins-5.12.0",
+      "app_version": "2.580.2"
+    },
+    {
+      "name": "metrics-server",
+      "namespace": "kube-system",
+      "revision": "1",
+      "updated": "2026-11-11 17:50:54.086665716 -0500 EST",
+      "status": "deployed",
+      "chart": "metrics-server-3.14.0",
+      "app_version": "0.9.0"
+    },
+    {
+      "name": "monitoring",
+      "namespace": "monitoring",
+      "revision": "1",
+      "updated": "2026-11-13 11:41:10.413542876 -0500 EST",
+      "status": "deployed",
+      "chart": "kube-prometheus-stack-93.2.2",
+      "app_version": "v0.95.2"
+    },
+    {
+      "name": "neoversity-apps",
+      "namespace": "argocd",
+      "revision": "1",
+      "updated": "2026-11-11 19:52:40.923146278 -0500 EST",
+      "status": "deployed",
+      "chart": "neoversity-applications-0.1.0",
+      "app_version": ""
+    }
+  ],
+  "nodes": [
+    {
+      "name": "ip-10-0-4-121.us-east-2.compute.internal",
+      "ready": true,
+      "allocatable": {
+        "cpu": "1930m",
+        "ephemeral-storage": "18181869946",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "memory": "3372872Ki",
+        "pods": "17"
+      },
+      "nodeInfo": {
+        "architecture": "amd64",
+        "bootID": "436cfe7c-c370-43bd-b283-322894ba2402",
+        "containerRuntimeVersion": "containerd://2.3.7+unknown",
+        "kernelVersion": "6.18.56-125.164.amzn2023.x86_64",
+        "kubeProxyVersion": "",
+        "kubeletVersion": "v1.37.1-eks-8418f54",
+        "machineID": "ec21fef2411a86363cbe5ef30098dfc6",
+        "operatingSystem": "linux",
+        "osImage": "Amazon Linux 2023.12.20261102",
+        "runningInUserNamespace": false,
+        "systemUUID": "ec21fef2-411a-8636-3cbe-5ef30098dfc6"
+      }
+    },
+    {
+      "name": "ip-10-0-6-10.us-east-2.compute.internal",
+      "ready": true,
+      "allocatable": {
+        "cpu": "1930m",
+        "ephemeral-storage": "18181869946",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "memory": "3372872Ki",
+        "pods": "17"
+      },
+      "nodeInfo": {
+        "architecture": "amd64",
+        "bootID": "d8d373ec-2e21-40d7-99ba-ad27c22c3a80",
+        "containerRuntimeVersion": "containerd://2.3.7+unknown",
+        "kernelVersion": "6.18.56-125.164.amzn2023.x86_64",
+        "kubeProxyVersion": "",
+        "kubeletVersion": "v1.37.1-eks-8418f54",
+        "machineID": "ec2c8acb538ab6c211352731ad7a2915",
+        "operatingSystem": "linux",
+        "osImage": "Amazon Linux 2023.12.20261102",
+        "runningInUserNamespace": false,
+        "systemUUID": "ec2c8acb-538a-b6c2-1135-2731ad7a2915"
+      }
+    }
+  ],
+  "storage": [
+    {
+      "kind": "StorageClass",
+      "namespace": null,
+      "name": "gp2",
+      "phase": null,
+      "provisioner": "kubernetes.io/aws-ebs",
+      "reclaimPolicy": "Delete",
+      "volumeBindingMode": "WaitForFirstConsumer",
+      "volumeName": null,
+      "storageClassName": null
+    }
+  ],
+  "irsa_serviceaccounts": [],
+  "pod_identity_associations": [
+    {
+      "clusterName": "neoversity-lesson-7",
+      "namespace": "jenkins",
+      "serviceAccount": "kaniko-builder",
+      "associationArn": "arn:aws:eks:us-east-2:227281812993:podidentityassociation/neoversity-lesson-7/a-tz4qej2cbs3u2t9ss",
+      "associationId": "a-tz4qej2cbs3u2t9ss"
+    }
+  ],
+  "root_drift": {
+    "scope": "final-project state only; no remote state persisted",
+    "resource_drift": [
+      {
+        "address": "module.rds[0].aws_security_group.database",
+        "actions": [
+          "update"
+        ],
+        "changed_attributes": [
+          "ingress"
+        ]
+      }
+    ],
+    "complete": false,
+    "errored": true,
+    "output_change_names": [
+      "argocd_password_command",
+      "argocd_service",
+      "cluster_name",
+      "ecr_repository_url",
+      "existing_eks_cluster",
+      "existing_vpc_id",
+      "grafana_port_forward",
+      "jenkins_service",
+      "new_rds_db_name",
+      "new_rds_port",
+      "private_subnets",
+      "vpc_id"
+    ]
+  },
+  "terraform_profile_bridge": "Fresh CLI profile credentials supplied only in child-process memory; no credentials persisted or displayed",
+  "app_database_reference": {
+    "configmap": "django-app-config",
+    "matching_rds_instances": [
+      "neoversity-final-db"
+    ],
+    "sslmode": null,
+    "configured_variable_names": [
+      "DJANGO_ALLOWED_HOSTS",
+      "DJANGO_DEBUG",
+      "POSTGRES_DB",
+      "POSTGRES_HOST",
+      "POSTGRES_PORT",
+      "POSTGRES_USER"
+    ]
+  },
+  "external_secrets_crds": [],
+  "dynamodb_lock_table": {
+    "TableName": "terraform-locks",
+    "TableStatus": "ACTIVE",
+    "ItemCount": 1,
+    "SSEDescription": null
+  },
+  "rds_secret_kms_metadata": {
+    "Arn": "arn:aws:kms:us-east-2:227281812993:key/97886a30-dc4d-4403-b314-3ae7452dbb45",
+    "Enabled": true,
+    "KeyState": "Enabled",
+    "KeyManager": "AWS",
+    "DeletionDate": null
+  },
+  "rds_key_policy_readable": true,
+  "prometheus_targets": {
+    "count": 19,
+    "health_counts": {
+      "up": 19,
+      "down": 0,
+      "unknown": 0
+    },
+    "unhealthy_jobs": []
+  },
+  "pods": [
+    {
+      "namespace": "argocd",
+      "name": "argocd-application-controller-0",
+      "phase": "Running",
+      "ready": true,
+      "restarts": 0,
+      "images": [
+        "quay.io/argoproj/argocd:v3.6.1"
+      ],
+      "claims": [],
+      "emptyDirVolumes": [
+        "argocd-home",
+        "argocd-application-controller-tmp"
+      ]
+    },
+    {
+      "namespace": "argocd",
+      "name": "argocd-applicationset-controller-6b9df966db-5dc2q",
+      "phase": "Running",
+      "ready": true,
+      "restarts": 0,
+      "images": [
+        "quay.io/argoproj/argocd:v3.6.1"
+      ],
+      "claims": [],
+      "emptyDirVolumes": [
+        "gpg-keyring",
+        "tmp"
+      ]
+    },
+    {
+      "namespace": "argocd",
+      "name": "argocd-dex-server-7bb69987cd-mv5cr",
+      "phase": "Running",
+      "ready": true,
+      "restarts": 2,
+      "images": [
+        "ghcr.io/dexidp/dex:v2.46.1"
+      ],
+      "claims": [],
+      "emptyDirVolumes": [
+        "static-files",
+        "dexconfig"
+      ]
+    },
+    {
+      "namespace": "argocd",
+      "name": "argocd-notifications-controller-667f69dc6-f72kt",
+      "phase": "Running",
+      "ready": true,
+      "restarts": 0,
+      "images": [
+        "quay.io/argoproj/argocd:v3.6.1"
+      ],
+      "claims": [],
+      "emptyDirVolumes": []
+    },
+    {
+      "namespace": "argocd",
+      "name": "argocd-redis-8589554fdd-7kjmf",
+      "phase": "Running",
+      "ready": true,
+      "restarts": 0,
+      "images": [
+        "ecr-public.aws.com/docker/library/redis:8.6.4-alpine"
+      ],
+      "claims": [],
+      "emptyDirVolumes": []
+    },
+    {
+      "namespace": "argocd",
+      "name": "argocd-repo-server-68fd748885-zn4dk",
+      "phase": "Running",
+      "ready": true,
+      "restarts": 0,
+      "images": [
+        "quay.io/argoproj/argocd:v3.6.1"
+      ],
+      "claims": [],
+      "emptyDirVolumes": [
+        "helm-working-dir",
+        "plugins",
+        "var-files",
+        "tmp",
+        "gpg-keyring"
+      ]
+    },
+    {
+      "namespace": "argocd",
+      "name": "argocd-server-7478cc4db7-8pcnl",
+      "phase": "Running",
+      "ready": true,
+      "restarts": 0,
+      "images": [
+        "quay.io/argoproj/argocd:v3.6.1"
+      ],
+      "claims": [],
+      "emptyDirVolumes": [
+        "plugins-home",
+        "tmp"
+      ]
+    },
+    {
+      "namespace": "jenkins",
+      "name": "jenkins-0",
+      "phase": "Running",
+      "ready": true,
+      "restarts": 0,
+      "images": [
+        "docker.io/jenkins/jenkins:2.580.2-jdk25",
+        "docker.io/kiwigrid/k8s-sidecar:2.14.1"
+      ],
+      "claims": [],
+      "emptyDirVolumes": [
+        "plugins",
+        "plugin-dir",
+        "jenkins-cache",
+        "jenkins-home",
+        "sc-config-volume",
+        "tmp-volume"
+      ]
+    },
+    {
+      "namespace": "kube-system",
+      "name": "aws-node-45zvh",
+      "phase": "Running",
+      "ready": true,
+      "restarts": 0,
+      "images": [
+        "602401143452.dkr.ecr.us-east-2.amazonaws.com/amazon-k8s-cni:v1.22.4-eksbuild.10",
+        "602401143452.dkr.ecr.us-east-2.amazonaws.com/amazon/aws-network-policy-agent:v1.4.0-eksbuild.1"
+      ],
+      "claims": [],
+      "emptyDirVolumes": []
+    },
+    {
+      "namespace": "kube-system",
+      "name": "aws-node-dlr7p",
+      "phase": "Running",
+      "ready": true,
+      "restarts": 0,
+      "images": [
+        "602401143452.dkr.ecr.us-east-2.amazonaws.com/amazon-k8s-cni:v1.22.4-eksbuild.10",
+        "602401143452.dkr.ecr.us-east-2.amazonaws.com/amazon/aws-network-policy-agent:v1.4.0-eksbuild.1"
+      ],
+      "claims": [],
+      "emptyDirVolumes": []
+    },
+    {
+      "namespace": "kube-system",
+      "name": "coredns-6b9f5c657c-ntlns",
+      "phase": "Running",
+      "ready": true,
+      "restarts": 0,
+      "images": [
+        "602401143452.dkr.ecr.us-east-2.amazonaws.com/eks/coredns:v1.14.7-eksbuild.28"
+      ],
+      "claims": [],
+      "emptyDirVolumes": []
+    },
+    {
+      "namespace": "kube-system",
+      "name": "coredns-6b9f5c657c-q4f9v",
+      "phase": "Running",
+      "ready": true,
+      "restarts": 0,
+      "images": [
+        "602401143452.dkr.ecr.us-east-2.amazonaws.com/eks/coredns:v1.14.7-eksbuild.28"
+      ],
+      "claims": [],
+      "emptyDirVolumes": []
+    },
+    {
+      "namespace": "kube-system",
+      "name": "eks-pod-identity-agent-cnnjm",
+      "phase": "Running",
+      "ready": true,
+      "restarts": 0,
+      "images": [
+        "602401143452.dkr.ecr.us-east-2.amazonaws.com/eks/eks-pod-identity-agent:v0.2.7"
+      ],
+      "claims": [],
+      "emptyDirVolumes": [
+        "jwk-cache"
+      ]
+    },
+    {
+      "namespace": "kube-system",
+      "name": "eks-pod-identity-agent-hvnc6",
+      "phase": "Running",
+      "ready": true,
+      "restarts": 0,
+      "images": [
+        "602401143452.dkr.ecr.us-east-2.amazonaws.com/eks/eks-pod-identity-agent:v0.2.7"
+      ],
+      "claims": [],
+      "emptyDirVolumes": [
+        "jwk-cache"
+      ]
+    },
+    {
+      "namespace": "kube-system",
+      "name": "kube-proxy-hfgcp",
+      "phase": "Running",
+      "ready": true,
+      "restarts": 0,
+      "images": [
+        "602401143452.dkr.ecr.us-east-2.amazonaws.com/eks/kube-proxy:v1.37.0-eksbuild.34"
+      ],
+      "claims": [],
+      "emptyDirVolumes": []
+    },
+    {
+      "namespace": "kube-system",
+      "name": "kube-proxy-ntrpk",
+      "phase": "Running",
+      "ready": true,
+      "restarts": 0,
+      "images": [
+        "602401143452.dkr.ecr.us-east-2.amazonaws.com/eks/kube-proxy:v1.37.0-eksbuild.34"
+      ],
+      "claims": [],
+      "emptyDirVolumes": []
+    },
+    {
+      "namespace": "kube-system",
+      "name": "metrics-server-c4994bc54-ccwsr",
+      "phase": "Running",
+      "ready": true,
+      "restarts": 0,
+      "images": [
+        "registry.k8s.io/metrics-server/metrics-server:v0.9.0"
+      ],
+      "claims": [],
+      "emptyDirVolumes": [
+        "tmp"
+      ]
+    },
+    {
+      "namespace": "monitoring",
+      "name": "monitoring-grafana-6d9d97f9cb-kcvh5",
+      "phase": "Running",
+      "ready": true,
+      "restarts": 0,
+      "images": [
+        "quay.io/kiwigrid/k8s-sidecar:2.14.3",
+        "quay.io/kiwigrid/k8s-sidecar:2.14.3",
+        "docker.io/grafana/grafana:13.3.1-distroless"
+      ],
+      "claims": [],
+      "emptyDirVolumes": [
+        "tmp",
+        "storage",
+        "search",
+        "sc-dashboard-volume",
+        "sc-datasources-volume"
+      ]
+    },
+    {
+      "namespace": "monitoring",
+      "name": "monitoring-kube-prometheus-operator-6b77dd6c5b-gk8cm",
+      "phase": "Running",
+      "ready": true,
+      "restarts": 0,
+      "images": [
+        "quay.io/prometheus-operator/prometheus-operator:v0.95.2"
+      ],
+      "claims": [],
+      "emptyDirVolumes": []
+    },
+    {
+      "namespace": "monitoring",
+      "name": "monitoring-kube-state-metrics-7d94c4cbd8-pp8cx",
+      "phase": "Running",
+      "ready": true,
+      "restarts": 0,
+      "images": [
+        "registry.k8s.io/kube-state-metrics/kube-state-metrics:v2.20.0"
+      ],
+      "claims": [],
+      "emptyDirVolumes": []
+    },
+    {
+      "namespace": "monitoring",
+      "name": "monitoring-prometheus-node-exporter-5l5pc",
+      "phase": "Running",
+      "ready": true,
+      "restarts": 0,
+      "images": [
+        "quay.io/prometheus/node-exporter:v1.12.1-distroless"
+      ],
+      "claims": [],
+      "emptyDirVolumes": []
+    },
+    {
+      "namespace": "monitoring",
+      "name": "monitoring-prometheus-node-exporter-p57c4",
+      "phase": "Running",
+      "ready": true,
+      "restarts": 0,
+      "images": [
+        "quay.io/prometheus/node-exporter:v1.12.1-distroless"
+      ],
+      "claims": [],
+      "emptyDirVolumes": []
+    },
+    {
+      "namespace": "monitoring",
+      "name": "prometheus-monitoring-kube-prometheus-prometheus-0",
+      "phase": "Running",
+      "ready": true,
+      "restarts": 0,
+      "images": [
+        "quay.io/prometheus/prometheus:v3.16.0-distroless",
+        "quay.io/prometheus-operator/prometheus-config-reloader:v0.95.2"
+      ],
+      "claims": [],
+      "emptyDirVolumes": [
+        "config-out",
+        "prometheus-monitoring-kube-prometheus-prometheus-db"
+      ]
+    },
+    {
+      "namespace": "neoversity",
+      "name": "django-app-5c49884dfd-qrdk6",
+      "phase": "Running",
+      "ready": true,
+      "restarts": 0,
+      "images": [
+        "227281812993.dkr.ecr.us-east-2.amazonaws.com/lesson-7-django:fea9e0c3973a"
+      ],
+      "claims": [],
+      "emptyDirVolumes": []
+    },
+    {
+      "namespace": "neoversity",
+      "name": "django-app-5c49884dfd-sb6ch",
+      "phase": "Running",
+      "ready": true,
+      "restarts": 0,
+      "images": [
+        "227281812993.dkr.ecr.us-east-2.amazonaws.com/lesson-7-django:fea9e0c3973a"
+      ],
+      "claims": [],
+      "emptyDirVolumes": []
+    },
+    {
+      "namespace": "neoversity",
+      "name": "django-app-postgresql-cc8df7db5-cq7vl",
+      "phase": "Running",
+      "ready": true,
+      "restarts": 0,
+      "images": [
+        "postgres:16-alpine"
+      ],
+      "claims": [],
+      "emptyDirVolumes": [
+        "data"
+      ]
+    },
+    {
+      "namespace": "neoversity",
+      "name": "django-rds-migrate-1794588947-6cl47",
+      "phase": "Succeeded",
+      "ready": false,
+      "restarts": 0,
+      "images": [
+        "227281812993.dkr.ecr.us-east-2.amazonaws.com/lesson-7-django:fea9e0c3973a"
+      ],
+      "claims": [],
+      "emptyDirVolumes": []
+    }
+  ],
+  "controllers": [
+    {
+      "namespace": "argocd",
+      "kind": "Deployment",
+      "name": "argocd-applicationset-controller",
+      "generation": 1,
+      "replicas": 1,
+      "status": {
+        "availableReplicas": 1,
+        "conditions": [
+          {
+            "lastTransitionTime": "2026-11-12T00:52:16Z",
+            "lastUpdateTime": "2026-11-12T00:52:16Z",
+            "message": "Deployment has minimum availability.",
+            "reason": "MinimumReplicasAvailable",
+            "status": "True",
+            "type": "Available"
+          },
+          {
+            "lastTransitionTime": "2026-11-12T00:52:13Z",
+            "lastUpdateTime": "2026-11-12T00:52:16Z",
+            "message": "ReplicaSet \"argocd-applicationset-controller-6b9df966db\" has successfully progressed.",
+            "reason": "NewReplicaSetAvailable",
+            "status": "True",
+            "type": "Progressing"
+          }
+        ],
+        "observedGeneration": 1,
+        "readyReplicas": 1,
+        "replicas": 1,
+        "terminatingReplicas": 0,
+        "updatedReplicas": 1
+      }
+    },
+    {
+      "namespace": "argocd",
+      "kind": "Deployment",
+      "name": "argocd-dex-server",
+      "generation": 1,
+      "replicas": 1,
+      "status": {
+        "availableReplicas": 1,
+        "conditions": [
+          {
+            "lastTransitionTime": "2026-11-12T00:52:13Z",
+            "lastUpdateTime": "2026-11-12T00:52:22Z",
+            "message": "ReplicaSet \"argocd-dex-server-7bb69987cd\" has successfully progressed.",
+            "reason": "NewReplicaSetAvailable",
+            "status": "True",
+            "type": "Progressing"
+          },
+          {
+            "lastTransitionTime": "2026-11-12T00:52:36Z",
+            "lastUpdateTime": "2026-11-12T00:52:36Z",
+            "message": "Deployment has minimum availability.",
+            "reason": "MinimumReplicasAvailable",
+            "status": "True",
+            "type": "Available"
+          }
+        ],
+        "observedGeneration": 1,
+        "readyReplicas": 1,
+        "replicas": 1,
+        "terminatingReplicas": 0,
+        "updatedReplicas": 1
+      }
+    },
+    {
+      "namespace": "argocd",
+      "kind": "Deployment",
+      "name": "argocd-notifications-controller",
+      "generation": 1,
+      "replicas": 1,
+      "status": {
+        "availableReplicas": 1,
+        "conditions": [
+          {
+            "lastTransitionTime": "2026-11-12T00:52:27Z",
+            "lastUpdateTime": "2026-11-12T00:52:27Z",
+            "message": "Deployment has minimum availability.",
+            "reason": "MinimumReplicasAvailable",
+            "status": "True",
+            "type": "Available"
+          },
+          {
+            "lastTransitionTime": "2026-11-12T00:52:13Z",
+            "lastUpdateTime": "2026-11-12T00:52:27Z",
+            "message": "ReplicaSet \"argocd-notifications-controller-667f69dc6\" has successfully progressed.",
+            "reason": "NewReplicaSetAvailable",
+            "status": "True",
+            "type": "Progressing"
+          }
+        ],
+        "observedGeneration": 1,
+        "readyReplicas": 1,
+        "replicas": 1,
+        "terminatingReplicas": 0,
+        "updatedReplicas": 1
+      }
+    },
+    {
+      "namespace": "argocd",
+      "kind": "Deployment",
+      "name": "argocd-redis",
+      "generation": 1,
+      "replicas": 1,
+      "status": {
+        "availableReplicas": 1,
+        "conditions": [
+          {
+            "lastTransitionTime": "2026-11-12T00:52:21Z",
+            "lastUpdateTime": "2026-11-12T00:52:21Z",
+            "message": "Deployment has minimum availability.",
+            "reason": "MinimumReplicasAvailable",
+            "status": "True",
+            "type": "Available"
+          },
+          {
+            "lastTransitionTime": "2026-11-12T00:52:13Z",
+            "lastUpdateTime": "2026-11-12T00:52:21Z",
+            "message": "ReplicaSet \"argocd-redis-8589554fdd\" has successfully progressed.",
+            "reason": "NewReplicaSetAvailable",
+            "status": "True",
+            "type": "Progressing"
+          }
+        ],
+        "observedGeneration": 1,
+        "readyReplicas": 1,
+        "replicas": 1,
+        "terminatingReplicas": 0,
+        "updatedReplicas": 1
+      }
+    },
+    {
+      "namespace": "argocd",
+      "kind": "Deployment",
+      "name": "argocd-repo-server",
+      "generation": 1,
+      "replicas": 1,
+      "status": {
+        "availableReplicas": 1,
+        "conditions": [
+          {
+            "lastTransitionTime": "2026-11-12T00:52:31Z",
+            "lastUpdateTime": "2026-11-12T00:52:31Z",
+            "message": "Deployment has minimum availability.",
+            "reason": "MinimumReplicasAvailable",
+            "status": "True",
+            "type": "Available"
+          },
+          {
+            "lastTransitionTime": "2026-11-12T00:52:13Z",
+            "lastUpdateTime": "2026-11-12T00:52:31Z",
+            "message": "ReplicaSet \"argocd-repo-server-68fd748885\" has successfully progressed.",
+            "reason": "NewReplicaSetAvailable",
+            "status": "True",
+            "type": "Progressing"
+          }
+        ],
+        "observedGeneration": 1,
+        "readyReplicas": 1,
+        "replicas": 1,
+        "terminatingReplicas": 0,
+        "updatedReplicas": 1
+      }
+    },
+    {
+      "namespace": "argocd",
+      "kind": "Deployment",
+      "name": "argocd-server",
+      "generation": 1,
+      "replicas": 1,
+      "status": {
+        "availableReplicas": 1,
+        "conditions": [
+          {
+            "lastTransitionTime": "2026-11-12T00:52:38Z",
+            "lastUpdateTime": "2026-11-12T00:52:38Z",
+            "message": "Deployment has minimum availability.",
+            "reason": "MinimumReplicasAvailable",
+            "status": "True",
+            "type": "Available"
+          },
+          {
+            "lastTransitionTime": "2026-11-12T00:52:14Z",
+            "lastUpdateTime": "2026-11-12T00:52:38Z",
+            "message": "ReplicaSet \"argocd-server-7478cc4db7\" has successfully progressed.",
+            "reason": "NewReplicaSetAvailable",
+            "status": "True",
+            "type": "Progressing"
+          }
+        ],
+        "observedGeneration": 1,
+        "readyReplicas": 1,
+        "replicas": 1,
+        "terminatingReplicas": 0,
+        "updatedReplicas": 1
+      }
+    },
+    {
+      "namespace": "kube-system",
+      "kind": "Deployment",
+      "name": "coredns",
+      "generation": 1,
+      "replicas": 2,
+      "status": {
+        "availableReplicas": 2,
+        "conditions": [
+          {
+            "lastTransitionTime": "2026-11-11T22:33:50Z",
+            "lastUpdateTime": "2026-11-11T22:33:50Z",
+            "message": "Deployment has minimum availability.",
+            "reason": "MinimumReplicasAvailable",
+            "status": "True",
+            "type": "Available"
+          },
+          {
+            "lastTransitionTime": "2026-11-11T22:30:43Z",
+            "lastUpdateTime": "2026-11-11T22:33:50Z",
+            "message": "ReplicaSet \"coredns-6b9f5c657c\" has successfully progressed.",
+            "reason": "NewReplicaSetAvailable",
+            "status": "True",
+            "type": "Progressing"
+          }
+        ],
+        "observedGeneration": 1,
+        "readyReplicas": 2,
+        "replicas": 2,
+        "terminatingReplicas": 0,
+        "updatedReplicas": 2
+      }
+    },
+    {
+      "namespace": "kube-system",
+      "kind": "Deployment",
+      "name": "metrics-server",
+      "generation": 1,
+      "replicas": 1,
+      "status": {
+        "availableReplicas": 1,
+        "conditions": [
+          {
+            "lastTransitionTime": "2026-11-11T22:51:19Z",
+            "lastUpdateTime": "2026-11-11T22:51:19Z",
+            "message": "Deployment has minimum availability.",
+            "reason": "MinimumReplicasAvailable",
+            "status": "True",
+            "type": "Available"
+          },
+          {
+            "lastTransitionTime": "2026-11-11T22:50:56Z",
+            "lastUpdateTime": "2026-11-11T22:51:19Z",
+            "message": "ReplicaSet \"metrics-server-c4994bc54\" has successfully progressed.",
+            "reason": "NewReplicaSetAvailable",
+            "status": "True",
+            "type": "Progressing"
+          }
+        ],
+        "observedGeneration": 1,
+        "readyReplicas": 1,
+        "replicas": 1,
+        "terminatingReplicas": 0,
+        "updatedReplicas": 1
+      }
+    },
+    {
+      "namespace": "monitoring",
+      "kind": "Deployment",
+      "name": "monitoring-grafana",
+      "generation": 1,
+      "replicas": 1,
+      "status": {
+        "availableReplicas": 1,
+        "conditions": [
+          {
+            "lastTransitionTime": "2026-11-13T16:42:23Z",
+            "lastUpdateTime": "2026-11-13T16:42:23Z",
+            "message": "Deployment has minimum availability.",
+            "reason": "MinimumReplicasAvailable",
+            "status": "True",
+            "type": "Available"
+          },
+          {
+            "lastTransitionTime": "2026-11-13T16:41:33Z",
+            "lastUpdateTime": "2026-11-13T16:42:23Z",
+            "message": "ReplicaSet \"monitoring-grafana-6d9d97f9cb\" has successfully progressed.",
+            "reason": "NewReplicaSetAvailable",
+            "status": "True",
+            "type": "Progressing"
+          }
+        ],
+        "observedGeneration": 1,
+        "readyReplicas": 1,
+        "replicas": 1,
+        "terminatingReplicas": 0,
+        "updatedReplicas": 1
+      }
+    },
+    {
+      "namespace": "monitoring",
+      "kind": "Deployment",
+      "name": "monitoring-kube-prometheus-operator",
+      "generation": 1,
+      "replicas": 1,
+      "status": {
+        "availableReplicas": 1,
+        "conditions": [
+          {
+            "lastTransitionTime": "2026-11-13T16:41:36Z",
+            "lastUpdateTime": "2026-11-13T16:41:36Z",
+            "message": "Deployment has minimum availability.",
+            "reason": "MinimumReplicasAvailable",
+            "status": "True",
+            "type": "Available"
+          },
+          {
+            "lastTransitionTime": "2026-11-13T16:41:33Z",
+            "lastUpdateTime": "2026-11-13T16:41:36Z",
+            "message": "ReplicaSet \"monitoring-kube-prometheus-operator-6b77dd6c5b\" has successfully progressed.",
+            "reason": "NewReplicaSetAvailable",
+            "status": "True",
+            "type": "Progressing"
+          }
+        ],
+        "observedGeneration": 1,
+        "readyReplicas": 1,
+        "replicas": 1,
+        "terminatingReplicas": 0,
+        "updatedReplicas": 1
+      }
+    },
+    {
+      "namespace": "monitoring",
+      "kind": "Deployment",
+      "name": "monitoring-kube-state-metrics",
+      "generation": 1,
+      "replicas": 1,
+      "status": {
+        "availableReplicas": 1,
+        "conditions": [
+          {
+            "lastTransitionTime": "2026-11-13T16:41:47Z",
+            "lastUpdateTime": "2026-11-13T16:41:47Z",
+            "message": "Deployment has minimum availability.",
+            "reason": "MinimumReplicasAvailable",
+            "status": "True",
+            "type": "Available"
+          },
+          {
+            "lastTransitionTime": "2026-11-13T16:41:33Z",
+            "lastUpdateTime": "2026-11-13T16:41:47Z",
+            "message": "ReplicaSet \"monitoring-kube-state-metrics-7d94c4cbd8\" has successfully progressed.",
+            "reason": "NewReplicaSetAvailable",
+            "status": "True",
+            "type": "Progressing"
+          }
+        ],
+        "observedGeneration": 1,
+        "readyReplicas": 1,
+        "replicas": 1,
+        "terminatingReplicas": 0,
+        "updatedReplicas": 1
+      }
+    },
+    {
+      "namespace": "neoversity",
+      "kind": "Deployment",
+      "name": "django-app",
+      "generation": 7,
+      "replicas": 2,
+      "status": {
+        "availableReplicas": 2,
+        "conditions": [
+          {
+            "lastTransitionTime": "2026-11-12T00:54:14Z",
+            "lastUpdateTime": "2026-11-13T17:03:25Z",
+            "message": "ReplicaSet \"django-app-5c49884dfd\" has successfully progressed.",
+            "reason": "NewReplicaSetAvailable",
+            "status": "True",
+            "type": "Progressing"
+          },
+          {
+            "lastTransitionTime": "2026-11-13T17:03:55Z",
+            "lastUpdateTime": "2026-11-13T17:03:55Z",
+            "message": "Deployment has minimum availability.",
+            "reason": "MinimumReplicasAvailable",
+            "status": "True",
+            "type": "Available"
+          }
+        ],
+        "observedGeneration": 7,
+        "readyReplicas": 2,
+        "replicas": 2,
+        "terminatingReplicas": 0,
+        "updatedReplicas": 2
+      }
+    },
+    {
+      "namespace": "neoversity",
+      "kind": "Deployment",
+      "name": "django-app-postgresql",
+      "generation": 2,
+      "replicas": 1,
+      "status": {
+        "availableReplicas": 1,
+        "conditions": [
+          {
+            "lastTransitionTime": "2026-11-13T16:59:36Z",
+            "lastUpdateTime": "2026-11-13T16:59:36Z",
+            "message": "Deployment has minimum availability.",
+            "reason": "MinimumReplicasAvailable",
+            "status": "True",
+            "type": "Available"
+          },
+          {
+            "lastTransitionTime": "2026-11-12T00:54:14Z",
+            "lastUpdateTime": "2026-11-13T16:59:36Z",
+            "message": "ReplicaSet \"django-app-postgresql-cc8df7db5\" has successfully progressed.",
+            "reason": "NewReplicaSetAvailable",
+            "status": "True",
+            "type": "Progressing"
+          }
+        ],
+        "observedGeneration": 2,
+        "readyReplicas": 1,
+        "replicas": 1,
+        "terminatingReplicas": 0,
+        "updatedReplicas": 1
+      }
+    },
+    {
+      "namespace": "argocd",
+      "kind": "StatefulSet",
+      "name": "argocd-application-controller",
+      "generation": 1,
+      "replicas": 1,
+      "status": {
+        "availableReplicas": 1,
+        "collisionCount": 0,
+        "currentReplicas": 1,
+        "currentRevision": "argocd-application-controller-d5dc5b5d8",
+        "observedGeneration": 1,
+        "readyReplicas": 1,
+        "replicas": 1,
+        "updateRevision": "argocd-application-controller-d5dc5b5d8",
+        "updatedReplicas": 1
+      }
+    },
+    {
+      "namespace": "jenkins",
+      "kind": "StatefulSet",
+      "name": "jenkins",
+      "generation": 1,
+      "replicas": 1,
+      "status": {
+        "availableReplicas": 1,
+        "collisionCount": 0,
+        "currentReplicas": 1,
+        "currentRevision": "jenkins-87bd99dd7",
+        "observedGeneration": 1,
+        "readyReplicas": 1,
+        "replicas": 1,
+        "updateRevision": "jenkins-87bd99dd7",
+        "updatedReplicas": 1
+      }
+    },
+    {
+      "namespace": "monitoring",
+      "kind": "StatefulSet",
+      "name": "prometheus-monitoring-kube-prometheus-prometheus",
+      "generation": 1,
+      "replicas": 1,
+      "status": {
+        "availableReplicas": 1,
+        "collisionCount": 0,
+        "currentReplicas": 1,
+        "currentRevision": "prometheus-monitoring-kube-prometheus-prometheus-5759f95664",
+        "observedGeneration": 1,
+        "readyReplicas": 1,
+        "replicas": 1,
+        "updateRevision": "prometheus-monitoring-kube-prometheus-prometheus-5759f95664",
+        "updatedReplicas": 1
+      }
+    },
+    {
+      "namespace": "kube-system",
+      "kind": "DaemonSet",
+      "name": "aws-node",
+      "generation": 1,
+      "replicas": null,
+      "status": {
+        "currentNumberScheduled": 2,
+        "desiredNumberScheduled": 2,
+        "numberAvailable": 2,
+        "numberMisscheduled": 0,
+        "numberReady": 2,
+        "observedGeneration": 1,
+        "updatedNumberScheduled": 2
+      }
+    },
+    {
+      "namespace": "kube-system",
+      "kind": "DaemonSet",
+      "name": "eks-pod-identity-agent",
+      "generation": 1,
+      "replicas": null,
+      "status": {
+        "currentNumberScheduled": 2,
+        "desiredNumberScheduled": 2,
+        "numberAvailable": 2,
+        "numberMisscheduled": 0,
+        "numberReady": 2,
+        "observedGeneration": 1,
+        "updatedNumberScheduled": 2
+      }
+    },
+    {
+      "namespace": "kube-system",
+      "kind": "DaemonSet",
+      "name": "kube-proxy",
+      "generation": 1,
+      "replicas": null,
+      "status": {
+        "currentNumberScheduled": 2,
+        "desiredNumberScheduled": 2,
+        "numberAvailable": 2,
+        "numberMisscheduled": 0,
+        "numberReady": 2,
+        "observedGeneration": 1,
+        "updatedNumberScheduled": 2
+      }
+    },
+    {
+      "namespace": "monitoring",
+      "kind": "DaemonSet",
+      "name": "monitoring-prometheus-node-exporter",
+      "generation": 1,
+      "replicas": null,
+      "status": {
+        "currentNumberScheduled": 2,
+        "desiredNumberScheduled": 2,
+        "numberAvailable": 2,
+        "numberMisscheduled": 0,
+        "numberReady": 2,
+        "observedGeneration": 1,
+        "updatedNumberScheduled": 2
+      }
+    }
+  ],
+  "application_status": [
+    {
+      "name": "django-gitops",
+      "namespace": "argocd",
+      "syncPolicy": {
+        "automated": {
+          "enabled": true,
+          "prune": true,
+          "selfHeal": true
+        },
+        "syncOptions": [
+          "CreateNamespace=true"
+        ]
+      },
+      "status": {
+        "sync": {
+          "comparedTo": {
+            "destination": {
+              "namespace": "neoversity",
+              "server": "https://kubernetes.default.svc"
+            },
+            "source": {
+              "helm": {
+                "releaseName": "django-app"
+              },
+              "path": "charts/django-app",
+              "repoURL": "https://github.com/fedorstoiets/neoversity-django-gitops.git",
+              "targetRevision": "main"
+            }
+          },
+          "revision": "43a3a1b0b4d9129b3512d89bdf74d27089537862",
+          "status": "Synced"
+        },
+        "health": {
+          "lastTransitionTime": "2026-11-13T17:08:44Z",
+          "status": "Healthy"
+        },
+        "conditions": null
+      }
+    }
+  ],
+  "jenkins_backup": {
+    "sha256": "ad3b3765bc6ad3b90124276eb0e0fbfbeb07583162697328c25b91fa4fba4529",
+    "matches_recorded_backup": true,
+    "application_consistency": "unverified",
+    "restore_rehearsal": "not_proven",
+    "current_persistence": "jenkins-home emptyDir; no PVC/PV"
+  },
+  "private_evidence_directory": "/tmp/goaldevops-live-20261115T030959Z",
+  "drift_plan_errors": [
+    "RDS private_subnet_ids empty because VPC is not yet in destination state",
+    "RDS ingress for_each key derived from EKS output unknown before consolidation"
+  ],
+  "ownership_scope": "Four discovered state keys in configured bucket, pinned/rechecked versions; no universal claim across undiscovered buckets or unmanaged tools",
+  "decision": "BLOCKED",
+  "source_validation_repeated": false,
+  "public_auto_ip_subnets": [
+    {
+      "id": "subnet-0f20b776df8a53388",
+      "auto_public_ip": true
+    },
+    {
+      "id": "subnet-0cc524f0e3eca1973",
+      "auto_public_ip": true
+    },
+    {
+      "id": "subnet-0d2217efb5f48b784",
+      "auto_public_ip": true
+    }
+  ]
+}

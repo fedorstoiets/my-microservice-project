@@ -22,3 +22,20 @@ variable "availability_zones" {
 }
 variable "vpc_name" { type = string }
 variable "nat_gateway_enabled" { type = bool }
+
+variable "public_subnet_auto_assign_ipv4" {
+  type    = bool
+  default = false
+}
+variable "enable_flow_logs" {
+  type    = bool
+  default = false
+  validation {
+    condition     = !var.enable_flow_logs || var.flow_logs_kms_key_arn != null
+    error_message = "Flow logs require an explicit authorized KMS key."
+  }
+}
+variable "flow_logs_kms_key_arn" {
+  type    = string
+  default = null
+}

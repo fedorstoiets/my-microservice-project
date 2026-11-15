@@ -1,0 +1,5 @@
+apiVersion: v2
+name: platform-secrets
+version: 0.1.0
+type: application
+description: Secrets Manager references only; no secret material in Helm values

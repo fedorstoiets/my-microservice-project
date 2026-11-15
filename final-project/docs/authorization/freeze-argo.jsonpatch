@@ -1,0 +1,25 @@
+[
+  {
+    "op": "test",
+    "path": "/metadata/resourceVersion",
+    "value": "825585"
+  },
+  {
+    "op": "test",
+    "path": "/spec/syncPolicy/automated",
+    "value": {
+      "enabled": true,
+      "prune": true,
+      "selfHeal": true
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/spec/syncPolicy/automated",
+    "value": {
+      "enabled": false,
+      "prune": false,
+      "selfHeal": false
+    }
+  }
+]

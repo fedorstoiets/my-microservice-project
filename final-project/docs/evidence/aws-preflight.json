@@ -1,0 +1,6 @@
+{
+  "checked_at": "2026-11-15T01:42:46.966950+00:00",
+  "check": "aws-sts-read-only",
+  "status": "blocked",
+  "reason": "Authentication unavailable; no current state or AWS resource configuration verified"
+}

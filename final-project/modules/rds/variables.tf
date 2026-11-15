@@ -139,3 +139,9 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "named_security_group_ids" {
+  description = "Stable keys support SG IDs that are unknown until apply. Legacy list-based rules retain their addresses."
+  type        = map(string)
+  default     = {}
+}

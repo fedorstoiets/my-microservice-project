@@ -1,0 +1,22 @@
+{
+  "helm-amd64": {
+    "version": "v3.22.1",
+    "sha256": "896cf63684a42a723d61c980369d6e588330927deb13676ca0d85006dd6da0ea",
+    "source": "https://get.helm.sh/helm-v3.22.1-linux-amd64.tar.gz.sha256sum"
+  },
+  "kubectl-amd64": {
+    "version": "v1.37.2",
+    "sha256": "c04487523e7aa7d1493f7808174c899db93d7a9cf57531420cd76b9bd415f8f4",
+    "source": "https://dl.k8s.io/release/v1.37.2/bin/linux/amd64/kubectl.sha256"
+  },
+  "helm-arm64": {
+    "version": "v3.22.1",
+    "sha256": "4c29e286b279d170fa048ddfc3e4e83dcd069ca9c52102766ba672d7149e694d",
+    "source": "https://get.helm.sh/helm-v3.22.1-linux-arm64.tar.gz.sha256sum"
+  },
+  "kubectl-arm64": {
+    "version": "v1.37.2",
+    "sha256": "fcc16f63186659d9722014b7e02d5fdd2d4e669cb8c0ab66365d7d3b8ba03509",
+    "source": "https://dl.k8s.io/release/v1.37.2/bin/linux/arm64/kubectl.sha256"
+  }
+}

@@ -4,3 +4,16 @@ server:
 configs:
   params:
     server.insecure: false
+
+  cm:
+    resource.customizations.health.external-secrets.io_ExternalSecret: |
+      hs = { status = "Progressing", message = "Waiting for secret reconciliation" }
+      if obj.status ~= nil and obj.status.conditions ~= nil then
+        for _, condition in ipairs(obj.status.conditions) do
+          if condition.type == "Ready" and condition.status == "True" then
+            hs.status = "Healthy"
+            hs.message = "Secret reconciled"
+          end
+        end
+      end
+      return hs

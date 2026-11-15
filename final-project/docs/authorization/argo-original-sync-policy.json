@@ -1,0 +1,17 @@
+{
+  "kind": "ReviewOnlyOriginalPolicy",
+  "name": "django-gitops",
+  "namespace": "argocd",
+  "captured_resource_version": "825585",
+  "policy": {
+    "automated": {
+      "enabled": true,
+      "prune": true,
+      "selfHeal": true
+    },
+    "syncOptions": [
+      "CreateNamespace=true"
+    ]
+  },
+  "automatic_reenable_authorized": false
+}

@@ -1,7 +1,8 @@
 resource "kubernetes_service_account_v1" "builder" {
   metadata {
-    name      = "kaniko-builder"
-    namespace = var.namespace
+    name        = "kaniko-builder"
+    namespace   = var.namespace
+    annotations = var.irsa_role_arn == null ? {} : { "eks.amazonaws.com/role-arn" = var.irsa_role_arn }
   }
 }
 

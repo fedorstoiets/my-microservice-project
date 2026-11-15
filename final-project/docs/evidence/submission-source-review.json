@@ -1,0 +1,14 @@
+{
+  "checked_at": "2026-11-15T13:15:29.298597+00:00",
+  "repository": "fedorstoiets/my-microservice-project",
+  "target_branch": "final-project",
+  "reviewed_remote_parent": "ef1eea3976651bbf96a3306a77f7b0ddd741e8ff",
+  "original_worktree_branch": "final-project-v2",
+  "original_worktree_reset_or_discarded": false,
+  "scope": "final-project paths only; unrelated remote paths retained",
+  "remote_readme_resolution": "Build on remote parent, retain its no-destruction-of-old-lessons intent; update implementation/evidence to current requested scope",
+  "source_code_sha256": "9ab25eaf8b5940a24f3ad4dcf87b4a70f7a812afe831f7d5f6137313c35c08bb",
+  "publication_status": "not_performed",
+  "publication_limit": "Current Jenkins job/webhook behavior could not be inspected (API denied); no source push that could trigger unapproved live build/deployment activity",
+  "candidate_commit_identity": "See isolated Git commit and archive MANIFEST.json; no self-referential commit field is embedded"
+}

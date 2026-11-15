@@ -2,13 +2,14 @@ data "aws_caller_identity" "current" {}
 
 resource "aws_ecr_repository" "main" {
   name                 = var.ecr_name
-  image_tag_mutability = "MUTABLE"
+  image_tag_mutability = var.immutable_tags ? "IMMUTABLE" : "MUTABLE"
   force_delete         = false
   image_scanning_configuration {
     scan_on_push = var.scan_on_push
   }
   encryption_configuration {
-    encryption_type = "AES256"
+    encryption_type = var.kms_key_arn == null ? "AES256" : "KMS"
+    kms_key         = var.kms_key_arn
   }
 }
 

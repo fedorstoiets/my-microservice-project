@@ -11,3 +11,8 @@ variable "table_name" {
   description = "DynamoDB table name for legacy Terraform state locking"
   type        = string
 }
+
+variable "kms_key_arn" {
+  type    = string
+  default = null
+}

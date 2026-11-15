@@ -13,13 +13,20 @@ spec:
     path: charts/django-app
     helm:
       releaseName: django-app
+      valuesObject:
+        {{- toYaml .Values.appValues | nindent 8 }}
+      parameters:
+        - name: config.POSTGRES_HOST
+          value: {{ required "rdsEndpoint required" .Values.rdsEndpoint | quote }}
   destination:
     server: https://kubernetes.default.svc
     namespace: {{ .Values.appNamespace | quote }}
   syncPolicy:
+    {{- if .Values.enableAutoSync }}
     automated:
       enabled: true
-      prune: true
+      prune: {{ .Values.enablePruning }}
       selfHeal: true
+    {{- end }}
     syncOptions:
       - CreateNamespace=true

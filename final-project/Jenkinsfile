@@ -1,0 +1,198 @@
+pipeline {
+  environment {
+    CI_TOOLS_IMAGE = '227281812993.dkr.ecr.us-east-2.amazonaws.com/lesson-7-django@sha256:3a4983c2735f0cecc3175fc3abb6b8d4a7d0cc68ab321c4debc9034d498fdb9c'
+    KANIKO_IMAGE = 'gcr.io/kaniko-project/executor:v1.23.2-debug'
+    KANIKO_CONFIG_MAP = 'kaniko-docker-config'
+    TRIVY_CACHE_DIR = '/tmp/goaldevops-trivy-cache'
+    HOME = '/tmp'
+  }
+  agent none
+  options { disableConcurrentBuilds(); skipDefaultCheckout(true); timeout(time: 40, unit: 'MINUTES') }
+  parameters {
+    booleanParam(name: 'PUBLISH_GITOPS', defaultValue: false, description: 'Publish the reviewed chart/digest without enabling cluster sync; requires explicit GitOps-write authorization')
+    booleanParam(name: 'DEPLOY', defaultValue: false, description: 'Enable GitOps publishing and delivery verification only after explicit rollout/database authorization')
+  }
+  stages {
+    stage('Test, build, scan and publish GitOps') {
+      agent {
+        kubernetes {
+          defaultContainer 'tools'
+          yaml """
+apiVersion: v1
+kind: Pod
+spec:
+  serviceAccountName: kaniko-builder
+  automountServiceAccountToken: false
+  securityContext:
+    runAsUser: 10001
+    runAsGroup: 10001
+    fsGroup: 10001
+    seccompProfile: {type: RuntimeDefault}
+  containers:
+  - name: jnlp
+    image: jenkins/inbound-agent:latest-jdk21
+    workingDir: /home/jenkins/agent
+    securityContext:
+      runAsUser: 1000
+      runAsGroup: 1000
+      runAsNonRoot: true
+    volumeMounts:
+    - name: workspace
+      mountPath: /home/jenkins/agent
+  - name: tools
+    image: ${env.CI_TOOLS_IMAGE}
+    command: ["sleep", "99d"]
+    envFrom: [{configMapRef: {name: goaldevops-build-config}}]
+    volumeMounts:
+    - name: workspace
+      mountPath: /home/jenkins/agent
+    securityContext:
+      runAsNonRoot: true
+      runAsUser: 1000
+      allowPrivilegeEscalation: false
+      capabilities: {drop: ["ALL"]}
+    resources:
+      requests: {cpu: 200m, memory: 256Mi}
+      limits: {cpu: '1', memory: 1Gi}
+  - name: kaniko
+    image: ${env.KANIKO_IMAGE}
+    command: ["/busybox/cat"]
+    tty: true
+    envFrom: [{configMapRef: {name: goaldevops-build-config}}]
+    env:
+    - {name: AWS_SDK_LOAD_CONFIG, value: 'true'}
+    - {name: AWS_EC2_METADATA_DISABLED, value: 'true'}
+    - {name: PATH, value: '/kaniko:/busybox:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'}
+    securityContext:
+      runAsUser: 0
+      runAsGroup: 0
+      allowPrivilegeEscalation: false
+      capabilities: {drop: [NET_RAW]}
+    resources:
+      requests: {cpu: 500m, memory: 512Mi}
+      limits: {cpu: '2', memory: 2Gi}
+    volumeMounts:
+    - {name: docker-config, mountPath: /kaniko/.docker, readOnly: true}
+    - {name: workspace, mountPath: /home/jenkins/agent}
+  volumes:
+  - name: workspace
+    emptyDir: {}
+  - name: docker-config
+    configMap: {name: ${env.KANIKO_CONFIG_MAP}}
+"""
+        }
+      }
+      stages {
+        stage('Checkout exact source revision') {
+          steps {
+            checkout scm
+            script { env.SOURCE_COMMIT = sh(script: 'git rev-parse HEAD', returnStdout: true).trim() }
+            stash name: 'source', includes: 'final-project/**', excludes: '**/.terraform/**,**/reports/**,**/dist/**'
+          }
+        }
+        stage('Application and chart checks') {
+          steps {
+            sh '''
+              set -eu
+              cd final-project
+              DJANGO_LOCAL_DEVELOPMENT=1 python Django/manage.py test core --noinput
+              helm lint charts/django-app --strict --set config.POSTGRES_HOST=example.invalid
+              python scripts/test-source.py
+              STRICT_SECURITY=true bash scripts/security-scan.sh
+            '''
+          }
+        }
+        stage('Resolve existing immutable image') {
+          steps {
+            script { env.IMAGE_DIGEST = sh(script: 'python final-project/scripts/ci-ecr.py lookup "$ECR_URL" --tag "$SOURCE_COMMIT"', returnStdout: true).trim() }
+          }
+        }
+        stage('Build immutable image') {
+          when { expression { !env.IMAGE_DIGEST } }
+          steps {
+            container('kaniko') {
+              sh '''
+                set -eu
+                /kaniko/executor --context "$WORKSPACE/final-project/Django" \
+                  --dockerfile "$WORKSPACE/final-project/Django/Dockerfile" \
+                  --destination "$ECR_URL:$SOURCE_COMMIT" --cache=false \
+                  --digest-file "$WORKSPACE/image-digest.txt"
+              '''
+            }
+            script { env.IMAGE_DIGEST = readFile('image-digest.txt').trim() }
+          }
+        }
+        stage('Scan published image') {
+          steps {
+            sh 'python final-project/scripts/ci-ecr.py scan "$ECR_URL@$IMAGE_DIGEST"'
+            sh 'printf "%s@%s" "$ECR_URL" "$IMAGE_DIGEST" > image-reference.txt'
+            archiveArtifacts artifacts: 'image-reference.txt', fingerprint: true
+          }
+        }
+        stage('Align chart and update GitOps') {
+          when { expression { params.PUBLISH_GITOPS || params.DEPLOY } }
+          steps {
+            withCredentials([string(credentialsId: 'github-gitops-pat', variable: 'GITHUB_TOKEN')]) {
+              sh '''
+                set +x
+                set -eu
+                askpass="$(mktemp)"
+                trap 'rm -f "$askpass"' EXIT
+                cat > "$askpass" <<'ASKPASS'
+#!/bin/sh
+case "$1" in
+  *Username*) printf 'x-access-token' ;;
+  *Password*) printf '%s' "$GITHUB_TOKEN" ;;
+esac
+ASKPASS
+                chmod 700 "$askpass"
+                export GIT_ASKPASS="$askpass" GIT_TERMINAL_PROMPT=0
+                git clone --depth 1 --branch main "$GITOPS_REPO" gitops
+                python final-project/scripts/update-gitops.py gitops --image "$ECR_URL@$IMAGE_DIGEST" --tag "$SOURCE_COMMIT" --reviewed-base "${GITOPS_REVIEWED_BASE:-}"
+                git -C gitops config user.name neoversity-jenkins
+                git -C gitops config user.email jenkins@users.noreply.github.com
+                if ! git -C gitops diff --cached --quiet; then
+                  git -C gitops commit -m "ci: deploy source $SOURCE_COMMIT"
+                  git -C gitops push origin HEAD:main
+                fi
+                git -C gitops rev-parse HEAD > gitops-revision.txt
+              '''
+            }
+            script {
+              env.GITOPS_REVISION = readFile('gitops-revision.txt').trim()
+              env.DELIVERY_IMAGE = sh(script: 'printf "%s@%s" "$ECR_URL" "$IMAGE_DIGEST"', returnStdout: true).trim()
+              env.DELIVERY_URL = sh(script: 'printf "%s" "$APP_URL"', returnStdout: true).trim()
+            }
+          }
+        }
+      }
+    }
+    stage('Verify Argo delivery and database health') {
+      when { beforeAgent true; expression { params.DEPLOY } }
+      agent {
+        kubernetes {
+          defaultContainer 'verify'
+          yaml """
+apiVersion: v1
+kind: Pod
+spec:
+  serviceAccountName: goaldevops-verifier
+  securityContext: {runAsNonRoot: true, runAsUser: 10001, runAsGroup: 10001, fsGroup: 10001, seccompProfile: {type: RuntimeDefault}}
+  containers:
+  - name: verify
+    image: ${env.CI_TOOLS_IMAGE}
+    command: ["sleep", "99d"]
+    securityContext: {allowPrivilegeEscalation: false, capabilities: {drop: [ALL]}}
+    resources:
+      requests: {cpu: 100m, memory: 128Mi}
+      limits: {cpu: 500m, memory: 512Mi}
+"""
+        }
+      }
+      steps {
+        unstash 'source'
+        sh '''python final-project/scripts/verify-delivery.py --revision "$GITOPS_REVISION" --image "$DELIVERY_IMAGE" --url "$DELIVERY_URL"'''
+      }
+    }
+  }
+}

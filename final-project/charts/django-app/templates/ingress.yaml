@@ -3,6 +3,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
+  namespace: {{ .Release.Namespace }}
   name: {{ include "django-app.fullname" . }}
   annotations:
     cert-manager.io/cluster-issuer: {{ .Values.ingress.clusterIssuer | quote }}
@@ -26,6 +27,7 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
+  namespace: {{ .Release.Namespace }}
   name: {{ include "django-app.fullname" . }}
 spec:
   ingressClassName: {{ .Values.ingress.className }}

@@ -77,7 +77,7 @@ resource "aws_db_parameter_group" "standard" {
     content {
       name         = parameter.key
       value        = parameter.value
-      apply_method = parameter.key == "max_connections" ? "pending-reboot" : "immediate"
+      apply_method = parameter.key == "max_connections" && var.engine == "postgres" ? "pending-reboot" : "immediate"
     }
   }
 
@@ -86,30 +86,21 @@ resource "aws_db_parameter_group" "standard" {
   }
 }
 
-# Aurora PostgreSQL uses cluster-level tuning for the key coursework parameters.
+# Keep cluster-only settings separate from per-instance coursework tuning.
+# AWS instance parameter metadata supports these memory/connection/log settings;
+# using DB instance groups avoids assuming every family exposes them at cluster scope.
 resource "aws_rds_cluster_parameter_group" "aurora" {
   count  = var.use_aurora ? 1 : 0
   name   = "${var.name}-aurora-pg"
   family = local.family
   tags   = var.tags
 
-  dynamic "parameter" {
-    for_each = var.engine == "postgres" ? local.db_parameters : {
-      general_log = tostring(var.parameter_general_log)
-    }
-    content {
-      name         = parameter.key
-      value        = parameter.value
-      apply_method = parameter.key == "max_connections" ? "pending-reboot" : "immediate"
-    }
-  }
-
   lifecycle {
     create_before_destroy = true
   }
 }
 
-# Aurora MySQL max_connections and sort_buffer_size are instance-level parameters.
+# Aurora MySQL general_log, max_connections and sort_buffer_size are instance settings.
 resource "aws_db_parameter_group" "aurora_mysql" {
   count  = var.use_aurora && var.engine == "mysql" ? 1 : 0
   name   = "${var.name}-aurora-instance-pg"
@@ -117,18 +108,41 @@ resource "aws_db_parameter_group" "aurora_mysql" {
   tags   = var.tags
 
   dynamic "parameter" {
-    for_each = merge(
-      { sort_buffer_size = tostring(var.parameter_sort_buffer_size) },
-      { max_connections = tostring(var.parameter_max_connections) }
-    )
+    for_each = local.db_parameters
     content {
       name         = parameter.key
       value        = parameter.value
-      apply_method = parameter.key == "max_connections" ? "pending-reboot" : "immediate"
+      apply_method = "immediate"
     }
   }
 
   lifecycle {
     create_before_destroy = true
   }
+}
+
+resource "aws_db_parameter_group" "aurora_postgresql" {
+  count  = var.use_aurora && var.engine == "postgres" ? 1 : 0
+  name   = "${var.name}-aurora-instance-pg"
+  family = local.family
+  tags   = var.tags
+  dynamic "parameter" {
+    for_each = local.db_parameters
+    content {
+      name         = parameter.key
+      value        = parameter.value
+      apply_method = parameter.key == "max_connections" ? "pending-reboot" : "immediate"
+    }
+  }
+  lifecycle { create_before_destroy = true }
+}
+
+resource "aws_vpc_security_group_ingress_rule" "from_named_sg" {
+  for_each                     = var.named_security_group_ids
+  security_group_id            = aws_security_group.database.id
+  referenced_security_group_id = each.value
+  from_port                    = local.port
+  to_port                      = local.port
+  ip_protocol                  = "tcp"
+  description                  = "Database access from ${each.key}"
 }

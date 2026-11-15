@@ -1,0 +1,2727 @@
+{
+  "reviewed_at": "2026-11-15T02:35:15.513611+00:00",
+  "images": {
+    "kaniko": {
+      "counts": {
+        "HIGH": 228,
+        "LOW": 34,
+        "MEDIUM": 288,
+        "UNKNOWN": 13,
+        "CRITICAL": 11
+      },
+      "findings": [
+        {
+          "id": "CVE-2025-30204",
+          "package": "github.com/golang-jwt/jwt/v4",
+          "version": "v4.5.0",
+          "fixed": "4.5.2",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "CVE-2024-45337",
+          "package": "golang.org/x/crypto",
+          "version": "v0.24.0",
+          "fixed": "0.31.0",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "CVE-2025-22869",
+          "package": "golang.org/x/crypto",
+          "version": "v0.24.0",
+          "fixed": "0.35.0",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "CVE-2025-47913",
+          "package": "golang.org/x/crypto",
+          "version": "v0.24.0",
+          "fixed": "0.43.0",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "CVE-2026-39828",
+          "package": "golang.org/x/crypto",
+          "version": "v0.24.0",
+          "fixed": "0.52.0",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "CVE-2026-39829",
+          "package": "golang.org/x/crypto",
+          "version": "v0.24.0",
+          "fixed": "0.52.0",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "CVE-2026-39830",
+          "package": "golang.org/x/crypto",
+          "version": "v0.24.0",
+          "fixed": "0.52.0",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "CVE-2026-39831",
+          "package": "golang.org/x/crypto",
+          "version": "v0.24.0",
+          "fixed": "0.52.0",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "CVE-2026-39832",
+          "package": "golang.org/x/crypto",
+          "version": "v0.24.0",
+          "fixed": "0.52.0",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "CVE-2026-39835",
+          "package": "golang.org/x/crypto",
+          "version": "v0.24.0",
+          "fixed": "0.52.0",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "CVE-2026-42508",
+          "package": "golang.org/x/crypto",
+          "version": "v0.24.0",
+          "fixed": "0.52.0",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "CVE-2026-46595",
+          "package": "golang.org/x/crypto",
+          "version": "v0.24.0",
+          "fixed": "0.52.0",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "CVE-2026-46597",
+          "package": "golang.org/x/crypto",
+          "version": "v0.24.0",
+          "fixed": "0.52.0",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "CVE-2026-56854",
+          "package": "golang.org/x/crypto",
+          "version": "v0.24.0",
+          "fixed": "0.55.0",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "GO-2026-5932",
+          "package": "golang.org/x/crypto",
+          "version": "v0.24.0",
+          "fixed": "0.58.1-0.20261009181718-2f1f834330b2",
+          "severity": "UNKNOWN",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "CVE-2026-39824",
+          "package": "golang.org/x/sys",
+          "version": "v0.21.0",
+          "fixed": "0.44.0",
+          "severity": "UNKNOWN",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "CVE-2026-56851",
+          "package": "golang.org/x/text",
+          "version": "v0.16.0",
+          "fixed": "0.41.0",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "CVE-2026-56852",
+          "package": "golang.org/x/text",
+          "version": "v0.16.0",
+          "fixed": "0.39.0",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "CVE-2025-68121",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.24.13, 1.25.7, 1.26.0-rc.3",
+          "severity": "CRITICAL",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "CVE-2024-34156",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.22.7, 1.23.1",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "CVE-2025-61726",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.24.12, 1.25.6",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "CVE-2025-61729",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.24.11, 1.25.5",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "CVE-2026-111943",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.26.10, 1.27.3",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "CVE-2026-25679",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.8, 1.26.1",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "CVE-2026-27145",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.11, 1.26.4",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "CVE-2026-32280",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.9, 1.26.2",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "CVE-2026-32281",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.9, 1.26.2",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "CVE-2026-32283",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.9, 1.26.2",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "CVE-2026-33811",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.10, 1.26.3",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "CVE-2026-33814",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.10, 1.26.3",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "CVE-2026-33818",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.13, 1.26.6, 1.27.0-rc.3",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "CVE-2026-39820",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.10, 1.26.3",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "CVE-2026-39821",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.13, 1.26.6, 1.27.0-rc.3",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "CVE-2026-39822",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.12, 1.26.5, 1.27.0-rc.2",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "CVE-2026-39836",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.10, 1.26.3",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "CVE-2026-42499",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.10, 1.26.3",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "CVE-2026-42504",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.11, 1.26.4",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "CVE-2026-56853",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.13, 1.26.6, 1.27.0-rc.3",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "CVE-2026-56858",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.13, 1.26.6, 1.27.0-rc.3",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "CVE-2026-56859",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.13, 1.26.6, 1.27.0-rc.3",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "CVE-2026-56860",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.13, 1.26.6, 1.27.0-rc.3",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "CVE-2026-56862",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.13, 1.26.6, 1.27.0-rc.3",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "CVE-2026-78667",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.26.9, 1.27.2",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "CVE-2026-78669",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.26.9, 1.27.2",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "CVE-2026-97031",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.26.9, 1.27.2",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "CVE-2026-97054",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.26.11, 1.27.4",
+          "severity": "UNKNOWN",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "CVE-2026-39824",
+          "package": "golang.org/x/sys",
+          "version": "v0.21.0",
+          "fixed": "0.44.0",
+          "severity": "UNKNOWN",
+          "target": "kaniko/docker-credential-ecr-login"
+        },
+        {
+          "id": "CVE-2025-68121",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.24.13, 1.25.7, 1.26.0-rc.3",
+          "severity": "CRITICAL",
+          "target": "kaniko/docker-credential-ecr-login"
+        },
+        {
+          "id": "CVE-2024-34156",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.22.7, 1.23.1",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-ecr-login"
+        },
+        {
+          "id": "CVE-2025-61726",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.24.12, 1.25.6",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-ecr-login"
+        },
+        {
+          "id": "CVE-2025-61729",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.24.11, 1.25.5",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-ecr-login"
+        },
+        {
+          "id": "CVE-2026-111943",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.26.10, 1.27.3",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-ecr-login"
+        },
+        {
+          "id": "CVE-2026-25679",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.8, 1.26.1",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-ecr-login"
+        },
+        {
+          "id": "CVE-2026-27145",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.11, 1.26.4",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-ecr-login"
+        },
+        {
+          "id": "CVE-2026-32280",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.9, 1.26.2",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-ecr-login"
+        },
+        {
+          "id": "CVE-2026-32281",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.9, 1.26.2",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-ecr-login"
+        },
+        {
+          "id": "CVE-2026-32283",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.9, 1.26.2",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-ecr-login"
+        },
+        {
+          "id": "CVE-2026-33811",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.10, 1.26.3",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-ecr-login"
+        },
+        {
+          "id": "CVE-2026-33814",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.10, 1.26.3",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-ecr-login"
+        },
+        {
+          "id": "CVE-2026-33818",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.13, 1.26.6, 1.27.0-rc.3",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-ecr-login"
+        },
+        {
+          "id": "CVE-2026-39820",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.10, 1.26.3",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-ecr-login"
+        },
+        {
+          "id": "CVE-2026-39821",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.13, 1.26.6, 1.27.0-rc.3",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-ecr-login"
+        },
+        {
+          "id": "CVE-2026-39822",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.12, 1.26.5, 1.27.0-rc.2",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-ecr-login"
+        },
+        {
+          "id": "CVE-2026-39836",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.10, 1.26.3",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-ecr-login"
+        },
+        {
+          "id": "CVE-2026-42499",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.10, 1.26.3",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-ecr-login"
+        },
+        {
+          "id": "CVE-2026-42504",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.11, 1.26.4",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-ecr-login"
+        },
+        {
+          "id": "CVE-2026-56853",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.13, 1.26.6, 1.27.0-rc.3",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-ecr-login"
+        },
+        {
+          "id": "CVE-2026-56858",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.13, 1.26.6, 1.27.0-rc.3",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-ecr-login"
+        },
+        {
+          "id": "CVE-2026-56859",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.13, 1.26.6, 1.27.0-rc.3",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-ecr-login"
+        },
+        {
+          "id": "CVE-2026-56860",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.13, 1.26.6, 1.27.0-rc.3",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-ecr-login"
+        },
+        {
+          "id": "CVE-2026-56862",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.13, 1.26.6, 1.27.0-rc.3",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-ecr-login"
+        },
+        {
+          "id": "CVE-2026-78667",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.26.9, 1.27.2",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-ecr-login"
+        },
+        {
+          "id": "CVE-2026-78669",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.26.9, 1.27.2",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-ecr-login"
+        },
+        {
+          "id": "CVE-2026-97031",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.26.9, 1.27.2",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-ecr-login"
+        },
+        {
+          "id": "CVE-2026-97054",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.26.11, 1.27.4",
+          "severity": "UNKNOWN",
+          "target": "kaniko/docker-credential-ecr-login"
+        },
+        {
+          "id": "CVE-2025-15558",
+          "package": "github.com/docker/cli",
+          "version": "v26.1.4+incompatible",
+          "fixed": "29.2.0",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-gcr"
+        },
+        {
+          "id": "CVE-2024-41110",
+          "package": "github.com/docker/docker",
+          "version": "v27.0.3+incompatible",
+          "fixed": "23.0.15, 26.1.5, 27.1.1, 25.0.6",
+          "severity": "CRITICAL",
+          "target": "kaniko/docker-credential-gcr"
+        },
+        {
+          "id": "CVE-2026-41567",
+          "package": "github.com/docker/docker",
+          "version": "v27.0.3+incompatible",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-gcr"
+        },
+        {
+          "id": "CVE-2026-42306",
+          "package": "github.com/docker/docker",
+          "version": "v27.0.3+incompatible",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-gcr"
+        },
+        {
+          "id": "CVE-2025-22868",
+          "package": "golang.org/x/oauth2",
+          "version": "v0.21.0",
+          "fixed": "0.27.0",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-gcr"
+        },
+        {
+          "id": "CVE-2026-39824",
+          "package": "golang.org/x/sys",
+          "version": "v0.21.0",
+          "fixed": "0.44.0",
+          "severity": "UNKNOWN",
+          "target": "kaniko/docker-credential-gcr"
+        },
+        {
+          "id": "CVE-2025-68121",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.24.13, 1.25.7, 1.26.0-rc.3",
+          "severity": "CRITICAL",
+          "target": "kaniko/docker-credential-gcr"
+        },
+        {
+          "id": "CVE-2024-34156",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.22.7, 1.23.1",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-gcr"
+        },
+        {
+          "id": "CVE-2025-61726",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.24.12, 1.25.6",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-gcr"
+        },
+        {
+          "id": "CVE-2025-61729",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.24.11, 1.25.5",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-gcr"
+        },
+        {
+          "id": "CVE-2026-111943",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.26.10, 1.27.3",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-gcr"
+        },
+        {
+          "id": "CVE-2026-25679",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.8, 1.26.1",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-gcr"
+        },
+        {
+          "id": "CVE-2026-27145",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.11, 1.26.4",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-gcr"
+        },
+        {
+          "id": "CVE-2026-32280",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.9, 1.26.2",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-gcr"
+        },
+        {
+          "id": "CVE-2026-32281",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.9, 1.26.2",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-gcr"
+        },
+        {
+          "id": "CVE-2026-32283",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.9, 1.26.2",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-gcr"
+        },
+        {
+          "id": "CVE-2026-33811",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.10, 1.26.3",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-gcr"
+        },
+        {
+          "id": "CVE-2026-33814",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.10, 1.26.3",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-gcr"
+        },
+        {
+          "id": "CVE-2026-33818",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.13, 1.26.6, 1.27.0-rc.3",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-gcr"
+        },
+        {
+          "id": "CVE-2026-39820",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.10, 1.26.3",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-gcr"
+        },
+        {
+          "id": "CVE-2026-39821",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.13, 1.26.6, 1.27.0-rc.3",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-gcr"
+        },
+        {
+          "id": "CVE-2026-39822",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.12, 1.26.5, 1.27.0-rc.2",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-gcr"
+        },
+        {
+          "id": "CVE-2026-39836",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.10, 1.26.3",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-gcr"
+        },
+        {
+          "id": "CVE-2026-42499",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.10, 1.26.3",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-gcr"
+        },
+        {
+          "id": "CVE-2026-42504",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.11, 1.26.4",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-gcr"
+        },
+        {
+          "id": "CVE-2026-56853",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.13, 1.26.6, 1.27.0-rc.3",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-gcr"
+        },
+        {
+          "id": "CVE-2026-56858",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.13, 1.26.6, 1.27.0-rc.3",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-gcr"
+        },
+        {
+          "id": "CVE-2026-56859",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.13, 1.26.6, 1.27.0-rc.3",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-gcr"
+        },
+        {
+          "id": "CVE-2026-56860",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.13, 1.26.6, 1.27.0-rc.3",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-gcr"
+        },
+        {
+          "id": "CVE-2026-56862",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.13, 1.26.6, 1.27.0-rc.3",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-gcr"
+        },
+        {
+          "id": "CVE-2026-78667",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.26.9, 1.27.2",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-gcr"
+        },
+        {
+          "id": "CVE-2026-78669",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.26.9, 1.27.2",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-gcr"
+        },
+        {
+          "id": "CVE-2026-97031",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.26.9, 1.27.2",
+          "severity": "HIGH",
+          "target": "kaniko/docker-credential-gcr"
+        },
+        {
+          "id": "CVE-2026-97054",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.26.11, 1.27.4",
+          "severity": "UNKNOWN",
+          "target": "kaniko/docker-credential-gcr"
+        },
+        {
+          "id": "CVE-2024-25621",
+          "package": "github.com/containerd/containerd",
+          "version": "v1.7.18",
+          "fixed": "1.7.29",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-53488",
+          "package": "github.com/containerd/containerd",
+          "version": "v1.7.18",
+          "fixed": "1.7.33",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2025-15558",
+          "package": "github.com/docker/cli",
+          "version": "v26.1.4+incompatible",
+          "fixed": "29.2.0",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2024-41110",
+          "package": "github.com/docker/docker",
+          "version": "v27.0.3+incompatible",
+          "fixed": "23.0.15, 26.1.5, 27.1.1, 25.0.6",
+          "severity": "CRITICAL",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-41567",
+          "package": "github.com/docker/docker",
+          "version": "v27.0.3+incompatible",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-42306",
+          "package": "github.com/docker/docker",
+          "version": "v27.0.3+incompatible",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-44973",
+          "package": "github.com/go-git/go-billy/v5",
+          "version": "v5.5.0",
+          "fixed": "5.9.0",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2025-21613",
+          "package": "github.com/go-git/go-git/v5",
+          "version": "v5.12.0",
+          "fixed": "5.13.0",
+          "severity": "CRITICAL",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2025-21614",
+          "package": "github.com/go-git/go-git/v5",
+          "version": "v5.12.0",
+          "fixed": "5.13.0",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-45022",
+          "package": "github.com/go-git/go-git/v5",
+          "version": "v5.12.0",
+          "fixed": "5.19.0",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-71556",
+          "package": "github.com/go-git/go-git/v5",
+          "version": "v5.12.0",
+          "fixed": "5.19.2",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2025-30204",
+          "package": "github.com/golang-jwt/jwt/v4",
+          "version": "v4.5.0",
+          "fixed": "4.5.2",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-63209",
+          "package": "github.com/klauspost/compress",
+          "version": "v1.17.4",
+          "fixed": "1.18.7",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-33747",
+          "package": "github.com/moby/buildkit",
+          "version": "v0.14.1",
+          "fixed": "0.28.1",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-33748",
+          "package": "github.com/moby/buildkit",
+          "version": "v0.14.1",
+          "fixed": "0.28.1",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2025-52881",
+          "package": "github.com/opencontainers/selinux",
+          "version": "v1.11.0",
+          "fixed": "1.13.0",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2024-45337",
+          "package": "golang.org/x/crypto",
+          "version": "v0.24.0",
+          "fixed": "0.31.0",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2025-22869",
+          "package": "golang.org/x/crypto",
+          "version": "v0.24.0",
+          "fixed": "0.35.0",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2025-47913",
+          "package": "golang.org/x/crypto",
+          "version": "v0.24.0",
+          "fixed": "0.43.0",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-39828",
+          "package": "golang.org/x/crypto",
+          "version": "v0.24.0",
+          "fixed": "0.52.0",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-39829",
+          "package": "golang.org/x/crypto",
+          "version": "v0.24.0",
+          "fixed": "0.52.0",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-39830",
+          "package": "golang.org/x/crypto",
+          "version": "v0.24.0",
+          "fixed": "0.52.0",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-39831",
+          "package": "golang.org/x/crypto",
+          "version": "v0.24.0",
+          "fixed": "0.52.0",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-39832",
+          "package": "golang.org/x/crypto",
+          "version": "v0.24.0",
+          "fixed": "0.52.0",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-39835",
+          "package": "golang.org/x/crypto",
+          "version": "v0.24.0",
+          "fixed": "0.52.0",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-42508",
+          "package": "golang.org/x/crypto",
+          "version": "v0.24.0",
+          "fixed": "0.52.0",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-46595",
+          "package": "golang.org/x/crypto",
+          "version": "v0.24.0",
+          "fixed": "0.52.0",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-46597",
+          "package": "golang.org/x/crypto",
+          "version": "v0.24.0",
+          "fixed": "0.52.0",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-56854",
+          "package": "golang.org/x/crypto",
+          "version": "v0.24.0",
+          "fixed": "0.55.0",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "GO-2026-5932",
+          "package": "golang.org/x/crypto",
+          "version": "v0.24.0",
+          "fixed": "0.58.1-0.20261009181718-2f1f834330b2",
+          "severity": "UNKNOWN",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2024-45338",
+          "package": "golang.org/x/net",
+          "version": "v0.26.0",
+          "fixed": "0.33.0",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-25681",
+          "package": "golang.org/x/net",
+          "version": "v0.26.0",
+          "fixed": "0.55.0",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-27136",
+          "package": "golang.org/x/net",
+          "version": "v0.26.0",
+          "fixed": "0.55.0",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-33814",
+          "package": "golang.org/x/net",
+          "version": "v0.26.0",
+          "fixed": "0.53.0",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-39821",
+          "package": "golang.org/x/net",
+          "version": "v0.26.0",
+          "fixed": "0.55.0",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-46600",
+          "package": "golang.org/x/net",
+          "version": "v0.26.0",
+          "fixed": "0.56.0",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-78661",
+          "package": "golang.org/x/net",
+          "version": "v0.26.0",
+          "fixed": "0.62.0",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-78669",
+          "package": "golang.org/x/net",
+          "version": "v0.26.0",
+          "fixed": "0.60.0",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2025-22868",
+          "package": "golang.org/x/oauth2",
+          "version": "v0.21.0",
+          "fixed": "0.27.0",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-39824",
+          "package": "golang.org/x/sys",
+          "version": "v0.21.0",
+          "fixed": "0.44.0",
+          "severity": "UNKNOWN",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-56851",
+          "package": "golang.org/x/text",
+          "version": "v0.16.0",
+          "fixed": "0.41.0",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-56852",
+          "package": "golang.org/x/text",
+          "version": "v0.16.0",
+          "fixed": "0.39.0",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-33186",
+          "package": "google.golang.org/grpc",
+          "version": "v1.64.0",
+          "fixed": "1.79.3",
+          "severity": "CRITICAL",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-84304",
+          "package": "google.golang.org/grpc",
+          "version": "v1.64.0",
+          "fixed": "1.83.1",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-84445",
+          "package": "google.golang.org/grpc",
+          "version": "v1.64.0",
+          "fixed": "1.82.2, 1.83.2, 1.84.0-dev.0.20260825144003-d5a41119e0e3, 1.85.0-dev.0.20260825072537-93e31b48545e",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "GHSA-hrxh-6v49-42gf",
+          "package": "google.golang.org/grpc",
+          "version": "v1.64.0",
+          "fixed": "1.82.1",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2025-68121",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.24.13, 1.25.7, 1.26.0-rc.3",
+          "severity": "CRITICAL",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2024-34156",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.22.7, 1.23.1",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2025-61726",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.24.12, 1.25.6",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2025-61729",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.24.11, 1.25.5",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-111943",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.26.10, 1.27.3",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-25679",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.8, 1.26.1",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-27145",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.11, 1.26.4",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-32280",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.9, 1.26.2",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-32281",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.9, 1.26.2",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-32283",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.9, 1.26.2",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-33811",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.10, 1.26.3",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-33814",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.10, 1.26.3",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-33818",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.13, 1.26.6, 1.27.0-rc.3",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-39820",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.10, 1.26.3",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-39821",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.13, 1.26.6, 1.27.0-rc.3",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-39822",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.12, 1.26.5, 1.27.0-rc.2",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-39836",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.10, 1.26.3",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-42499",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.10, 1.26.3",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-42504",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.11, 1.26.4",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-56853",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.13, 1.26.6, 1.27.0-rc.3",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-56858",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.13, 1.26.6, 1.27.0-rc.3",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-56859",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.13, 1.26.6, 1.27.0-rc.3",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-56860",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.13, 1.26.6, 1.27.0-rc.3",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-56862",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.13, 1.26.6, 1.27.0-rc.3",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-78667",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.26.9, 1.27.2",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-78669",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.26.9, 1.27.2",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-97031",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.26.9, 1.27.2",
+          "severity": "HIGH",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2026-97054",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.26.11, 1.27.4",
+          "severity": "UNKNOWN",
+          "target": "kaniko/executor"
+        },
+        {
+          "id": "CVE-2024-25621",
+          "package": "github.com/containerd/containerd",
+          "version": "v1.7.18",
+          "fixed": "1.7.29",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-53488",
+          "package": "github.com/containerd/containerd",
+          "version": "v1.7.18",
+          "fixed": "1.7.33",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2025-15558",
+          "package": "github.com/docker/cli",
+          "version": "v26.1.4+incompatible",
+          "fixed": "29.2.0",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2024-41110",
+          "package": "github.com/docker/docker",
+          "version": "v27.0.3+incompatible",
+          "fixed": "23.0.15, 26.1.5, 27.1.1, 25.0.6",
+          "severity": "CRITICAL",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-41567",
+          "package": "github.com/docker/docker",
+          "version": "v27.0.3+incompatible",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-42306",
+          "package": "github.com/docker/docker",
+          "version": "v27.0.3+incompatible",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2025-30204",
+          "package": "github.com/golang-jwt/jwt/v4",
+          "version": "v4.5.0",
+          "fixed": "4.5.2",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-63209",
+          "package": "github.com/klauspost/compress",
+          "version": "v1.17.4",
+          "fixed": "1.18.7",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-33747",
+          "package": "github.com/moby/buildkit",
+          "version": "v0.14.1",
+          "fixed": "0.28.1",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-33748",
+          "package": "github.com/moby/buildkit",
+          "version": "v0.14.1",
+          "fixed": "0.28.1",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2025-52881",
+          "package": "github.com/opencontainers/selinux",
+          "version": "v1.11.0",
+          "fixed": "1.13.0",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2024-45337",
+          "package": "golang.org/x/crypto",
+          "version": "v0.24.0",
+          "fixed": "0.31.0",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2025-22869",
+          "package": "golang.org/x/crypto",
+          "version": "v0.24.0",
+          "fixed": "0.35.0",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2025-47913",
+          "package": "golang.org/x/crypto",
+          "version": "v0.24.0",
+          "fixed": "0.43.0",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-39828",
+          "package": "golang.org/x/crypto",
+          "version": "v0.24.0",
+          "fixed": "0.52.0",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-39829",
+          "package": "golang.org/x/crypto",
+          "version": "v0.24.0",
+          "fixed": "0.52.0",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-39830",
+          "package": "golang.org/x/crypto",
+          "version": "v0.24.0",
+          "fixed": "0.52.0",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-39831",
+          "package": "golang.org/x/crypto",
+          "version": "v0.24.0",
+          "fixed": "0.52.0",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-39832",
+          "package": "golang.org/x/crypto",
+          "version": "v0.24.0",
+          "fixed": "0.52.0",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-39835",
+          "package": "golang.org/x/crypto",
+          "version": "v0.24.0",
+          "fixed": "0.52.0",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-42508",
+          "package": "golang.org/x/crypto",
+          "version": "v0.24.0",
+          "fixed": "0.52.0",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-46595",
+          "package": "golang.org/x/crypto",
+          "version": "v0.24.0",
+          "fixed": "0.52.0",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-46597",
+          "package": "golang.org/x/crypto",
+          "version": "v0.24.0",
+          "fixed": "0.52.0",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-56854",
+          "package": "golang.org/x/crypto",
+          "version": "v0.24.0",
+          "fixed": "0.55.0",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "GO-2026-5932",
+          "package": "golang.org/x/crypto",
+          "version": "v0.24.0",
+          "fixed": "0.58.1-0.20261009181718-2f1f834330b2",
+          "severity": "UNKNOWN",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2024-45338",
+          "package": "golang.org/x/net",
+          "version": "v0.26.0",
+          "fixed": "0.33.0",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-25681",
+          "package": "golang.org/x/net",
+          "version": "v0.26.0",
+          "fixed": "0.55.0",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-27136",
+          "package": "golang.org/x/net",
+          "version": "v0.26.0",
+          "fixed": "0.55.0",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-33814",
+          "package": "golang.org/x/net",
+          "version": "v0.26.0",
+          "fixed": "0.53.0",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-39821",
+          "package": "golang.org/x/net",
+          "version": "v0.26.0",
+          "fixed": "0.55.0",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-46600",
+          "package": "golang.org/x/net",
+          "version": "v0.26.0",
+          "fixed": "0.56.0",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-78661",
+          "package": "golang.org/x/net",
+          "version": "v0.26.0",
+          "fixed": "0.62.0",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-78669",
+          "package": "golang.org/x/net",
+          "version": "v0.26.0",
+          "fixed": "0.60.0",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2025-22868",
+          "package": "golang.org/x/oauth2",
+          "version": "v0.21.0",
+          "fixed": "0.27.0",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-39824",
+          "package": "golang.org/x/sys",
+          "version": "v0.21.0",
+          "fixed": "0.44.0",
+          "severity": "UNKNOWN",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-56851",
+          "package": "golang.org/x/text",
+          "version": "v0.16.0",
+          "fixed": "0.41.0",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-56852",
+          "package": "golang.org/x/text",
+          "version": "v0.16.0",
+          "fixed": "0.39.0",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-33186",
+          "package": "google.golang.org/grpc",
+          "version": "v1.64.0",
+          "fixed": "1.79.3",
+          "severity": "CRITICAL",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-84304",
+          "package": "google.golang.org/grpc",
+          "version": "v1.64.0",
+          "fixed": "1.83.1",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-84445",
+          "package": "google.golang.org/grpc",
+          "version": "v1.64.0",
+          "fixed": "1.82.2, 1.83.2, 1.84.0-dev.0.20260825144003-d5a41119e0e3, 1.85.0-dev.0.20260825072537-93e31b48545e",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "GHSA-hrxh-6v49-42gf",
+          "package": "google.golang.org/grpc",
+          "version": "v1.64.0",
+          "fixed": "1.82.1",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2025-68121",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.24.13, 1.25.7, 1.26.0-rc.3",
+          "severity": "CRITICAL",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2024-34156",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.22.7, 1.23.1",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2025-61726",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.24.12, 1.25.6",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2025-61729",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.24.11, 1.25.5",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-111943",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.26.10, 1.27.3",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-25679",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.8, 1.26.1",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-27145",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.11, 1.26.4",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-32280",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.9, 1.26.2",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-32281",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.9, 1.26.2",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-32283",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.9, 1.26.2",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-33811",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.10, 1.26.3",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-33814",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.10, 1.26.3",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-33818",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.13, 1.26.6, 1.27.0-rc.3",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-39820",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.10, 1.26.3",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-39821",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.13, 1.26.6, 1.27.0-rc.3",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-39822",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.12, 1.26.5, 1.27.0-rc.2",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-39836",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.10, 1.26.3",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-42499",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.10, 1.26.3",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-42504",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.11, 1.26.4",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-56853",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.13, 1.26.6, 1.27.0-rc.3",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-56858",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.13, 1.26.6, 1.27.0-rc.3",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-56859",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.13, 1.26.6, 1.27.0-rc.3",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-56860",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.13, 1.26.6, 1.27.0-rc.3",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-56862",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.25.13, 1.26.6, 1.27.0-rc.3",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-78667",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.26.9, 1.27.2",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-78669",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.26.9, 1.27.2",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-97031",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.26.9, 1.27.2",
+          "severity": "HIGH",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-97054",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "fixed": "1.26.11, 1.27.4",
+          "severity": "UNKNOWN",
+          "target": "kaniko/warmer"
+        }
+      ]
+    },
+    "maintained-kaniko": {
+      "counts": {
+        "UNKNOWN": 4
+      },
+      "findings": [
+        {
+          "id": "GO-2026-5932",
+          "package": "golang.org/x/crypto",
+          "version": "v0.58.0",
+          "fixed": "0.58.1-0.20261009181718-2f1f834330b2",
+          "severity": "UNKNOWN",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "CVE-2026-97054",
+          "package": "stdlib",
+          "version": "v1.27.3",
+          "fixed": "1.26.11, 1.27.4",
+          "severity": "UNKNOWN",
+          "target": "kaniko/docker-credential-acr-env"
+        },
+        {
+          "id": "GO-2026-5932",
+          "package": "golang.org/x/crypto",
+          "version": "v0.58.0",
+          "fixed": "0.58.1-0.20261009181718-2f1f834330b2",
+          "severity": "UNKNOWN",
+          "target": "kaniko/warmer"
+        },
+        {
+          "id": "CVE-2026-97054",
+          "package": "stdlib",
+          "version": "v1.27.3",
+          "fixed": "1.26.11, 1.27.4",
+          "severity": "UNKNOWN",
+          "target": "kaniko/warmer"
+        }
+      ]
+    },
+    "python-base": {
+      "counts": {
+        "LOW": 66,
+        "HIGH": 49,
+        "MEDIUM": 95,
+        "UNKNOWN": 5
+      },
+      "findings": [
+        {
+          "id": "CVE-2026-76642",
+          "package": "bsdutils",
+          "version": "1:2.41.5-0+deb13u1",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-78408",
+          "package": "bsdutils",
+          "version": "1:2.41.5-0+deb13u1",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-78409",
+          "package": "bsdutils",
+          "version": "1:2.41.5-0+deb13u1",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-78410",
+          "package": "bsdutils",
+          "version": "1:2.41.5-0+deb13u1",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-91094",
+          "package": "dpkg",
+          "version": "1.22.22",
+          "fixed": null,
+          "severity": "UNKNOWN",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-54369",
+          "package": "libacl1",
+          "version": "2.3.2-2+b1",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-76642",
+          "package": "libblkid1",
+          "version": "2.41.5-0+deb13u1",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-78408",
+          "package": "libblkid1",
+          "version": "2.41.5-0+deb13u1",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-78409",
+          "package": "libblkid1",
+          "version": "2.41.5-0+deb13u1",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-78410",
+          "package": "libblkid1",
+          "version": "2.41.5-0+deb13u1",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-100290",
+          "package": "libc-bin",
+          "version": "2.41-12+deb13u4",
+          "fixed": null,
+          "severity": "UNKNOWN",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-115819",
+          "package": "libc-bin",
+          "version": "2.41-12+deb13u4",
+          "fixed": null,
+          "severity": "UNKNOWN",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-100290",
+          "package": "libc6",
+          "version": "2.41-12+deb13u4",
+          "fixed": null,
+          "severity": "UNKNOWN",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-115819",
+          "package": "libc6",
+          "version": "2.41-12+deb13u4",
+          "fixed": null,
+          "severity": "UNKNOWN",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-76642",
+          "package": "liblastlog2-2",
+          "version": "2.41.5-0+deb13u1",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-78408",
+          "package": "liblastlog2-2",
+          "version": "2.41.5-0+deb13u1",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-78409",
+          "package": "liblastlog2-2",
+          "version": "2.41.5-0+deb13u1",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-78410",
+          "package": "liblastlog2-2",
+          "version": "2.41.5-0+deb13u1",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-76642",
+          "package": "libmount1",
+          "version": "2.41.5-0+deb13u1",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-78408",
+          "package": "libmount1",
+          "version": "2.41.5-0+deb13u1",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-78409",
+          "package": "libmount1",
+          "version": "2.41.5-0+deb13u1",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-78410",
+          "package": "libmount1",
+          "version": "2.41.5-0+deb13u1",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2025-69720",
+          "package": "libncursesw6",
+          "version": "6.5+20250216-2",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-76642",
+          "package": "libsmartcols1",
+          "version": "2.41.5-0+deb13u1",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-78408",
+          "package": "libsmartcols1",
+          "version": "2.41.5-0+deb13u1",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-78409",
+          "package": "libsmartcols1",
+          "version": "2.41.5-0+deb13u1",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-78410",
+          "package": "libsmartcols1",
+          "version": "2.41.5-0+deb13u1",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-119373",
+          "package": "libsqlite3-0",
+          "version": "3.46.1-7+deb13u2",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-119374",
+          "package": "libsqlite3-0",
+          "version": "3.46.1-7+deb13u2",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-119379",
+          "package": "libsqlite3-0",
+          "version": "3.46.1-7+deb13u2",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-16742",
+          "package": "libsystemd0",
+          "version": "257.13-1~deb13u1",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2025-69720",
+          "package": "libtinfo6",
+          "version": "6.5+20250216-2",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-16742",
+          "package": "libudev1",
+          "version": "257.13-1~deb13u1",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-76642",
+          "package": "libuuid1",
+          "version": "2.41.5-0+deb13u1",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-78408",
+          "package": "libuuid1",
+          "version": "2.41.5-0+deb13u1",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-78409",
+          "package": "libuuid1",
+          "version": "2.41.5-0+deb13u1",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-78410",
+          "package": "libuuid1",
+          "version": "2.41.5-0+deb13u1",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-76642",
+          "package": "login",
+          "version": "1:4.16.0-2+really2.41.5-0+deb13u1",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-78408",
+          "package": "login",
+          "version": "1:4.16.0-2+really2.41.5-0+deb13u1",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-78409",
+          "package": "login",
+          "version": "1:4.16.0-2+really2.41.5-0+deb13u1",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-78410",
+          "package": "login",
+          "version": "1:4.16.0-2+really2.41.5-0+deb13u1",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-76642",
+          "package": "mount",
+          "version": "2.41.5-0+deb13u1",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-78408",
+          "package": "mount",
+          "version": "2.41.5-0+deb13u1",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-78409",
+          "package": "mount",
+          "version": "2.41.5-0+deb13u1",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-78410",
+          "package": "mount",
+          "version": "2.41.5-0+deb13u1",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2025-69720",
+          "package": "ncurses-base",
+          "version": "6.5+20250216-2",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2025-69720",
+          "package": "ncurses-bin",
+          "version": "6.5+20250216-2",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-9538",
+          "package": "perl-base",
+          "version": "5.40.1-6+deb13u1",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-76642",
+          "package": "util-linux",
+          "version": "2.41.5-0+deb13u1",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-78408",
+          "package": "util-linux",
+          "version": "2.41.5-0+deb13u1",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-78409",
+          "package": "util-linux",
+          "version": "2.41.5-0+deb13u1",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-78410",
+          "package": "util-linux",
+          "version": "2.41.5-0+deb13u1",
+          "fixed": null,
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-76844",
+          "package": "zlib1g",
+          "version": "1:1.3.dfsg+really1.3.1-1+b1",
+          "fixed": "1:1.3.dfsg+really1.3.1-1+deb13u1",
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        },
+        {
+          "id": "CVE-2026-85091",
+          "package": "zlib1g",
+          "version": "1:1.3.dfsg+really1.3.1-1+b1",
+          "fixed": "1:1.3.dfsg+really1.3.1-1+deb13u1",
+          "severity": "HIGH",
+          "target": "python@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b (debian 13.7)"
+        }
+      ]
+    },
+    "python-alpine": {
+      "counts": {
+        "HIGH": 16,
+        "MEDIUM": 11,
+        "LOW": 1
+      },
+      "findings": [
+        {
+          "id": "CVE-2026-107364",
+          "package": "krb5-libs",
+          "version": "1.22.2-r1",
+          "fixed": "1.22.3-r0",
+          "severity": "HIGH",
+          "target": "python@sha256:c5ba3deef00c7758561a0f03c26f44f10589263d40e732b8748e0d1f38f6dd89 (alpine 3.24.4)"
+        },
+        {
+          "id": "CVE-2026-112315",
+          "package": "krb5-libs",
+          "version": "1.22.2-r1",
+          "fixed": "1.22.3-r0",
+          "severity": "HIGH",
+          "target": "python@sha256:c5ba3deef00c7758561a0f03c26f44f10589263d40e732b8748e0d1f38f6dd89 (alpine 3.24.4)"
+        },
+        {
+          "id": "CVE-2026-112316",
+          "package": "krb5-libs",
+          "version": "1.22.2-r1",
+          "fixed": "1.22.3-r0",
+          "severity": "HIGH",
+          "target": "python@sha256:c5ba3deef00c7758561a0f03c26f44f10589263d40e732b8748e0d1f38f6dd89 (alpine 3.24.4)"
+        },
+        {
+          "id": "CVE-2026-112317",
+          "package": "krb5-libs",
+          "version": "1.22.2-r1",
+          "fixed": "1.22.3-r0",
+          "severity": "HIGH",
+          "target": "python@sha256:c5ba3deef00c7758561a0f03c26f44f10589263d40e732b8748e0d1f38f6dd89 (alpine 3.24.4)"
+        },
+        {
+          "id": "CVE-2026-112318",
+          "package": "krb5-libs",
+          "version": "1.22.2-r1",
+          "fixed": "1.22.3-r0",
+          "severity": "HIGH",
+          "target": "python@sha256:c5ba3deef00c7758561a0f03c26f44f10589263d40e732b8748e0d1f38f6dd89 (alpine 3.24.4)"
+        },
+        {
+          "id": "CVE-2026-112319",
+          "package": "krb5-libs",
+          "version": "1.22.2-r1",
+          "fixed": "1.22.3-r0",
+          "severity": "HIGH",
+          "target": "python@sha256:c5ba3deef00c7758561a0f03c26f44f10589263d40e732b8748e0d1f38f6dd89 (alpine 3.24.4)"
+        },
+        {
+          "id": "CVE-2026-112320",
+          "package": "krb5-libs",
+          "version": "1.22.2-r1",
+          "fixed": "1.22.3-r0",
+          "severity": "HIGH",
+          "target": "python@sha256:c5ba3deef00c7758561a0f03c26f44f10589263d40e732b8748e0d1f38f6dd89 (alpine 3.24.4)"
+        },
+        {
+          "id": "CVE-2026-112321",
+          "package": "krb5-libs",
+          "version": "1.22.2-r1",
+          "fixed": "1.22.3-r0",
+          "severity": "HIGH",
+          "target": "python@sha256:c5ba3deef00c7758561a0f03c26f44f10589263d40e732b8748e0d1f38f6dd89 (alpine 3.24.4)"
+        },
+        {
+          "id": "CVE-2026-112322",
+          "package": "krb5-libs",
+          "version": "1.22.2-r1",
+          "fixed": "1.22.3-r0",
+          "severity": "HIGH",
+          "target": "python@sha256:c5ba3deef00c7758561a0f03c26f44f10589263d40e732b8748e0d1f38f6dd89 (alpine 3.24.4)"
+        },
+        {
+          "id": "CVE-2026-112323",
+          "package": "krb5-libs",
+          "version": "1.22.2-r1",
+          "fixed": "1.22.3-r0",
+          "severity": "HIGH",
+          "target": "python@sha256:c5ba3deef00c7758561a0f03c26f44f10589263d40e732b8748e0d1f38f6dd89 (alpine 3.24.4)"
+        },
+        {
+          "id": "CVE-2026-118380",
+          "package": "krb5-libs",
+          "version": "1.22.2-r1",
+          "fixed": "1.22.3-r0",
+          "severity": "HIGH",
+          "target": "python@sha256:c5ba3deef00c7758561a0f03c26f44f10589263d40e732b8748e0d1f38f6dd89 (alpine 3.24.4)"
+        },
+        {
+          "id": "CVE-2026-119079",
+          "package": "krb5-libs",
+          "version": "1.22.2-r1",
+          "fixed": "1.22.3-r0",
+          "severity": "HIGH",
+          "target": "python@sha256:c5ba3deef00c7758561a0f03c26f44f10589263d40e732b8748e0d1f38f6dd89 (alpine 3.24.4)"
+        },
+        {
+          "id": "CVE-2026-40355",
+          "package": "krb5-libs",
+          "version": "1.22.2-r1",
+          "fixed": "1.22.3-r0",
+          "severity": "HIGH",
+          "target": "python@sha256:c5ba3deef00c7758561a0f03c26f44f10589263d40e732b8748e0d1f38f6dd89 (alpine 3.24.4)"
+        },
+        {
+          "id": "CVE-2026-40356",
+          "package": "krb5-libs",
+          "version": "1.22.2-r1",
+          "fixed": "1.22.3-r0",
+          "severity": "HIGH",
+          "target": "python@sha256:c5ba3deef00c7758561a0f03c26f44f10589263d40e732b8748e0d1f38f6dd89 (alpine 3.24.4)"
+        },
+        {
+          "id": "CVE-2026-71199",
+          "package": "krb5-libs",
+          "version": "1.22.2-r1",
+          "fixed": "1.22.3-r0",
+          "severity": "HIGH",
+          "target": "python@sha256:c5ba3deef00c7758561a0f03c26f44f10589263d40e732b8748e0d1f38f6dd89 (alpine 3.24.4)"
+        },
+        {
+          "id": "CVE-2026-71200",
+          "package": "krb5-libs",
+          "version": "1.22.2-r1",
+          "fixed": "1.22.3-r0",
+          "severity": "HIGH",
+          "target": "python@sha256:c5ba3deef00c7758561a0f03c26f44f10589263d40e732b8748e0d1f38f6dd89 (alpine 3.24.4)"
+        }
+      ]
+    },
+    "scanner": {
+      "counts": {
+        "HIGH": 6,
+        "MEDIUM": 9,
+        "UNKNOWN": 2
+      },
+      "findings": [
+        {
+          "id": "CVE-2026-105437",
+          "package": "git",
+          "version": "2.54.0-r0",
+          "fixed": "2.54.1-r0",
+          "severity": "HIGH",
+          "target": "aquasec/trivy@sha256:8f6bb947dbc528902e11f2f5be52f7b519f6a39d5d148f41166f2040499768fb (alpine 3.24.3)"
+        },
+        {
+          "id": "CVE-2026-111760",
+          "package": "git",
+          "version": "2.54.0-r0",
+          "fixed": "2.54.1-r0",
+          "severity": "HIGH",
+          "target": "aquasec/trivy@sha256:8f6bb947dbc528902e11f2f5be52f7b519f6a39d5d148f41166f2040499768fb (alpine 3.24.3)"
+        },
+        {
+          "id": "CVE-2026-114466",
+          "package": "git",
+          "version": "2.54.0-r0",
+          "fixed": "2.54.1-r0",
+          "severity": "HIGH",
+          "target": "aquasec/trivy@sha256:8f6bb947dbc528902e11f2f5be52f7b519f6a39d5d148f41166f2040499768fb (alpine 3.24.3)"
+        },
+        {
+          "id": "CVE-2026-105437",
+          "package": "git-init-template",
+          "version": "2.54.0-r0",
+          "fixed": "2.54.1-r0",
+          "severity": "HIGH",
+          "target": "aquasec/trivy@sha256:8f6bb947dbc528902e11f2f5be52f7b519f6a39d5d148f41166f2040499768fb (alpine 3.24.3)"
+        },
+        {
+          "id": "CVE-2026-111760",
+          "package": "git-init-template",
+          "version": "2.54.0-r0",
+          "fixed": "2.54.1-r0",
+          "severity": "HIGH",
+          "target": "aquasec/trivy@sha256:8f6bb947dbc528902e11f2f5be52f7b519f6a39d5d148f41166f2040499768fb (alpine 3.24.3)"
+        },
+        {
+          "id": "CVE-2026-114466",
+          "package": "git-init-template",
+          "version": "2.54.0-r0",
+          "fixed": "2.54.1-r0",
+          "severity": "HIGH",
+          "target": "aquasec/trivy@sha256:8f6bb947dbc528902e11f2f5be52f7b519f6a39d5d148f41166f2040499768fb (alpine 3.24.3)"
+        },
+        {
+          "id": "GO-2026-5932",
+          "package": "golang.org/x/crypto",
+          "version": "v0.58.0",
+          "fixed": "0.58.1-0.20261009181718-2f1f834330b2",
+          "severity": "UNKNOWN",
+          "target": "usr/local/bin/trivy"
+        },
+        {
+          "id": "CVE-2026-97054",
+          "package": "stdlib",
+          "version": "v1.27.3",
+          "fixed": "1.26.11, 1.27.4",
+          "severity": "UNKNOWN",
+          "target": "usr/local/bin/trivy"
+        }
+      ]
+    }
+  },
+  "new_application_and_ci_images_built": false,
+  "new_application_and_ci_images_scanned": false,
+  "os_package_floor_evidence": "ci/os-security.json",
+  "note": "Scanner intermediate-stage Git packages are not copied into CI runtime; copied Trivy binary retains unscored advisories. No ignore-unfixed or severity suppression used."
+}

@@ -1,0 +1,377 @@
+{
+  "checked_at": "2026-11-15T04:09:06.939145+00:00",
+  "source_git_head": "35fc225495517f33b0444f1e5c0e8434721163f0",
+  "source_dirty": true,
+  "scope": "Existing runtime baseline, not proof current uncommitted source was deployed",
+  "account": "227281812993",
+  "cluster": "neoversity-lesson-7",
+  "context_matches_authenticated_eks": true,
+  "live_mutations": false,
+  "jenkins_restarted": false,
+  "private_raw_directory": "/tmp/goaldevops-runtime-final-20261115T040859Z",
+  "checks": {
+    "identity": {
+      "exit_code": 0,
+      "status": "read_succeeded"
+    },
+    "eks": {
+      "exit_code": 0,
+      "status": "read_succeeded"
+    },
+    "context": {
+      "exit_code": 0,
+      "status": "read_succeeded"
+    },
+    "rds": {
+      "exit_code": 0,
+      "status": "read_succeeded"
+    },
+    "app": {
+      "exit_code": 0,
+      "status": "read_succeeded"
+    },
+    "metrics": {
+      "exit_code": 0,
+      "status": "read_succeeded"
+    },
+    "services": {
+      "exit_code": 0,
+      "status": "read_succeeded"
+    },
+    "dashboards": {
+      "exit_code": 0,
+      "status": "read_succeeded"
+    },
+    "resources": {
+      "exit_code": 0,
+      "status": "read_succeeded"
+    },
+    "oidc": {
+      "exit_code": 254,
+      "status": "blocked",
+      "reason": "SCP explicit deny"
+    },
+    "addons": {
+      "exit_code": 0,
+      "status": "read_succeeded"
+    },
+    "app_config": {
+      "exit_code": 0,
+      "status": "read_succeeded"
+    },
+    "jenkins_api": {
+      "exit_code": 1,
+      "status": "blocked",
+      "reason": "Access denied"
+    },
+    "health": {
+      "exit_code": 0,
+      "status": "read_succeeded"
+    },
+    "addon_state_key": {
+      "exit_code": 254,
+      "status": "blocked",
+      "reason": "Read failed; private diagnostic retained"
+    },
+    "engine_postgres": {
+      "exit_code": 0,
+      "status": "read_succeeded"
+    },
+    "engine_mysql": {
+      "exit_code": 0,
+      "status": "read_succeeded"
+    },
+    "engine_aurora-postgresql": {
+      "exit_code": 0,
+      "status": "read_succeeded"
+    },
+    "engine_aurora-mysql": {
+      "exit_code": 0,
+      "status": "read_succeeded"
+    },
+    "prom_cpu": {
+      "exit_code": 0,
+      "status": "read_succeeded"
+    },
+    "ecr_deployed": {
+      "exit_code": 0,
+      "status": "read_succeeded"
+    },
+    "prom_memory": {
+      "exit_code": 0,
+      "status": "read_succeeded"
+    },
+    "prom_hpa_desired": {
+      "exit_code": 0,
+      "status": "read_succeeded"
+    },
+    "prom_ready_replicas": {
+      "exit_code": 0,
+      "status": "read_succeeded"
+    },
+    "targets": {
+      "exit_code": 0,
+      "status": "read_succeeded"
+    },
+    "parameters_aurora-postgresql": {
+      "exit_code": 0,
+      "status": "read_succeeded"
+    },
+    "parameters_aurora-mysql": {
+      "exit_code": 0,
+      "status": "read_succeeded"
+    },
+    "parameters_postgres": {
+      "exit_code": 0,
+      "status": "read_succeeded"
+    },
+    "instance_parameters_aurora-mysql": {
+      "exit_code": 0,
+      "status": "read_succeeded"
+    },
+    "parameters_mysql": {
+      "exit_code": 0,
+      "status": "read_succeeded"
+    }
+  },
+  "deployed_image_reference": "227281812993.dkr.ecr.us-east-2.amazonaws.com/lesson-7-django:fea9e0c3973a",
+  "pod_image_ids": [
+    "227281812993.dkr.ecr.us-east-2.amazonaws.com/lesson-7-django@sha256:57c93b7fa8f4735160b9da71a0ca4c41071f010721050fa4f8b1e0ec7a6b5def"
+  ],
+  "ecr_image": [
+    {
+      "imageDigest": "sha256:fd3deed1868090c735b5a810c668934bcdbb52e633b0641c8b77125881aab6e7",
+      "imageTags": [
+        "fea9e0c3973a"
+      ],
+      "imagePushedAt": "2026-11-11T20:23:54.880000-05:00"
+    }
+  ],
+  "argocd": {
+    "revision": "43a3a1b0b4d9129b3512d89bdf74d27089537862",
+    "sync": "Synced",
+    "health": "Healthy",
+    "automated": {
+      "enabled": true,
+      "prune": true,
+      "selfHeal": true
+    }
+  },
+  "hpa": [
+    {
+      "name": "django-app",
+      "namespace": "neoversity",
+      "spec": {
+        "maxReplicas": 6,
+        "metrics": [
+          {
+            "resource": {
+              "name": "cpu",
+              "target": {
+                "averageUtilization": 70,
+                "type": "Utilization"
+              }
+            },
+            "type": "Resource"
+          }
+        ],
+        "minReplicas": 2,
+        "scaleTargetRef": {
+          "apiVersion": "apps/v1",
+          "kind": "Deployment",
+          "name": "django-app"
+        }
+      },
+      "status": {
+        "conditions": [
+          {
+            "lastTransitionTime": "2026-11-12T00:54:27Z",
+            "message": "recommended size matches current size",
+            "reason": "ReadyForNewScale",
+            "status": "True",
+            "type": "AbleToScale"
+          },
+          {
+            "lastTransitionTime": "2026-11-12T00:54:27Z",
+            "message": "the HPA controller did not scale the workload to zero",
+            "reason": "NotScaledToZero",
+            "status": "False",
+            "type": "ScaledToZero"
+          },
+          {
+            "lastTransitionTime": "2026-11-13T17:03:44Z",
+            "message": "the HPA was able to successfully calculate a replica count from cpu resource utilization (percentage of request)",
+            "reason": "ValidMetricFound",
+            "status": "True",
+            "type": "ScalingActive"
+          },
+          {
+            "lastTransitionTime": "2026-11-13T17:19:45Z",
+            "message": "the desired replica count is less than the minimum replica count",
+            "reason": "TooFewReplicas",
+            "status": "True",
+            "type": "ScalingLimited"
+          }
+        ],
+        "currentMetrics": [
+          {
+            "resource": {
+              "current": {
+                "averageUtilization": 3,
+                "averageValue": "3m"
+              },
+              "name": "cpu"
+            },
+            "type": "Resource"
+          }
+        ],
+        "currentReplicas": 2,
+        "desiredReplicas": 2,
+        "lastScaleTime": "2026-11-13T17:08:44Z",
+        "observedGeneration": 1
+      }
+    }
+  ],
+  "resource_metrics_available": true,
+  "rds": {
+    "identifier": "neoversity-final-db",
+    "status": "available",
+    "encrypted": true,
+    "public": false,
+    "app_config_host_matches": true,
+    "explicit_sslmode": null,
+    "backup_retention_days": 1
+  },
+  "http_health": {
+    "status": "ok",
+    "database": "postgresql",
+    "connected": true
+  },
+  "jenkins_api": null,
+  "prometheus": {
+    "ready_replicas": [
+      [
+        1794715745.706,
+        "2"
+      ]
+    ],
+    "hpa_desired": [
+      [
+        1794715745.707,
+        "2"
+      ]
+    ],
+    "cpu": [
+      [
+        1794715745.674,
+        "0.007412042228416963"
+      ]
+    ],
+    "memory": [
+      [
+        1794715745.704,
+        "241295360"
+      ]
+    ]
+  },
+  "prometheus_targets": {
+    "total": 19,
+    "up": 19
+  },
+  "custom_dashboards": [
+    {
+      "configmap": "neoversity-top-dashboard",
+      "title": "Neoversity \u2014 Final DevOps / TOP",
+      "panel_count": 5,
+      "sha256": "8dea61c57a65ae1d8ed52e6fcc8517e73bc7c0433666a34537257b29ed0d9386"
+    }
+  ],
+  "ebs_csi_addon_present": false,
+  "jenkins_pvc_names": [],
+  "rds_engine_metadata": {
+    "postgres": {
+      "version": "18.3",
+      "family": "postgres18",
+      "parameter_metadata": [
+        {
+          "ParameterName": "log_statement",
+          "ApplyType": "dynamic",
+          "IsModifiable": true,
+          "AllowedValues": "none,ddl,mod,all"
+        },
+        {
+          "ParameterName": "max_connections",
+          "ApplyType": "static",
+          "IsModifiable": true,
+          "AllowedValues": "6-262143"
+        },
+        {
+          "ParameterName": "work_mem",
+          "ApplyType": "dynamic",
+          "IsModifiable": true,
+          "AllowedValues": "64-2147483647"
+        }
+      ]
+    },
+    "mysql": {
+      "version": "8.4.11",
+      "family": "mysql8.4",
+      "parameter_metadata": [
+        {
+          "ParameterName": "general_log",
+          "ApplyType": "dynamic",
+          "IsModifiable": true,
+          "AllowedValues": "0,1"
+        },
+        {
+          "ParameterName": "max_connections",
+          "ApplyType": "dynamic",
+          "IsModifiable": true,
+          "AllowedValues": "1-100000"
+        },
+        {
+          "ParameterName": "sort_buffer_size",
+          "ApplyType": "dynamic",
+          "IsModifiable": true,
+          "AllowedValues": "32768-18446744073709551615"
+        }
+      ]
+    },
+    "aurora-postgresql": {
+      "version": "17.9",
+      "family": "aurora-postgresql17",
+      "parameter_metadata": []
+    },
+    "aurora-mysql": {
+      "version": "8.0.mysql_aurora.3.10.3",
+      "family": "aurora-mysql8.0",
+      "parameter_metadata": [],
+      "instance_parameter_metadata": [
+        {
+          "ParameterName": "general_log",
+          "ApplyType": "dynamic",
+          "IsModifiable": true,
+          "AllowedValues": "0,1"
+        },
+        {
+          "ParameterName": "max_connections",
+          "ApplyType": "dynamic",
+          "IsModifiable": true,
+          "AllowedValues": "1-16000"
+        },
+        {
+          "ParameterName": "sort_buffer_size",
+          "ApplyType": "dynamic",
+          "IsModifiable": true,
+          "AllowedValues": "32768-18446744073709551615"
+        }
+      ]
+    }
+  },
+  "hpa_scaling_under_controlled_load": "not_performed; requires explicit load authorization",
+  "later_image_scan_attempt": {
+    "status": "blocked",
+    "reason": "Authenticated profile credential export unavailable; no authentication loop or image scan executed"
+  },
+  "ecr_digest_relation": "unverified: ECR tag digest differs from container imageID; may be multi-platform index versus platform manifest. No equivalence or tag drift claimed without manifest evidence."
+}

@@ -1,0 +1,13 @@
+{
+  "alpine_version": "3.24.4",
+  "apk_index": "https://dl-cdn.alpinelinux.org/alpine/v3.24/main/x86_64/APKINDEX.tar.gz",
+  "packages": {
+    "curl": "8.23.0-r0",
+    "git": "2.54.1-r0",
+    "krb5-libs": "1.22.3-r0"
+  },
+  "trivy_latest": {
+    "tag": "v0.76.2",
+    "published_at": "2026-11-05T12:50:25Z"
+  }
+}

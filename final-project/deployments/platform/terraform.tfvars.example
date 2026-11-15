@@ -1,0 +1,14 @@
+# New demo only. Replace required inputs; do not put tokens/passwords here.
+aws_region      = "us-east-2"
+state_bucket    = "REPLACE_WITH_NEW_BOOTSTRAP_BUCKET"
+infra_state_key = "goaldevops-v2/demo/infra.tfstate"
+source_repo     = "https://github.com/fedorstoiets/my-microservice-project.git"
+# Use a DISTINCT demo GitOps repository: the existing live repository auto-syncs.
+gitops_repo = "https://github.com/REPLACE_OWNER/REPLACE_DEMO_GITOPS_REPOSITORY.git"
+ci_tools_image = "REPLACE_WITH_ACTUAL_BUILT_AND_SCANNED_CI_IMAGE_DIGEST"
+kaniko_image = "ghcr.io/osscontainertools/kaniko@sha256:ebc38a988e5aa1aaea99240e931aeeeff9d8e6bb5a0bd0e00eaf79973bf0a773"
+# Fill only after reviewing the actual demo GitOps commit, if alignment needs it.
+reviewed_gitops_base = ""
+enable_application_sync = false
+enable_database_bootstrap = false
+enable_application_pruning = false

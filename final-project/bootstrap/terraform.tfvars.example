@@ -1,0 +1,4 @@
+bucket_name = "REPLACE_WITH_UNIQUE_STATE_BUCKET_NAME"
+
+# Only for an approved, distinct fresh environment.
+new_environment = true

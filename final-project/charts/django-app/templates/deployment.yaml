@@ -1,13 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  namespace: {{ .Release.Namespace }}
   name: {{ include "django-app.fullname" . }}
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
   labels:
     {{- include "django-app.labels" . | nindent 4 }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
+  strategy:
+    type: RollingUpdate
+    rollingUpdate: { maxUnavailable: 0, maxSurge: 1 }
   selector:
     matchLabels:
       app: {{ include "django-app.fullname" . }}
@@ -16,16 +22,32 @@ spec:
       labels:
         app: {{ include "django-app.fullname" . }}
     spec:
+      automountServiceAccountToken: false
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      volumes:
+        - name: tmp
+          emptyDir: { sizeLimit: 64Mi }
+        - name: credentials
+          secret:
+            secretName: {{ .Values.secretName }}
+            defaultMode: 0440
       containers:
         - name: django
-          image: "{{ required "Provide image.repository with the ECR URI" .Values.image.repository }}:{{ .Values.image.tag }}"
+          image: {{ include "django-app.image" . | quote }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          # Bypass lesson-4 entrypoint (which runs migrate in every replica).
+          securityContext:
+            {{- toYaml .Values.containerSecurityContext | nindent 12 }}
           command: ["gunicorn"]
-          args: ["config.wsgi:application", "--bind", "0.0.0.0:8000", "--workers", "2"]
+          args: ["config.wsgi:application", "--bind", "0.0.0.0:8000", "--workers", "2", "--worker-tmp-dir", "/tmp"]
+          volumeMounts:
+            - { name: tmp, mountPath: /tmp }
+            - { name: credentials, mountPath: /var/run/django-secrets, readOnly: true }
           ports:
             - name: http
               containerPort: 8000
+          env:
+            - { name: POSTGRES_PASSWORD_FILE, value: /var/run/django-secrets/POSTGRES_PASSWORD }
           envFrom:
             - configMapRef:
                 name: {{ include "django-app.fullname" . }}-config
@@ -33,11 +55,24 @@ spec:
                 name: {{ .Values.secretName }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          startupProbe:
+            httpGet:
+              path: /live/
+              port: http
+              httpHeaders: [{ name: Host, value: localhost }]
+            periodSeconds: 5
+            failureThreshold: 30
           readinessProbe:
-            httpGet: { path: /health/, port: http }
+            httpGet:
+              path: /health/
+              port: http
+              httpHeaders: [{ name: Host, value: localhost }]
             initialDelaySeconds: 8
             periodSeconds: 10
           livenessProbe:
-            httpGet: { path: /health/, port: http }
+            httpGet:
+              path: /live/
+              port: http
+              httpHeaders: [{ name: Host, value: localhost }]
             initialDelaySeconds: 25
             periodSeconds: 20

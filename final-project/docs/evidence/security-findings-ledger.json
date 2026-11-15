@@ -1,0 +1,102 @@
+{
+  "reviewed_at": "2026-11-15T02:35:15.429458+00:00",
+  "historical_snapshot": "2026-11-14T20:12:31Z",
+  "current_live_verified": false,
+  "suppression_added": false,
+  "hardened_scan": {
+    "LOW": 7,
+    "MEDIUM": 11
+  },
+  "continuity_scan": {
+    "LOW": 7,
+    "HIGH": 5,
+    "MEDIUM": 10,
+    "CRITICAL": 2
+  },
+  "findings": [
+    {
+      "rule": "AWS-0040",
+      "severity": "CRITICAL",
+      "source": "modules/eks/eks.tf",
+      "resource": "module.eks.aws_eks_cluster.main",
+      "snapshot_resource_name": "neoversity-lesson-7",
+      "observed": "Public API endpoint recorded true",
+      "source_remediation": "Hardened profile sets endpoint_public_access=false",
+      "source_status": "remediated_in_hardened_profile",
+      "runtime_status": "unverified_pending_plan_and_authorization",
+      "reference": "https://docs.aws.amazon.com/eks/latest/userguide/config-cluster-endpoint.html"
+    },
+    {
+      "rule": "AWS-0041",
+      "severity": "CRITICAL",
+      "source": "modules/eks/eks.tf",
+      "resource": "module.eks.aws_eks_cluster.main",
+      "snapshot_resource_name": "neoversity-lesson-7",
+      "observed": "Public CIDR recorded 0.0.0.0/0",
+      "source_remediation": "Hardened profile sets public_access_cidrs=[]; private runner required",
+      "source_status": "remediated_in_hardened_profile",
+      "runtime_status": "unverified_pending_plan_and_authorization",
+      "reference": "https://docs.aws.amazon.com/eks/latest/userguide/config-cluster-endpoint.html"
+    },
+    {
+      "rule": "AWS-0031",
+      "severity": "HIGH",
+      "source": "modules/ecr/ecr.tf",
+      "resource": "module.ecr.aws_ecr_repository.main",
+      "snapshot_resource_name": "lesson-7-django",
+      "observed": "Mutable tags recorded",
+      "source_remediation": "Hardened profile sets IMMUTABLE; pipeline reuses full-SHA tags and deploys digests",
+      "source_status": "remediated_in_hardened_profile",
+      "runtime_status": "unverified_pending_plan_and_authorization",
+      "reference": "https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-tag-mutability.html"
+    },
+    {
+      "rule": "AWS-0039",
+      "severity": "HIGH",
+      "source": "modules/eks/eks.tf",
+      "resource": "module.eks.aws_eks_cluster.main",
+      "snapshot_resource_name": "neoversity-lesson-7",
+      "observed": "Explicit encryption_config absent; Kubernetes 1.37 recorded",
+      "source_remediation": "AWS default encryption on 1.28+ means absence is not proof of plaintext. Explicit retained customer key proposed as defense in depth, separately authorized",
+      "source_status": "remediated_in_hardened_profile",
+      "runtime_status": "unverified_pending_plan_and_authorization",
+      "reference": "https://docs.aws.amazon.com/eks/latest/userguide/envelope-encryption.html"
+    },
+    {
+      "rule": "AWS-0164",
+      "severity": "HIGH",
+      "source": "modules/vpc/vpc.tf",
+      "resource": "module.vpc.aws_subnet.public[0]",
+      "snapshot_resource_name": "lesson-5-vpc-public-1",
+      "observed": "Auto public IP allocation recorded true; nodes use private subnets",
+      "source_remediation": "Hardened profile disables auto allocation. Existing addresses are not revoked by this attribute",
+      "source_status": "remediated_in_hardened_profile",
+      "runtime_status": "unverified_pending_plan_and_authorization",
+      "reference": "https://docs.aws.amazon.com/vpc/latest/userguide/subnet-public-ip.html"
+    },
+    {
+      "rule": "AWS-0164",
+      "severity": "HIGH",
+      "source": "modules/vpc/vpc.tf",
+      "resource": "module.vpc.aws_subnet.public[1]",
+      "snapshot_resource_name": "lesson-5-vpc-public-2",
+      "observed": "Auto public IP allocation recorded true; nodes use private subnets",
+      "source_remediation": "Hardened profile disables auto allocation. Existing addresses are not revoked by this attribute",
+      "source_status": "remediated_in_hardened_profile",
+      "runtime_status": "unverified_pending_plan_and_authorization",
+      "reference": "https://docs.aws.amazon.com/vpc/latest/userguide/subnet-public-ip.html"
+    },
+    {
+      "rule": "AWS-0164",
+      "severity": "HIGH",
+      "source": "modules/vpc/vpc.tf",
+      "resource": "module.vpc.aws_subnet.public[2]",
+      "snapshot_resource_name": "lesson-5-vpc-public-3",
+      "observed": "Auto public IP allocation recorded true; nodes use private subnets",
+      "source_remediation": "Hardened profile disables auto allocation. Existing addresses are not revoked by this attribute",
+      "source_status": "remediated_in_hardened_profile",
+      "runtime_status": "unverified_pending_plan_and_authorization",
+      "reference": "https://docs.aws.amazon.com/vpc/latest/userguide/subnet-public-ip.html"
+    }
+  ]
+}

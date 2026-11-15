@@ -1,0 +1,43 @@
+{
+  "retrieved_at": "2026-11-14T21:35:02.159089+00:00",
+  "charts": {
+    "jenkins": {
+      "version": "5.12.0",
+      "appVersion": "2.580.2",
+      "digest": "49cf886b3e336c5c54d57d4aa1764330c10f50a8e6caf85072b9807aa5450ec0",
+      "repository": "https://charts.jenkins.io"
+    },
+    "argocd": {
+      "version": "10.18.0",
+      "appVersion": "v3.6.1",
+      "digest": "9785aff67197402aab26d7ab3928ac8e611c292dacdee47f0e8ded16c2cd5a47",
+      "repository": "https://argoproj.github.io/argo-helm"
+    },
+    "monitoring": {
+      "version": "93.3.0",
+      "appVersion": "v0.95.2",
+      "digest": "2d40be0b19523cb4fed25b4db09e3ca35f471a06872baf7048b916a62c7af0eb",
+      "repository": "https://prometheus-community.github.io/helm-charts"
+    },
+    "external_secrets": {
+      "version": "2.15.0",
+      "appVersion": "v2.15.0",
+      "digest": "ed94d41cc67e392ea45e370345eb491b0fdc21387f1aaaefcf8e2e6c85089e1d",
+      "repository": "https://charts.external-secrets.io"
+    },
+    "metrics_server": {
+      "version": "3.14.0",
+      "appVersion": "0.9.0",
+      "digest": "c2ca1185c01e6e7f53dd1b7d131f0c9b3fa50e003ed068b784563a1b5a3422a1",
+      "repository": "https://kubernetes-sigs.github.io/metrics-server"
+    }
+  },
+  "python": {
+    "Django": "6.1.3",
+    "psycopg": "3.3.9",
+    "psycopg-binary": "3.3.9",
+    "gunicorn": "27.0.1",
+    "whitenoise": "6.12.0",
+    "PyYAML": "6.0.3"
+  }
+}

@@ -12,3 +12,11 @@ crash.log
 .env.*
 !.env.example
 reports/
+
+__pycache__/
+*.py[cod]
+.venv/
+dist/
+
+# Local Terraform working directories
+**/.terraform

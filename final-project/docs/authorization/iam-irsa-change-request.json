@@ -1,0 +1,70 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CreateOnlyVerifiedAbsentProvider",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateOpenIDConnectProvider",
+        "iam:GetOpenIDConnectProvider",
+        "iam:ListOpenIDConnectProviderTags",
+        "iam:TagOpenIDConnectProvider"
+      ],
+      "Resource": "arn:aws:iam::227281812993:oidc-provider/oidc.eks.us-east-2.amazonaws.com/id/DDF930235860D5B13B8F3342191ED95F"
+    },
+    {
+      "Sid": "ScopedIRSAProvisioning",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateRole",
+        "iam:GetRole",
+        "iam:UpdateAssumeRolePolicy",
+        "iam:ListRoleTags",
+        "iam:TagRole",
+        "iam:UntagRole",
+        "iam:PutRolePolicy",
+        "iam:GetRolePolicy",
+        "iam:ListRolePolicies",
+        "iam:ListAttachedRolePolicies"
+      ],
+      "Resource": [
+        "arn:aws:iam::227281812993:role/neoversity-lesson-7-ebs-csi-irsa",
+        "arn:aws:iam::227281812993:role/neoversity-lesson-7-kaniko-irsa",
+        "arn:aws:iam::227281812993:role/neoversity-lesson-7-external-secrets-irsa"
+      ]
+    },
+    {
+      "Sid": "AttachOnlyReviewedCSIPolicy",
+      "Effect": "Allow",
+      "Action": [
+        "iam:AttachRolePolicy"
+      ],
+      "Resource": "arn:aws:iam::227281812993:role/neoversity-lesson-7-ebs-csi-irsa",
+      "Condition": {
+        "ArnEquals": {
+          "iam:PolicyARN": "arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy"
+        }
+      }
+    },
+    {
+      "Sid": "ReadCSIPolicy",
+      "Effect": "Allow",
+      "Action": [
+        "iam:GetPolicy",
+        "iam:GetPolicyVersion"
+      ],
+      "Resource": "arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy"
+    },
+    {
+      "Sid": "PassCSIToEKSOnly",
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "arn:aws:iam::227281812993:role/neoversity-lesson-7-ebs-csi-irsa",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": "eks.amazonaws.com"
+        }
+      }
+    }
+  ]
+}

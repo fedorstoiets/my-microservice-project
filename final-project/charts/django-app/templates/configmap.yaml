@@ -1,6 +1,10 @@
+{{- $_ := required "config.POSTGRES_HOST must be the RDS endpoint" .Values.config.POSTGRES_HOST -}}
 apiVersion: v1
 kind: ConfigMap
 metadata:
+  namespace: {{ .Release.Namespace }}
+  annotations:
+    argocd.argoproj.io/sync-wave: "-3"
   name: {{ include "django-app.fullname" . }}-config
   labels:
     {{- include "django-app.labels" . | nindent 4 }}

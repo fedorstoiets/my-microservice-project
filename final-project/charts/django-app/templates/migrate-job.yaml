@@ -1,0 +1,47 @@
+{{- if .Values.migrations.enabled }}
+apiVersion: batch/v1
+kind: Job
+metadata:
+  namespace: {{ .Release.Namespace }}
+  name: {{ include "django-app.fullname" . }}-migrate
+  annotations:
+    argocd.argoproj.io/hook: Sync
+    argocd.argoproj.io/sync-wave: "-1"
+    argocd.argoproj.io/hook-delete-policy: BeforeHookCreation,HookSucceeded
+
+spec:
+  backoffLimit: 3
+  activeDeadlineSeconds: 600
+  template:
+    spec:
+      restartPolicy: Never
+      automountServiceAccountToken: false
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      volumes:
+        - name: tmp
+          emptyDir: { sizeLimit: 64Mi }
+        - name: credentials
+          secret:
+            secretName: {{ .Values.secretName }}
+            defaultMode: 0440
+      containers:
+        - name: migrate
+          image: {{ include "django-app.image" . | quote }}
+          securityContext:
+            {{- toYaml .Values.containerSecurityContext | nindent 12 }}
+          volumeMounts:
+            - { name: tmp, mountPath: /tmp }
+            - { name: credentials, mountPath: /var/run/django-secrets, readOnly: true }
+          command: ["python", "manage.py", "migrate", "--noinput"]
+          env:
+            - { name: POSTGRES_PASSWORD_FILE, value: /var/run/django-secrets/POSTGRES_PASSWORD }
+          envFrom:
+            - configMapRef:
+                name: {{ include "django-app.fullname" . }}-config
+            - secretRef:
+                name: {{ .Values.secretName }}
+          resources:
+            requests: { cpu: 100m, memory: 128Mi }
+            limits: { cpu: 500m, memory: 512Mi }
+{{- end }}

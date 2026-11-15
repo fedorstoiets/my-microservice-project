@@ -1,0 +1,14 @@
+# Existing cluster only; metadata is not approval to apply.
+aws_region          = "us-east-2"
+cluster_name        = "neoversity-lesson-7"
+ecr_repository_name = "lesson-7-django"
+# Observed compatible 2026-11-15; recheck at plan review.
+ebs_csi_addon_version = "v1.68.0-eksbuild.1"
+# Supply actual administrator-verified ARN after the SCP discovery restriction is resolved.
+existing_oidc_provider_arn = null
+create_oidc_provider       = false
+oidc_absence_verified      = false
+prepare_jenkins_storage    = true
+enable_eso                = false
+secret_arns               = []
+kms_key_arns              = []

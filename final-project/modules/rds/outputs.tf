@@ -30,6 +30,12 @@ output "master_secret_arn" {
 output "parameter_group_name" {
   value = var.use_aurora ? aws_rds_cluster_parameter_group.aurora[0].name : aws_db_parameter_group.standard[0].name
 }
+output "instance_parameter_group_name" {
+  description = "The instance group that applies connection, memory and query logging settings."
+  value = var.use_aurora ? (
+    var.engine == "mysql" ? aws_db_parameter_group.aurora_mysql[0].name : aws_db_parameter_group.aurora_postgresql[0].name
+  ) : aws_db_parameter_group.standard[0].name
+}
 output "subnet_group_name" {
   value = aws_db_subnet_group.main.name
 }

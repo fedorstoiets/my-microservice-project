@@ -1,0 +1,29 @@
+{
+  "checked_at": "2026-11-15T13:13:53.617799+00:00",
+  "status": "passed",
+  "scope": "Source/documentation review only; runtime and external rubric completeness not asserted",
+  "reviewer": "Codex repository review",
+  "topics": [
+    "existing AWS reuse and additive ownership",
+    "five Terraform roots and four RDS engine/mode plan tests",
+    "independent bootstrap/infra/platform without homework state",
+    "explicit no-apply HOLD and existing-controller recovery boundary",
+    "submitted Jenkins pipeline and source security scopes",
+    "RDS/ESO/IRSA and credentials",
+    "runtime timestamps/source/image limitations",
+    "port-forwards and monitoring/HPA verification",
+    "costs and controlled cleanup",
+    "exact committed-source packaging"
+  ],
+  "files": {
+    "README.md": "7c14b9d377facb7e9554cd9bb36a371a4e69496dac4a8e96e81fc8631c0aa571",
+    "docs/DEPLOYMENT.md": "3c2f2a91e0b97f6f025d77a024a6218acfea98bd91360e8db50f1fbed91887d6",
+    "docs/MIGRATION-RUNBOOK.md": "fb7bee22cc730dcecc5e9fdfa1a746ee34d5eb29ff6e721350627064ba537c6d",
+    "docs/EXECUTION-PLAN.md": "eb331bec1bb4ce1b8058254025de3893c90be7ea6e9faf0b5b9dcfcb87f9427f",
+    "docs/ACCEPTANCE-EVIDENCE.md": "8f430a5e3a74577dd85817bd520d928dcdaff343d3ceed18ff11a0b4f7233e9f",
+    "docs/REQUIREMENTS-MAP.md": "e6d5c8b557fa427c47623e830e09530b3a625efd4bdb75727a6f3a6647957a7c",
+    "docs/GoalDevOps.md": "b86c9eb365be1d89ece2ef14ff92e0707b81da79c451582bce82348cf47d9d7e",
+    "docs/FINAL-SUBMISSION.md": "11f4f316c2c042fdd10ea38c72888ab170ff62d949c22acef9062a94a3128317",
+    "docs/SUBMISSION-CHECKLIST.md": "c8d34dbe0cd65423f123bcea2fcf2581c88e6e440b9b668fee79198443c0d13a"
+  }
+}

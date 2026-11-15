@@ -1,0 +1,89 @@
+{
+  "checked_at": "2026-11-15T13:03:08.690626+00:00",
+  "aws_read_metadata": {
+    "postgres": {
+      "version": "18.3",
+      "family": "postgres18",
+      "parameter_metadata": [
+        {
+          "ParameterName": "log_statement",
+          "ApplyType": "dynamic",
+          "IsModifiable": true,
+          "AllowedValues": "none,ddl,mod,all"
+        },
+        {
+          "ParameterName": "max_connections",
+          "ApplyType": "static",
+          "IsModifiable": true,
+          "AllowedValues": "6-262143"
+        },
+        {
+          "ParameterName": "work_mem",
+          "ApplyType": "dynamic",
+          "IsModifiable": true,
+          "AllowedValues": "64-2147483647"
+        }
+      ]
+    },
+    "mysql": {
+      "version": "8.4.11",
+      "family": "mysql8.4",
+      "parameter_metadata": [
+        {
+          "ParameterName": "general_log",
+          "ApplyType": "dynamic",
+          "IsModifiable": true,
+          "AllowedValues": "0,1"
+        },
+        {
+          "ParameterName": "max_connections",
+          "ApplyType": "dynamic",
+          "IsModifiable": true,
+          "AllowedValues": "1-100000"
+        },
+        {
+          "ParameterName": "sort_buffer_size",
+          "ApplyType": "dynamic",
+          "IsModifiable": true,
+          "AllowedValues": "32768-18446744073709551615"
+        }
+      ]
+    },
+    "aurora-postgresql": {
+      "version": "17.9",
+      "family": "aurora-postgresql17",
+      "parameter_metadata": []
+    },
+    "aurora-mysql": {
+      "version": "8.0.mysql_aurora.3.10.3",
+      "family": "aurora-mysql8.0",
+      "parameter_metadata": [],
+      "instance_parameter_metadata": [
+        {
+          "ParameterName": "general_log",
+          "ApplyType": "dynamic",
+          "IsModifiable": true,
+          "AllowedValues": "0,1"
+        },
+        {
+          "ParameterName": "max_connections",
+          "ApplyType": "dynamic",
+          "IsModifiable": true,
+          "AllowedValues": "1-16000"
+        },
+        {
+          "ParameterName": "sort_buffer_size",
+          "ApplyType": "dynamic",
+          "IsModifiable": true,
+          "AllowedValues": "32768-18446744073709551615"
+        }
+      ]
+    }
+  },
+  "offline_mode_tests": "tests/rds-modes.tftest.hcl",
+  "live_database_changes": false,
+  "scope": "Parameter metadata and source placement, not successful live Aurora deployment",
+  "aurora_postgresql_instance_parameter_source": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraPostgreSQL.Reference.ParameterGroups.html",
+  "aurora_mysql_instance_parameter_source": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Reference.ParameterGroups.html",
+  "source_correction": "Attach per-instance coursework tuning to Aurora DB instances; Aurora MySQL general_log belongs in instance parameter group and its dynamic values use immediate application. Standard PostgreSQL configuration preserved."
+}

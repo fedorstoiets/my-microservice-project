@@ -1,0 +1,41 @@
+# REVIEW TEMPLATE ONLY. Do not submit to a live cluster without storage-cutover approval.
+# Prepopulate the backup PVC with the verified archive after explicit authorization.
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: jenkins-home-restore
+  namespace: jenkins
+spec:
+  suspend: true
+  backoffLimit: 0
+  template:
+    spec:
+      restartPolicy: Never
+      automountServiceAccountToken: false
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1000
+        fsGroup: 1000
+        seccompProfile: { type: RuntimeDefault }
+      containers:
+        - name: restore
+          image: REQUIRED_VERIFIED_CI_TOOLS_IMAGE_DIGEST
+          command: [python, /restore/jenkins-home.py, /backup/jenkins-home.tar.gz, --restore-to, /home-volume/restored]
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities: { drop: [ALL] }
+          resources:
+            requests: { cpu: 100m, memory: 128Mi }
+            limits: { cpu: 500m, memory: 512Mi }
+          volumeMounts:
+            - { name: home, mountPath: /home-volume }
+            - { name: backup, mountPath: /backup, readOnly: true }
+            - { name: script, mountPath: /restore, readOnly: true }
+      volumes:
+        - name: home
+          persistentVolumeClaim: { claimName: jenkins-home }
+        - name: backup
+          persistentVolumeClaim: { claimName: REQUIRED_PRIVATE_BACKUP_PVC }
+        - name: script
+          configMap: { name: jenkins-restore-script }

@@ -1,68 +1,56 @@
-# Neoversity DevOps — Final Project Submission
+# Neoversity DevOps final-project submission
 
-## Overview
+> **November 15, 2026 verification update:** See [CI Build #17 acceptance](CI-BUILD-17-ACCEPTANCE.md). Earlier CI status rows are historical; the successful Replay does not establish complete SCM-to-GitOps deployment.
 
-A Django microservice deployed to Amazon EKS in `us-east-2`, using a private Amazon RDS PostgreSQL database, Amazon ECR images, Jenkins build/push, Argo CD GitOps delivery, and Prometheus/Grafana monitoring. Provisioning is organized with Terraform modules and isolated state ownership for earlier lessons.
+The implementation targets the existing account `227281812993`, region
+`us-east-2`, EKS `neoversity-lesson-7`. Migration HOLD is active. No second cluster,
+39-resource transfer, live apply, Jenkins restart, SQL or GitOps rollout was
+performed by this implementation. Runtime observations below are timestamped
+baseline evidence, not proof this source revision is deployed. No grade is claimed.
 
-**Source:** https://github.com/fedorstoiets/my-microservice-project/tree/final-project
+## Evidence by grading category
 
-**Live GitOps chart:** https://github.com/fedorstoiets/neoversity-django-gitops/tree/main/charts/django-app
+| Category | Supported evidence | Remaining verification |
+|---|---|---|
+| Infrastructure architecture — 20 | Complete VPC/EKS/ECR/RDS/Jenkins/Argo/monitoring modules; independent bootstrap→infra→platform workflow with no homework remote states; five validated roots and 14 mocked plans, including four RDS modes. Existing-addons implements missing prerequisites without owning old resources. | Live clean bootstrap is simulated, not demonstrated. Additive existing-cluster plan/apply needs SCP/actual OIDC inputs and explicit approval. |
+| Security — 20 | Strict source scan: 0 CRITICAL/0 HIGH; exact IRSA issuer/audience/subjects, scoped secret/KMS permissions, non-root app, TLS/role separation, protected storage. AWS metadata corrected Aurora MySQL instance parameter placement. | OIDC discovery is SCP-denied. Existing image scan/digest relationship, actual IRSA/ESO/secret reconciliation and current DB least-privilege/TLS proof remain open. Source scan is not deployed-image safety. |
+| Deployment and CI/CD — 30 | Submitted Jenkinsfile checks out exact SCM revision, tests, strictly scans IaC/dependencies/rendered manifests, builds/scans ECR digest, publishes GitOps and verifies exact Argo/image/DB health. CI Bash dependency fixed. Existing app HTTP health reports PostgreSQL connected and Argo is Synced/Healthy. | A successful final-project build is still required; old lesson-8-9 builds are not substituted. Jenkins API access was denied; images are unbuilt here because Docker daemon is unavailable. Publishing/deployment require explicit scope. |
+| Monitoring and HPA — 20 | Existing Prometheus: 19/19 targets up; live Django CPU/memory and HPA desired replicas returned numeric values. HPA: CPU metric valid, current/desired 2, CPU utilization 3%. Custom five-panel Grafana dashboard ConfigMap is provisioned. | Controlled load scaling/recovery, Grafana authenticated UI evidence and Jenkins persistence replacement-survival have not been performed. |
+| Documentation — 10 | README, exact deployment examples, existing-owner/additive boundaries, CI/CD, RDS/secrets, verification, costs and recovery/cleanup precautions. Source/archive manifest and checksum validation. | Original instructor rubric/message is unavailable beyond the versioned repository's mentor-feedback summary. GitHub final publication and final acceptance remain open. |
 
-**AWS region:** `us-east-2` | **EKS cluster:** `neoversity-lesson-7` | **Namespace:** `neoversity` | **Database:** `neoversity-final-db`
+## Evidence files
 
-## Architecture and deployment flow
+- `evidence/local-validation.json`: actual source fingerprint and successful local suite.
+- `evidence/security-summary.json`: actual strict source results; exceptions remain separate.
+- `evidence/runtime-implementation.json`: observed image reference and container imageID,
+  ECR tag digest, GitOps revision, RDS/HTTP, dashboard, Prometheus/HPA metadata.
+- `evidence/rds-mode-metadata.json`: AWS parameter metadata and official scope references;
+  four engine/mode tests are plans, not four deployed databases.
+- `evidence/jenkins-backup-check.json`: 79 files restored locally with zero hash mismatches;
+  required keys present, no plugin binaries in that old archive. Application consistency,
+  Jenkins boot and credential decryption are not proven.
+- `evidence/documentation-review.json`: documentation coverage/hash review, not live success.
 
-`GitHub source (lesson-8-9) → Jenkins (Kubernetes Kaniko build agent) → Amazon ECR → GitOps main (image tag updated) → Argo CD → Amazon EKS (Django Deployment + HPA) → private Amazon RDS PostgreSQL`. Prometheus gathers cluster/container metrics; Grafana provides standard dashboards and a custom Neoversity dashboard.
+The deployed tag `fea9e0c3973a` resolves to ECR digest
+`sha256:fd3deed1868090c735b5a810c668934bcdbb52e633b0641c8b77125881aab6e7`;
+containers report imageID
+`sha256:57c93b7fa8f4735160b9da71a0ca4c41071f010721050fa4f8b1e0ec7a6b5def`.
+Their relation may be index/platform manifests; it was not verified because later
+AWS profile credential export failed. They must not be silently treated as equal
+or labeled malicious tag drift without manifest evidence. Argo revision observed:
+`43a3a1b0b4d9129b3512d89bdf74d27089537862`. The current source was not deployed.
 
-This final-project folder reuses infrastructure deployed and owned by separate Terraform states (`lesson-5`, `lesson-7`, `lesson-8-9`) and adds RDS plus monitoring under `final-project`. **Do not apply duplicate infrastructure modules from other states.** The bundled `charts/django-app` directory is a reference chart; the **live, authoritative** GitOps chart is in the separate repository linked above. It is the live GitOps `main` values that specify RDS host/user and `django-rds-secrets`.
+## Mentor items and submission contents
 
-## Functional evidence
+The [versioned mentor-feedback summary](https://github.com/fedorstoiets/my-microservice-project/blob/ef1eea3976651bbf96a3306a77f7b0ddd741e8ff/final-project/README.md#mentor-feedback-to-close-before-submission)
+asks for four RDS mode plans/parameters, persistent Jenkins/CSI, IRSA where required,
+JCasC/Kubernetes-backed GitHub credentials, Argo private-repository access, RDS
+injection/migrations and a successful build from final-project. The source covers
+those implementations; the open runtime requirements above are not checked off.
 
-- Jenkins pipeline built the Django container and pushed a commit-derived tag to ECR; a successful previous build was observed.
-- Argo CD Application `django-gitops` was `Synced / Healthy`.
-- Django had 2/2 available replicas; HPA allowed 2–6 replicas at 70% CPU target.
-- RDS PostgreSQL 18.6 was available, private (`publicly_accessible=false`) and encrypted. Django returned `('neoversity_db', 'dbadmin')` from a live database query using the RDS hostname.
-- `/health/` returned HTTP 200 with `{"status":"ok","database":"postgresql","connected":true`; homepage returned HTTP 2xx.
-- Prometheus returned numeric values for Django ready replicas, HPA desired replicas, CPU, and memory; Grafana sidecar provisioned `Neoversity — Final DevOps / TOP` from a ConfigMap.
-- `terraform fmt -check -recursive` and `terraform validate` passed at the final-project root.
-- The comprehensive operational verifier reported **PASS=11 FAIL=0 SKIP=0**. See `docs/evidence/verification-summary.txt` and `docs/evidence/smoke-test.txt`.
-
-## Verification (Ubuntu WSL)
-
-```bash
-cd ~/Neoversity/my-microservice-project/final-project
-bash scripts/smoke-test.sh
-bash scripts/verify-final.sh
-kubectl -n argocd get application django-gitops
-kubectl -n neoversity get deploy,hpa
-kubectl -n monitoring get pods
-```
-
-The verification script uses AWS CLI credentials; refresh AWS SSO/login first if required. `scripts/security-scan.sh` runs Trivy configuration scanning, but its default non-strict mode does **not** mean zero findings.
-
-## Infrastructure ownership and safe operations
-
-- `lesson-5` Terraform state owns the original VPC/subnets and ECR resources.
-- `lesson-7` state owns the existing EKS cluster and application ECR resources.
-- `lesson-8-9` state owns Jenkins and Argo CD.
-- `final-project` state owns new private RDS and the monitoring Helm release. Use the existing `backend.hcl` and local `*.tfvars` files (ignored by Git) when initializing.
-- No credentials, Terraform state, plans, `.env`, or live generated reports should be committed.
-- RDS, EKS nodes, NAT gateways, EBS/EFS, and load balancers incur AWS charges until explicitly cleaned up; destroy resources *only from the Terraform state that owns them*.
-
-## Known limitations / mentor-feedback items
-
-- Jenkins currently runs with `persistence.enabled=false`; its home is on an ephemeral `emptyDir`. A private local backup exists but is not included in submission.
-- EBS CSI add-on and `gp3` persistent Jenkins PVC have **not** been installed.
-- Kaniko uses **EKS Pod Identity**, not IRSA. Account SCP explicitly denied reading IAM OIDC providers, so this substitution must be disclosed rather than labeled IRSA.
-- Jenkins JCasC defines a seed job, but GitHub credential lifecycle and private GitOps repository credential declarations are not yet fully codified in IaC.
-- The temporary in-cluster PostgreSQL Deployment is retained as a fallback and uses ephemeral storage. Django uses RDS, not that deployment.
-- Trivy reported HIGH/CRITICAL IaC findings (including public EKS API endpoint exposure and container security contexts). The passed operational verifier is *not* a strict security approval. See `docs/SECURITY-REVIEW.md` and `docs/evidence/trivy-findings.txt`.
-- AWS API endpoint and other permissions must be reviewed before treating this as a production deployment. This is a coursework/lab environment.
-
-## Submission contents
-
-- Terraform source and module definitions in `final-project/`
-- Monitoring ConfigMap and dashboard JSON in `monitoring/`
-- Smoke test, security scan and consolidated verification scripts in `scripts/`
-- Documentation in `docs/` and sanitized test evidence in `docs/evidence/`
-- The repository source archive generated from Git `final-project` branch, without credentials/state/reports
+The source archive includes Terraform/modules, charts, Django/Dockerfiles,
+Jenkinsfile, scripts, examples and sanitized evidence. Live credentials, tfvars,
+state/plans, Jenkins backups, caches and private reports are excluded. Source
+publication must preserve the current remote branch head and unrelated files.
+Use the ZIP's MANIFEST.json for its exact committed source revision and draft/
+acceptance status; a candidate archive is not proof of all G01–G20 passing.

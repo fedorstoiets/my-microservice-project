@@ -1,0 +1,70 @@
+{
+  "execution_authorized": false,
+  "not_a_tfvars_file": true,
+  "preserve_existing_rds_and_helm": true,
+  "profile_rule": "Continuity only for ownership rehearsal; after approved P02 inherit hardened profile and retained KMS, never revert",
+  "P03": {
+    "ebs_csi_addon_version": "v1.68.0-eksbuild.1",
+    "enable_irsa": true,
+    "enable_ebs_csi": true,
+    "prepare_jenkins_storage": true,
+    "enable_delivery_v2": false,
+    "existing_oidc_provider_arn": "BLOCKED pending administrator discovery/ownership proof; never default blindly to create",
+    "storage_review": "storage-render.review.yaml",
+    "expected_objects": [
+      "aws_iam_role.ebs_csi[0]",
+      "aws_iam_role.kaniko_irsa[0]",
+      "aws_iam_role_policy_attachment.ebs_csi[0]",
+      "aws_iam_role_policy.kaniko_irsa_ecr[0]",
+      "module.eks.aws_eks_addon.ebs_csi[0]",
+      "kubernetes_storage_class_v1.gp3[0]",
+      "kubernetes_persistent_volume_claim_v1.jenkins_home[0]",
+      "module.kaniko_identity.kubernetes_service_account_v1.builder (annotation update only)"
+    ],
+    "preserve": "Deployed Helm values, frozen Applications chart, current Pod Identity, all RDS resources"
+  },
+  "P04": {
+    "external_secrets_chart_version": "2.15.0",
+    "enable_external_secrets": true,
+    "proposed_role": "arn:aws:iam::227281812993:role/neoversity-lesson-7-external-secrets-irsa",
+    "actual_app_secret_arn": null,
+    "actual_signing_secret_arn": null,
+    "actual_gitops_secret_arn": null,
+    "actual_secret_kms_key_arns": null,
+    "app_secret_required_keys": [
+      "username",
+      "password"
+    ],
+    "signing_secret_required_keys": [
+      "secret_key"
+    ],
+    "gitops_secret_required_keys": [
+      "read_token",
+      "push_token"
+    ],
+    "secret_values_in_package": false
+  },
+  "P05": {
+    "jenkins_namespace": "jenkins",
+    "target_claim": "jenkins-home",
+    "target_subdirectory": "restored",
+    "restore_uid": 1000,
+    "actual_backup_claim": null,
+    "actual_scanned_restore_image": null,
+    "restored_pv_and_az": null,
+    "jenkins_restore_verified": false,
+    "enable_delivery_v2": false,
+    "restore_manifest": "BLOCKED: scripts/render-jenkins-restore.py requires real scanned image digest and actual backup PVC"
+  },
+  "P06": {
+    "DEPLOY": false,
+    "PUBLISH_GITOPS": false,
+    "gitops_publish_requires_separate_approval": true
+  },
+  "P07": {
+    "enable_application_sync": false,
+    "enable_application_pruning": false,
+    "enable_database_bootstrap": false,
+    "existing_database_sql_requires_separate_approval": true
+  }
+}

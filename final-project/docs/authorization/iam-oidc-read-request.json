@@ -1,0 +1,22 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DiscoverOIDCOwnership",
+      "Effect": "Allow",
+      "Action": [
+        "iam:ListOpenIDConnectProviders"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ReadExpectedIssuerIfProviderExists",
+      "Effect": "Allow",
+      "Action": [
+        "iam:GetOpenIDConnectProvider",
+        "iam:ListOpenIDConnectProviderTags"
+      ],
+      "Resource": "arn:aws:iam::227281812993:oidc-provider/oidc.eks.us-east-2.amazonaws.com/id/DDF930235860D5B13B8F3342191ED95F"
+    }
+  ]
+}

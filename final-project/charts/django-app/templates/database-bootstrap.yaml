@@ -1,0 +1,57 @@
+{{- if .Values.databaseBootstrap.enabled }}
+{{- if not .Values.externalSecrets.enabled }}
+{{- fail "databaseBootstrap requires externalSecrets.enabled=true" }}
+{{- end }}
+apiVersion: external-secrets.io/v1
+kind: ExternalSecret
+metadata:
+  namespace: {{ .Release.Namespace }}
+  name: django-db-admin
+  annotations: { argocd.argoproj.io/sync-wave: "-3" }
+spec:
+  refreshInterval: 5m
+  secretStoreRef: { kind: ClusterSecretStore, name: {{ .Values.externalSecrets.storeName }} }
+  target: { name: django-db-admin, creationPolicy: Owner }
+  data:
+    - secretKey: ADMIN_USER
+      remoteRef: { key: {{ required "databaseBootstrap.adminSecretArn required" .Values.databaseBootstrap.adminSecretArn | quote }}, property: username }
+    - secretKey: ADMIN_PASSWORD
+      remoteRef: { key: {{ .Values.databaseBootstrap.adminSecretArn | quote }}, property: password }
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  namespace: {{ .Release.Namespace }}
+  name: django-db-bootstrap
+  annotations:
+    argocd.argoproj.io/hook: Sync
+    argocd.argoproj.io/sync-wave: "-2"
+    argocd.argoproj.io/hook-delete-policy: BeforeHookCreation,HookSucceeded
+spec:
+  backoffLimit: 2
+  activeDeadlineSeconds: 600
+  template:
+    spec:
+      restartPolicy: Never
+      automountServiceAccountToken: false
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      volumes:
+        - name: tmp
+          emptyDir: { sizeLimit: 64Mi }
+      containers:
+        - name: bootstrap
+          image: {{ include "django-app.image" . | quote }}
+          command: [python, /app/bootstrap_database.py]
+          securityContext:
+            {{- toYaml .Values.containerSecurityContext | nindent 12 }}
+          volumeMounts:
+            - { name: tmp, mountPath: /tmp }
+          envFrom:
+            - configMapRef: { name: {{ include "django-app.fullname" . }}-config }
+            - secretRef: { name: {{ .Values.secretName }} }
+            - secretRef: { name: django-db-admin }
+          resources:
+            requests: { cpu: 100m, memory: 128Mi }
+            limits: { cpu: 500m, memory: 512Mi }
+{{- end }}

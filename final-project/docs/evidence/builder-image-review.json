@@ -1,0 +1,137 @@
+{
+  "checked_at": "2026-11-15T02:11:46.016464+00:00",
+  "images": {
+    "archived": {
+      "reference": "gcr.io/kaniko-project/executor@sha256:c3109d5926a997b100c4343944e06c6b30a6804b2f9abe0994d3de6ef92b028e",
+      "counts": {
+        "HIGH": 228,
+        "LOW": 34,
+        "MEDIUM": 288,
+        "UNKNOWN": 13,
+        "CRITICAL": 11
+      },
+      "distinct_advisories": 159,
+      "unknown_advisories": [
+        {
+          "id": "GO-2026-5932",
+          "package": "golang.org/x/crypto",
+          "version": "v0.24.0",
+          "url": null
+        },
+        {
+          "id": "CVE-2026-39824",
+          "package": "golang.org/x/sys",
+          "version": "v0.21.0",
+          "url": "https://avd.aquasec.com/nvd/cve-2026-39824"
+        },
+        {
+          "id": "CVE-2026-97054",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "url": "https://avd.aquasec.com/nvd/cve-2026-97054"
+        },
+        {
+          "id": "CVE-2026-39824",
+          "package": "golang.org/x/sys",
+          "version": "v0.21.0",
+          "url": "https://avd.aquasec.com/nvd/cve-2026-39824"
+        },
+        {
+          "id": "CVE-2026-97054",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "url": "https://avd.aquasec.com/nvd/cve-2026-97054"
+        },
+        {
+          "id": "CVE-2026-39824",
+          "package": "golang.org/x/sys",
+          "version": "v0.21.0",
+          "url": "https://avd.aquasec.com/nvd/cve-2026-39824"
+        },
+        {
+          "id": "CVE-2026-97054",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "url": "https://avd.aquasec.com/nvd/cve-2026-97054"
+        },
+        {
+          "id": "GO-2026-5932",
+          "package": "golang.org/x/crypto",
+          "version": "v0.24.0",
+          "url": null
+        },
+        {
+          "id": "CVE-2026-39824",
+          "package": "golang.org/x/sys",
+          "version": "v0.21.0",
+          "url": "https://avd.aquasec.com/nvd/cve-2026-39824"
+        },
+        {
+          "id": "CVE-2026-97054",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "url": "https://avd.aquasec.com/nvd/cve-2026-97054"
+        },
+        {
+          "id": "GO-2026-5932",
+          "package": "golang.org/x/crypto",
+          "version": "v0.24.0",
+          "url": null
+        },
+        {
+          "id": "CVE-2026-39824",
+          "package": "golang.org/x/sys",
+          "version": "v0.21.0",
+          "url": "https://avd.aquasec.com/nvd/cve-2026-39824"
+        },
+        {
+          "id": "CVE-2026-97054",
+          "package": "stdlib",
+          "version": "v1.22.5",
+          "url": "https://avd.aquasec.com/nvd/cve-2026-97054"
+        }
+      ],
+      "metadata": {
+        "os": null,
+        "architecture": "amd64"
+      }
+    },
+    "maintained": {
+      "reference": "ghcr.io/osscontainertools/kaniko@sha256:ebc38a988e5aa1aaea99240e931aeeeff9d8e6bb5a0bd0e00eaf79973bf0a773",
+      "counts": {
+        "UNKNOWN": 4
+      },
+      "distinct_advisories": 2,
+      "unknown_advisories": [
+        {
+          "id": "GO-2026-5932",
+          "package": "golang.org/x/crypto",
+          "version": "v0.58.0",
+          "url": null
+        },
+        {
+          "id": "CVE-2026-97054",
+          "package": "stdlib",
+          "version": "v1.27.3",
+          "url": "https://avd.aquasec.com/nvd/cve-2026-97054"
+        },
+        {
+          "id": "GO-2026-5932",
+          "package": "golang.org/x/crypto",
+          "version": "v0.58.0",
+          "url": null
+        },
+        {
+          "id": "CVE-2026-97054",
+          "package": "stdlib",
+          "version": "v1.27.3",
+          "url": "https://avd.aquasec.com/nvd/cve-2026-97054"
+        }
+      ],
+      "metadata": {
+        "os": null,
+        "architecture": "amd64"
+      }
+    }
+  }
+}

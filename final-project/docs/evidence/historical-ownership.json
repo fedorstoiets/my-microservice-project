@@ -1,0 +1,368 @@
+{
+  "status": "historical_snapshot_only",
+  "snapshot": "2026-11-14T20:12:31Z",
+  "live_recheck_required": true,
+  "states": {
+    "final-project": {
+      "serial": 3,
+      "lineage": "1f6fe0e5-2745-71ae-e983-641f5c3353df",
+      "sha256": "ab6edfdcbfc608f7d9941163d3f8ed349f7538317f443fab3e954d4117ca291f",
+      "managed_instances": 6
+    },
+    "lesson-5": {
+      "serial": 7,
+      "lineage": "f95dcb4c-6c91-b1cb-1a5e-b4dc6783f1ac",
+      "sha256": "32d30d7155250d7f5a03b3d7a37a4599380ee58bda5d593a3e9e1a64a6d0f8c5",
+      "managed_instances": 26
+    },
+    "lesson-7": {
+      "serial": 2,
+      "lineage": "edf8ddf6-83fa-eb27-c2c3-9005430dd657",
+      "sha256": "2e160cb3a4e43d5b4df526d5cec07670fc12c9e7566f10a5584f118dd11b86af",
+      "managed_instances": 10
+    },
+    "lesson-8-9": {
+      "serial": 4,
+      "lineage": "5dbb0b14-90bf-f05a-db34-553365cf690a",
+      "sha256": "1e7dfd6c7a6e830936ade299258d5dcba8f1debd86e13a9e4b1a007719aa5be5",
+      "managed_instances": 10
+    }
+  },
+  "duplicate_candidate_count": 0,
+  "helm_releases": {
+    "root.monitoring": {
+      "name": "monitoring",
+      "chart": "kube-prometheus-stack",
+      "version": "93.2.2"
+    },
+    "module.argo_cd.applications": {
+      "name": "neoversity-apps",
+      "chart": "modules/argo_cd/charts/applications",
+      "version": "0.1.0"
+    },
+    "module.argo_cd.argocd": {
+      "name": "argocd",
+      "chart": "argo-cd",
+      "version": "10.18.0"
+    },
+    "module.jenkins.jenkins": {
+      "name": "jenkins",
+      "chart": "jenkins",
+      "version": "5.12.0"
+    }
+  },
+  "migration_map": [
+    {
+      "source_state": "final-project",
+      "source_address": "helm_release.monitoring[0]",
+      "target_address": "helm_release.monitoring[0]",
+      "action": "retain_in_final_state"
+    },
+    {
+      "source_state": "final-project",
+      "source_address": "module.rds[0].aws_db_instance.standard[0]",
+      "target_address": "module.rds[0].aws_db_instance.standard[0]",
+      "action": "retain_in_final_state"
+    },
+    {
+      "source_state": "final-project",
+      "source_address": "module.rds[0].aws_db_parameter_group.standard[0]",
+      "target_address": "module.rds[0].aws_db_parameter_group.standard[0]",
+      "action": "retain_in_final_state"
+    },
+    {
+      "source_state": "final-project",
+      "source_address": "module.rds[0].aws_db_subnet_group.main",
+      "target_address": "module.rds[0].aws_db_subnet_group.main",
+      "action": "retain_in_final_state"
+    },
+    {
+      "source_state": "final-project",
+      "source_address": "module.rds[0].aws_security_group.database",
+      "target_address": "module.rds[0].aws_security_group.database",
+      "action": "retain_in_final_state"
+    },
+    {
+      "source_state": "final-project",
+      "source_address": "module.rds[0].aws_vpc_security_group_ingress_rule.from_sg[\"sg-0072c2bc38f9d15bc\"]",
+      "target_address": "module.rds[0].aws_vpc_security_group_ingress_rule.from_sg[\"sg-0072c2bc38f9d15bc\"]",
+      "action": "retain_in_final_state"
+    },
+    {
+      "source_state": "lesson-5",
+      "source_address": "module.ecr.aws_ecr_repository.main",
+      "target_address": null,
+      "action": "retain_legacy_owner"
+    },
+    {
+      "source_state": "lesson-5",
+      "source_address": "module.ecr.aws_ecr_repository_policy.main",
+      "target_address": null,
+      "action": "retain_legacy_owner"
+    },
+    {
+      "source_state": "lesson-5",
+      "source_address": "module.s3_backend.aws_dynamodb_table.locks",
+      "target_address": null,
+      "action": "retain_legacy_owner"
+    },
+    {
+      "source_state": "lesson-5",
+      "source_address": "module.s3_backend.aws_s3_bucket.state",
+      "target_address": null,
+      "action": "retain_legacy_owner"
+    },
+    {
+      "source_state": "lesson-5",
+      "source_address": "module.s3_backend.aws_s3_bucket_public_access_block.state",
+      "target_address": null,
+      "action": "retain_legacy_owner"
+    },
+    {
+      "source_state": "lesson-5",
+      "source_address": "module.s3_backend.aws_s3_bucket_server_side_encryption_configuration.state",
+      "target_address": null,
+      "action": "retain_legacy_owner"
+    },
+    {
+      "source_state": "lesson-5",
+      "source_address": "module.s3_backend.aws_s3_bucket_versioning.state",
+      "target_address": null,
+      "action": "retain_legacy_owner"
+    },
+    {
+      "source_state": "lesson-5",
+      "source_address": "module.vpc.aws_eip.nat[0]",
+      "target_address": "module.vpc.aws_eip.nat[0]",
+      "action": "review_transfer"
+    },
+    {
+      "source_state": "lesson-5",
+      "source_address": "module.vpc.aws_internet_gateway.main",
+      "target_address": "module.vpc.aws_internet_gateway.main",
+      "action": "review_transfer"
+    },
+    {
+      "source_state": "lesson-5",
+      "source_address": "module.vpc.aws_nat_gateway.main[0]",
+      "target_address": "module.vpc.aws_nat_gateway.main[0]",
+      "action": "review_transfer"
+    },
+    {
+      "source_state": "lesson-5",
+      "source_address": "module.vpc.aws_route.private_outbound[0]",
+      "target_address": "module.vpc.aws_route.private_outbound[0]",
+      "action": "review_transfer"
+    },
+    {
+      "source_state": "lesson-5",
+      "source_address": "module.vpc.aws_route_table.private",
+      "target_address": "module.vpc.aws_route_table.private",
+      "action": "review_transfer"
+    },
+    {
+      "source_state": "lesson-5",
+      "source_address": "module.vpc.aws_route_table.public",
+      "target_address": "module.vpc.aws_route_table.public",
+      "action": "review_transfer"
+    },
+    {
+      "source_state": "lesson-5",
+      "source_address": "module.vpc.aws_route_table_association.private[0]",
+      "target_address": "module.vpc.aws_route_table_association.private[0]",
+      "action": "review_transfer"
+    },
+    {
+      "source_state": "lesson-5",
+      "source_address": "module.vpc.aws_route_table_association.private[1]",
+      "target_address": "module.vpc.aws_route_table_association.private[1]",
+      "action": "review_transfer"
+    },
+    {
+      "source_state": "lesson-5",
+      "source_address": "module.vpc.aws_route_table_association.private[2]",
+      "target_address": "module.vpc.aws_route_table_association.private[2]",
+      "action": "review_transfer"
+    },
+    {
+      "source_state": "lesson-5",
+      "source_address": "module.vpc.aws_route_table_association.public[0]",
+      "target_address": "module.vpc.aws_route_table_association.public[0]",
+      "action": "review_transfer"
+    },
+    {
+      "source_state": "lesson-5",
+      "source_address": "module.vpc.aws_route_table_association.public[1]",
+      "target_address": "module.vpc.aws_route_table_association.public[1]",
+      "action": "review_transfer"
+    },
+    {
+      "source_state": "lesson-5",
+      "source_address": "module.vpc.aws_route_table_association.public[2]",
+      "target_address": "module.vpc.aws_route_table_association.public[2]",
+      "action": "review_transfer"
+    },
+    {
+      "source_state": "lesson-5",
+      "source_address": "module.vpc.aws_subnet.private[0]",
+      "target_address": "module.vpc.aws_subnet.private[0]",
+      "action": "review_transfer"
+    },
+    {
+      "source_state": "lesson-5",
+      "source_address": "module.vpc.aws_subnet.private[1]",
+      "target_address": "module.vpc.aws_subnet.private[1]",
+      "action": "review_transfer"
+    },
+    {
+      "source_state": "lesson-5",
+      "source_address": "module.vpc.aws_subnet.private[2]",
+      "target_address": "module.vpc.aws_subnet.private[2]",
+      "action": "review_transfer"
+    },
+    {
+      "source_state": "lesson-5",
+      "source_address": "module.vpc.aws_subnet.public[0]",
+      "target_address": "module.vpc.aws_subnet.public[0]",
+      "action": "review_transfer"
+    },
+    {
+      "source_state": "lesson-5",
+      "source_address": "module.vpc.aws_subnet.public[1]",
+      "target_address": "module.vpc.aws_subnet.public[1]",
+      "action": "review_transfer"
+    },
+    {
+      "source_state": "lesson-5",
+      "source_address": "module.vpc.aws_subnet.public[2]",
+      "target_address": "module.vpc.aws_subnet.public[2]",
+      "action": "review_transfer"
+    },
+    {
+      "source_state": "lesson-5",
+      "source_address": "module.vpc.aws_vpc.main",
+      "target_address": "module.vpc.aws_vpc.main",
+      "action": "review_transfer"
+    },
+    {
+      "source_state": "lesson-7",
+      "source_address": "module.ecr.aws_ecr_repository.main",
+      "target_address": "module.ecr.aws_ecr_repository.main",
+      "action": "review_transfer"
+    },
+    {
+      "source_state": "lesson-7",
+      "source_address": "module.ecr.aws_ecr_repository_policy.main",
+      "target_address": "module.ecr.aws_ecr_repository_policy.main",
+      "action": "review_transfer"
+    },
+    {
+      "source_state": "lesson-7",
+      "source_address": "module.eks.aws_eks_cluster.main",
+      "target_address": "module.eks.aws_eks_cluster.main",
+      "action": "review_transfer"
+    },
+    {
+      "source_state": "lesson-7",
+      "source_address": "module.eks.aws_eks_node_group.main",
+      "target_address": "module.eks.aws_eks_node_group.main",
+      "action": "review_transfer"
+    },
+    {
+      "source_state": "lesson-7",
+      "source_address": "module.eks.aws_iam_role.cluster",
+      "target_address": "module.eks.aws_iam_role.cluster",
+      "action": "review_transfer"
+    },
+    {
+      "source_state": "lesson-7",
+      "source_address": "module.eks.aws_iam_role.nodes",
+      "target_address": "module.eks.aws_iam_role.nodes",
+      "action": "review_transfer"
+    },
+    {
+      "source_state": "lesson-7",
+      "source_address": "module.eks.aws_iam_role_policy_attachment.cluster",
+      "target_address": "module.eks.aws_iam_role_policy_attachment.cluster",
+      "action": "review_transfer"
+    },
+    {
+      "source_state": "lesson-7",
+      "source_address": "module.eks.aws_iam_role_policy_attachment.nodes[\"AmazonEC2ContainerRegistryPullOnly\"]",
+      "target_address": "module.eks.aws_iam_role_policy_attachment.nodes[\"AmazonEC2ContainerRegistryPullOnly\"]",
+      "action": "review_transfer"
+    },
+    {
+      "source_state": "lesson-7",
+      "source_address": "module.eks.aws_iam_role_policy_attachment.nodes[\"AmazonEKSWorkerNodePolicy\"]",
+      "target_address": "module.eks.aws_iam_role_policy_attachment.nodes[\"AmazonEKSWorkerNodePolicy\"]",
+      "action": "review_transfer"
+    },
+    {
+      "source_state": "lesson-7",
+      "source_address": "module.eks.aws_iam_role_policy_attachment.nodes[\"AmazonEKS_CNI_Policy\"]",
+      "target_address": "module.eks.aws_iam_role_policy_attachment.nodes[\"AmazonEKS_CNI_Policy\"]",
+      "action": "review_transfer"
+    },
+    {
+      "source_state": "lesson-8-9",
+      "source_address": "kubernetes_namespace_v1.argocd",
+      "target_address": "kubernetes_namespace_v1.argocd",
+      "action": "review_transfer"
+    },
+    {
+      "source_state": "lesson-8-9",
+      "source_address": "kubernetes_namespace_v1.jenkins",
+      "target_address": "kubernetes_namespace_v1.jenkins",
+      "action": "review_transfer"
+    },
+    {
+      "source_state": "lesson-8-9",
+      "source_address": "module.argo_cd.helm_release.applications",
+      "target_address": "module.argo_cd.helm_release.applications",
+      "action": "review_transfer"
+    },
+    {
+      "source_state": "lesson-8-9",
+      "source_address": "module.argo_cd.helm_release.argocd",
+      "target_address": "module.argo_cd.helm_release.argocd",
+      "action": "review_transfer"
+    },
+    {
+      "source_state": "lesson-8-9",
+      "source_address": "module.jenkins.helm_release.jenkins",
+      "target_address": "module.jenkins.helm_release.jenkins",
+      "action": "review_transfer"
+    },
+    {
+      "source_state": "lesson-8-9",
+      "source_address": "module.kaniko_identity.aws_eks_addon.pod_identity",
+      "target_address": "module.kaniko_identity.aws_eks_addon.pod_identity",
+      "action": "review_transfer"
+    },
+    {
+      "source_state": "lesson-8-9",
+      "source_address": "module.kaniko_identity.aws_eks_pod_identity_association.kaniko",
+      "target_address": "module.kaniko_identity.aws_eks_pod_identity_association.kaniko",
+      "action": "review_transfer"
+    },
+    {
+      "source_state": "lesson-8-9",
+      "source_address": "module.kaniko_identity.aws_iam_role.kaniko",
+      "target_address": "module.kaniko_identity.aws_iam_role.kaniko",
+      "action": "review_transfer"
+    },
+    {
+      "source_state": "lesson-8-9",
+      "source_address": "module.kaniko_identity.aws_iam_role_policy.ecr_push",
+      "target_address": "module.kaniko_identity.aws_iam_role_policy.ecr_push",
+      "action": "review_transfer"
+    },
+    {
+      "source_state": "lesson-8-9",
+      "source_address": "module.kaniko_identity.kubernetes_service_account_v1.builder",
+      "target_address": "module.kaniko_identity.kubernetes_service_account_v1.builder",
+      "action": "review_transfer"
+    }
+  ]
+}

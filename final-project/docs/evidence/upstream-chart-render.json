@@ -1,0 +1,26 @@
+{
+  "jenkins": {
+    "rendered_objects": 15,
+    "status": "passed",
+    "existing_claim_rendered": true,
+    "pinned_plugin_count": 70,
+    "current_cutover_values_rendered": true,
+    "values_template_sha256": "275d11633eba819fa2699fbdc1713c8251ce844a84a840cd61c4abef3ba69173"
+  },
+  "argocd": {
+    "rendered_objects": 60,
+    "status": "passed"
+  },
+  "monitoring": {
+    "rendered_objects": 120,
+    "status": "passed"
+  },
+  "eso": {
+    "rendered_objects": 44,
+    "status": "passed"
+  },
+  "metrics": {
+    "rendered_objects": 9,
+    "status": "passed"
+  }
+}

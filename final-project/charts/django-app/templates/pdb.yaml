@@ -1,0 +1,10 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  namespace: {{ .Release.Namespace }}
+  name: {{ include "django-app.fullname" . }}
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: {{ include "django-app.fullname" . }}

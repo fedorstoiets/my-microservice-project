@@ -1,0 +1,64 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "VersionedStateReadsAndApprovedPushes",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject",
+        "s3:GetObjectVersion",
+        "s3:PutObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::fedorstoiets-neoversity-tfstate-227281812993/final-project/terraform.tfstate",
+        "arn:aws:s3:::fedorstoiets-neoversity-tfstate-227281812993/lesson-5/terraform.tfstate",
+        "arn:aws:s3:::fedorstoiets-neoversity-tfstate-227281812993/lesson-7/terraform.tfstate",
+        "arn:aws:s3:::fedorstoiets-neoversity-tfstate-227281812993/lesson-8-9/terraform.tfstate"
+      ]
+    },
+    {
+      "Sid": "NativeLockLifecycleOnly",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject",
+        "s3:PutObject",
+        "s3:DeleteObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::fedorstoiets-neoversity-tfstate-227281812993/final-project/terraform.tfstate.tflock",
+        "arn:aws:s3:::fedorstoiets-neoversity-tfstate-227281812993/lesson-5/terraform.tfstate.tflock",
+        "arn:aws:s3:::fedorstoiets-neoversity-tfstate-227281812993/lesson-7/terraform.tfstate.tflock",
+        "arn:aws:s3:::fedorstoiets-neoversity-tfstate-227281812993/lesson-8-9/terraform.tfstate.tflock"
+      ]
+    },
+    {
+      "Sid": "BackendMetadata",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetBucketVersioning",
+        "s3:GetEncryptionConfiguration"
+      ],
+      "Resource": "arn:aws:s3:::fedorstoiets-neoversity-tfstate-227281812993"
+    },
+    {
+      "Sid": "StateKeyDiscovery",
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListBucket",
+        "s3:ListBucketVersions"
+      ],
+      "Resource": "arn:aws:s3:::fedorstoiets-neoversity-tfstate-227281812993"
+    },
+    {
+      "Sid": "LegacyBackendLockProtocol",
+      "Effect": "Allow",
+      "Action": [
+        "dynamodb:DescribeTable",
+        "dynamodb:GetItem",
+        "dynamodb:PutItem",
+        "dynamodb:DeleteItem"
+      ],
+      "Resource": "arn:aws:dynamodb:us-east-2:227281812993:table/terraform-locks"
+    }
+  ]
+}

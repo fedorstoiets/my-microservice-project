@@ -1,0 +1,672 @@
+{
+  "prepared_at": "2026-11-15T03:29:19.580698+00:00",
+  "execution_authorized": false,
+  "migration_hold": "active",
+  "decision": "PREPARATION_COMPLETE_WITH_EXTERNAL_AND_APPROVAL_BLOCKERS",
+  "account": "227281812993",
+  "region": "us-east-2",
+  "principal": "arn:aws:sts::227281812993:assumed-role/AccountFullAccessRole/9478f4d8-60a1-708b-3da4-e21ae3a26c37",
+  "private_artifact_directory": "/tmp/goaldevops-authorization-20261115T032122Z",
+  "source_commit": "35fc225495517f33b0444f1e5c0e8434721163f0",
+  "states": [
+    {
+      "key": "final-project/terraform.tfstate",
+      "version_id": "b6i9qOXP0xgd.23RZnukXTz0IY8h0.HW",
+      "serial": 3,
+      "lineage": "1f6fe0e5-2745-71ae-e983-641f5c3353df",
+      "sha256": "ab6edfdcbfc608f7d9941163d3f8ed349f7538317f443fab3e954d4117ca291f"
+    },
+    {
+      "key": "lesson-5/terraform.tfstate",
+      "version_id": "3GoEfpgRiDjCmBhU0rg_fRPZM.ZQvtBn",
+      "serial": 7,
+      "lineage": "f95dcb4c-6c91-b1cb-1a5e-b4dc6783f1ac",
+      "sha256": "32d30d7155250d7f5a03b3d7a37a4599380ee58bda5d593a3e9e1a64a6d0f8c5"
+    },
+    {
+      "key": "lesson-7/terraform.tfstate",
+      "version_id": "pmMVXLk57kw73LLj2NvthAtwx_efwN.Q",
+      "serial": 2,
+      "lineage": "edf8ddf6-83fa-eb27-c2c3-9005430dd657",
+      "sha256": "2e160cb3a4e43d5b4df526d5cec07670fc12c9e7566f10a5584f118dd11b86af"
+    },
+    {
+      "key": "lesson-8-9/terraform.tfstate",
+      "version_id": "PWWaZMYzP5gaT5FtnMTUmZXisbg_rZy2",
+      "serial": 4,
+      "lineage": "5dbb0b14-90bf-f05a-db34-553365cf690a",
+      "sha256": "1e7dfd6c7a6e830936ade299258d5dcba8f1debd86e13a9e4b1a007719aa5be5"
+    }
+  ],
+  "versions_unchanged_after_planning": true,
+  "plans": {
+    "lesson-5-drift": {
+      "complete": true,
+      "errored": false,
+      "applyable": true,
+      "resource_changes": [],
+      "resource_drift": [
+        {
+          "address": "module.ecr.aws_ecr_repository.main",
+          "actions": [
+            "update"
+          ],
+          "changed_attributes": [
+            "tags"
+          ]
+        },
+        {
+          "address": "module.vpc.aws_eip.nat[0]",
+          "actions": [
+            "update"
+          ],
+          "changed_attributes": [
+            "private_dns",
+            "private_ip",
+            "association_id",
+            "network_interface"
+          ]
+        },
+        {
+          "address": "module.vpc.aws_route_table.private",
+          "actions": [
+            "update"
+          ],
+          "changed_attributes": [
+            "route"
+          ]
+        }
+      ],
+      "plan_sha256": "2fdf5c724b7da5edb3adc90e5ff60dd8c24ef8e1037f7f60c2bd18869c0f0776",
+      "artifact": "lesson-5-drift.tfplan",
+      "json_artifact": "lesson-5-drift-json.stdout",
+      "identity_inventory_section": "prior_state.values",
+      "managed_inventory_count": 26,
+      "physical_id_map_matches_inventory": true
+    },
+    "lesson-5-continuity": {
+      "complete": true,
+      "errored": false,
+      "applyable": false,
+      "resource_changes": [],
+      "resource_drift": [
+        {
+          "address": "module.ecr.aws_ecr_repository.main",
+          "actions": [
+            "update"
+          ],
+          "changed_attributes": [
+            "tags"
+          ]
+        },
+        {
+          "address": "module.vpc.aws_eip.nat[0]",
+          "actions": [
+            "update"
+          ],
+          "changed_attributes": [
+            "private_dns",
+            "private_ip",
+            "association_id",
+            "network_interface"
+          ]
+        },
+        {
+          "address": "module.vpc.aws_route_table.private",
+          "actions": [
+            "update"
+          ],
+          "changed_attributes": [
+            "route"
+          ]
+        }
+      ],
+      "plan_sha256": "74262c5871874b26ba7b7f1531651a9da1752dce322e788e4e37e5c15bbd7f6e",
+      "artifact": "lesson-5-continuity.tfplan",
+      "json_artifact": "lesson-5-continuity-json.stdout",
+      "identity_inventory_section": "planned_values",
+      "managed_inventory_count": 26,
+      "physical_id_map_matches_inventory": true,
+      "strict_guard_findings": [
+        "Refresh detected drift; investigate before proceeding"
+      ]
+    },
+    "lesson-7-drift": {
+      "complete": true,
+      "errored": false,
+      "applyable": true,
+      "resource_changes": [],
+      "resource_drift": [
+        {
+          "address": "module.ecr.aws_ecr_repository.main",
+          "actions": [
+            "update"
+          ],
+          "changed_attributes": [
+            "tags"
+          ]
+        },
+        {
+          "address": "module.eks.aws_eks_cluster.main",
+          "actions": [
+            "update"
+          ],
+          "changed_attributes": [
+            "enabled_cluster_log_types",
+            "vpc_config"
+          ]
+        },
+        {
+          "address": "module.eks.aws_eks_node_group.main",
+          "actions": [
+            "update"
+          ],
+          "changed_attributes": [
+            "labels"
+          ]
+        },
+        {
+          "address": "module.eks.aws_iam_role.cluster",
+          "actions": [
+            "update"
+          ],
+          "changed_attributes": [
+            "tags",
+            "managed_policy_arns"
+          ]
+        },
+        {
+          "address": "module.eks.aws_iam_role.nodes",
+          "actions": [
+            "update"
+          ],
+          "changed_attributes": [
+            "tags",
+            "managed_policy_arns"
+          ]
+        }
+      ],
+      "plan_sha256": "bc42bba9bc725db7dfe6d48af7a88c0ff40cea6c76571e642e0f43ca3c2da0b6",
+      "artifact": "lesson-7-drift.tfplan",
+      "json_artifact": "lesson-7-drift-json.stdout",
+      "identity_inventory_section": "prior_state.values",
+      "managed_inventory_count": 10,
+      "physical_id_map_matches_inventory": true
+    },
+    "lesson-7-continuity": {
+      "complete": true,
+      "errored": false,
+      "applyable": false,
+      "resource_changes": [],
+      "resource_drift": [
+        {
+          "address": "module.ecr.aws_ecr_repository.main",
+          "actions": [
+            "update"
+          ],
+          "changed_attributes": [
+            "tags"
+          ]
+        },
+        {
+          "address": "module.eks.aws_eks_cluster.main",
+          "actions": [
+            "update"
+          ],
+          "changed_attributes": [
+            "enabled_cluster_log_types",
+            "vpc_config"
+          ]
+        },
+        {
+          "address": "module.eks.aws_eks_node_group.main",
+          "actions": [
+            "update"
+          ],
+          "changed_attributes": [
+            "labels"
+          ]
+        },
+        {
+          "address": "module.eks.aws_iam_role.cluster",
+          "actions": [
+            "update"
+          ],
+          "changed_attributes": [
+            "tags",
+            "managed_policy_arns"
+          ]
+        },
+        {
+          "address": "module.eks.aws_iam_role.nodes",
+          "actions": [
+            "update"
+          ],
+          "changed_attributes": [
+            "tags",
+            "managed_policy_arns"
+          ]
+        }
+      ],
+      "plan_sha256": "b90850025843257cb9ca07d5e99446b9a4da6931a7cc3372c8cce28fcc206121",
+      "artifact": "lesson-7-continuity.tfplan",
+      "json_artifact": "lesson-7-continuity-json.stdout",
+      "identity_inventory_section": "planned_values",
+      "managed_inventory_count": 10,
+      "physical_id_map_matches_inventory": true,
+      "strict_guard_findings": [
+        "Refresh detected drift; investigate before proceeding"
+      ]
+    },
+    "lesson-8-9-drift": {
+      "complete": true,
+      "errored": false,
+      "applyable": true,
+      "resource_changes": [],
+      "resource_drift": [
+        {
+          "address": "kubernetes_namespace_v1.argocd",
+          "actions": [
+            "update"
+          ],
+          "changed_attributes": [
+            "metadata"
+          ]
+        },
+        {
+          "address": "kubernetes_namespace_v1.jenkins",
+          "actions": [
+            "update"
+          ],
+          "changed_attributes": [
+            "metadata"
+          ]
+        },
+        {
+          "address": "module.kaniko_identity.aws_eks_addon.pod_identity",
+          "actions": [
+            "update"
+          ],
+          "changed_attributes": [
+            "tags"
+          ]
+        },
+        {
+          "address": "module.kaniko_identity.aws_iam_role.kaniko",
+          "actions": [
+            "update"
+          ],
+          "changed_attributes": [
+            "inline_policy",
+            "tags"
+          ]
+        },
+        {
+          "address": "module.kaniko_identity.kubernetes_service_account_v1.builder",
+          "actions": [
+            "update"
+          ],
+          "changed_attributes": [
+            "metadata"
+          ]
+        }
+      ],
+      "plan_sha256": "5e5b6ea45091e9df0c6f6e6b2470eacf054c81b5b8344356c969ed7943627733",
+      "artifact": "lesson-8-9-drift.tfplan",
+      "json_artifact": "lesson-8-9-drift-json.stdout",
+      "identity_inventory_section": "prior_state.values",
+      "managed_inventory_count": 10,
+      "physical_id_map_matches_inventory": true
+    },
+    "lesson-8-9-continuity": {
+      "complete": true,
+      "errored": false,
+      "applyable": false,
+      "resource_changes": [],
+      "resource_drift": [
+        {
+          "address": "kubernetes_namespace_v1.argocd",
+          "actions": [
+            "update"
+          ],
+          "changed_attributes": [
+            "metadata"
+          ]
+        },
+        {
+          "address": "kubernetes_namespace_v1.jenkins",
+          "actions": [
+            "update"
+          ],
+          "changed_attributes": [
+            "metadata"
+          ]
+        },
+        {
+          "address": "module.kaniko_identity.aws_eks_addon.pod_identity",
+          "actions": [
+            "update"
+          ],
+          "changed_attributes": [
+            "tags"
+          ]
+        },
+        {
+          "address": "module.kaniko_identity.aws_iam_role.kaniko",
+          "actions": [
+            "update"
+          ],
+          "changed_attributes": [
+            "inline_policy",
+            "tags"
+          ]
+        },
+        {
+          "address": "module.kaniko_identity.kubernetes_service_account_v1.builder",
+          "actions": [
+            "update"
+          ],
+          "changed_attributes": [
+            "metadata"
+          ]
+        }
+      ],
+      "plan_sha256": "79a144a4d0db98d210e49bf71b333a87f88591cbac3b0a508618a622f7c7aad4",
+      "artifact": "lesson-8-9-continuity.tfplan",
+      "json_artifact": "lesson-8-9-continuity-json.stdout",
+      "identity_inventory_section": "planned_values",
+      "managed_inventory_count": 10,
+      "physical_id_map_matches_inventory": true,
+      "strict_guard_findings": [
+        "Refresh detected drift; investigate before proceeding"
+      ]
+    },
+    "final-project-drift": {
+      "complete": true,
+      "errored": false,
+      "applyable": true,
+      "resource_changes": [],
+      "resource_drift": [
+        {
+          "address": "module.rds[0].aws_db_instance.standard[0]",
+          "actions": [
+            "update"
+          ],
+          "changed_attributes": [
+            "latest_restorable_time",
+            "domain_dns_ips",
+            "enabled_cloudwatch_logs_exports"
+          ]
+        },
+        {
+          "address": "module.rds[0].aws_security_group.database",
+          "actions": [
+            "update"
+          ],
+          "changed_attributes": [
+            "ingress"
+          ]
+        }
+      ],
+      "plan_sha256": "8f376b77fb827e9d953aae8c970bf91a7f96d2e4af26c4afcf503ea28fe29c52",
+      "artifact": "final-project-deployed-inputs-drift.tfplan",
+      "json_artifact": "final-project-deployed-inputs-drift-json.stdout",
+      "identity_inventory_section": "prior_state.values",
+      "managed_inventory_count": 6,
+      "physical_id_map_matches_inventory": true
+    },
+    "final-project-continuity": {
+      "complete": true,
+      "errored": false,
+      "applyable": false,
+      "resource_changes": [],
+      "resource_drift": [
+        {
+          "address": "module.rds[0].aws_db_instance.standard[0]",
+          "actions": [
+            "update"
+          ],
+          "changed_attributes": [
+            "latest_restorable_time",
+            "domain_dns_ips",
+            "enabled_cloudwatch_logs_exports"
+          ]
+        },
+        {
+          "address": "module.rds[0].aws_security_group.database",
+          "actions": [
+            "update"
+          ],
+          "changed_attributes": [
+            "ingress"
+          ]
+        }
+      ],
+      "plan_sha256": "cab6088b21c8b653ef120e1723dae7eb3ca9ed3fee83da064b3d048121c35754",
+      "artifact": "final-project-deployed-inputs-continuity.tfplan",
+      "json_artifact": "final-project-deployed-inputs-continuity-json.stdout",
+      "identity_inventory_section": "planned_values",
+      "managed_inventory_count": 6,
+      "physical_id_map_matches_inventory": true,
+      "strict_guard_findings": [
+        "Refresh detected drift; investigate before proceeding"
+      ]
+    }
+  },
+  "drift_ledger": [
+    {
+      "owner": "lesson-5",
+      "address": "module.ecr.aws_ecr_repository.main",
+      "changed_attributes": [
+        "tags"
+      ],
+      "disposition": "Null-to-empty collection normalization (including nested metadata/EKS security-group list); no configured managed change proposed.",
+      "review_status": "pending_independent_acceptance",
+      "state_normalization_executed": false
+    },
+    {
+      "owner": "lesson-5",
+      "address": "module.vpc.aws_eip.nat[0]",
+      "changed_attributes": [
+        "association_id",
+        "network_interface",
+        "private_dns",
+        "private_ip"
+      ],
+      "disposition": "Previously blank computed NAT EIP association/private address/ENI/DNS now populated; resource ID unchanged.",
+      "review_status": "pending_independent_acceptance",
+      "state_normalization_executed": false
+    },
+    {
+      "owner": "lesson-5",
+      "address": "module.vpc.aws_route_table.private",
+      "changed_attributes": [
+        "route"
+      ],
+      "disposition": "Parent route view now includes the separately managed private default NAT route; no route change proposed.",
+      "review_status": "pending_independent_acceptance",
+      "state_normalization_executed": false
+    },
+    {
+      "owner": "lesson-7",
+      "address": "module.ecr.aws_ecr_repository.main",
+      "changed_attributes": [
+        "tags"
+      ],
+      "disposition": "Null-to-empty collection normalization (including nested metadata/EKS security-group list); no configured managed change proposed.",
+      "review_status": "pending_independent_acceptance",
+      "state_normalization_executed": false
+    },
+    {
+      "owner": "lesson-7",
+      "address": "module.eks.aws_eks_cluster.main",
+      "changed_attributes": [
+        "enabled_cluster_log_types",
+        "vpc_config"
+      ],
+      "disposition": "Null-to-empty collection normalization (including nested metadata/EKS security-group list); no configured managed change proposed.",
+      "review_status": "pending_independent_acceptance",
+      "state_normalization_executed": false
+    },
+    {
+      "owner": "lesson-7",
+      "address": "module.eks.aws_eks_node_group.main",
+      "changed_attributes": [
+        "labels"
+      ],
+      "disposition": "Null-to-empty collection normalization (including nested metadata/EKS security-group list); no configured managed change proposed.",
+      "review_status": "pending_independent_acceptance",
+      "state_normalization_executed": false
+    },
+    {
+      "owner": "lesson-7",
+      "address": "module.eks.aws_iam_role.cluster",
+      "changed_attributes": [
+        "managed_policy_arns",
+        "tags"
+      ],
+      "disposition": "Parent role view includes separately managed attached/inline policy and/or null-to-empty tags; verify child policy identity; no IAM change proposed.",
+      "review_status": "pending_independent_acceptance",
+      "state_normalization_executed": false
+    },
+    {
+      "owner": "lesson-7",
+      "address": "module.eks.aws_iam_role.nodes",
+      "changed_attributes": [
+        "managed_policy_arns",
+        "tags"
+      ],
+      "disposition": "Parent role view includes separately managed attached/inline policy and/or null-to-empty tags; verify child policy identity; no IAM change proposed.",
+      "review_status": "pending_independent_acceptance",
+      "state_normalization_executed": false
+    },
+    {
+      "owner": "lesson-8-9",
+      "address": "kubernetes_namespace_v1.argocd",
+      "changed_attributes": [
+        "metadata"
+      ],
+      "disposition": "Null-to-empty collection normalization (including nested metadata/EKS security-group list); no configured managed change proposed.",
+      "review_status": "pending_independent_acceptance",
+      "state_normalization_executed": false
+    },
+    {
+      "owner": "lesson-8-9",
+      "address": "kubernetes_namespace_v1.jenkins",
+      "changed_attributes": [
+        "metadata"
+      ],
+      "disposition": "Null-to-empty collection normalization (including nested metadata/EKS security-group list); no configured managed change proposed.",
+      "review_status": "pending_independent_acceptance",
+      "state_normalization_executed": false
+    },
+    {
+      "owner": "lesson-8-9",
+      "address": "module.kaniko_identity.aws_eks_addon.pod_identity",
+      "changed_attributes": [
+        "tags"
+      ],
+      "disposition": "Null-to-empty collection normalization (including nested metadata/EKS security-group list); no configured managed change proposed.",
+      "review_status": "pending_independent_acceptance",
+      "state_normalization_executed": false
+    },
+    {
+      "owner": "lesson-8-9",
+      "address": "module.kaniko_identity.aws_iam_role.kaniko",
+      "changed_attributes": [
+        "inline_policy",
+        "tags"
+      ],
+      "disposition": "Parent role view includes separately managed attached/inline policy and/or null-to-empty tags; verify child policy identity; no IAM change proposed.",
+      "review_status": "pending_independent_acceptance",
+      "state_normalization_executed": false
+    },
+    {
+      "owner": "lesson-8-9",
+      "address": "module.kaniko_identity.kubernetes_service_account_v1.builder",
+      "changed_attributes": [
+        "metadata"
+      ],
+      "disposition": "Null-to-empty collection normalization (including nested metadata/EKS security-group list); no configured managed change proposed.",
+      "review_status": "pending_independent_acceptance",
+      "state_normalization_executed": false
+    },
+    {
+      "owner": "final-project",
+      "address": "module.rds[0].aws_db_instance.standard[0]",
+      "changed_attributes": [
+        "domain_dns_ips",
+        "enabled_cloudwatch_logs_exports",
+        "latest_restorable_time"
+      ],
+      "disposition": "Current PITR timestamp plus null-to-empty fields. Timestamp can advance again; this is not zero-drift evidence.",
+      "review_status": "pending_independent_acceptance",
+      "state_normalization_executed": false
+    },
+    {
+      "owner": "final-project",
+      "address": "module.rds[0].aws_security_group.database",
+      "changed_attributes": [
+        "ingress"
+      ],
+      "disposition": "Parent ingress view now includes separately owned sgr-0bdf69b8c5c0b27b2; exact live TCP/5432 group pair matched. No firewall change proposed.",
+      "review_status": "pending_independent_acceptance",
+      "state_normalization_executed": false
+    }
+  ],
+  "frozen_chart": {
+    "deployed_and_source_render_identical": true,
+    "canonical_manifest_sha256": "7f2751a8075da71b37e431653fd3307c9951fd77fe2d1442342bd69fc9974d30",
+    "source_files": {
+      "values.yaml": "10af011711888360a3d4735545aa26afe911eeb5a7db51174138b22e060853db",
+      "Chart.yaml": "70c392ce720c1f60a2c3341f954dbcffe83ad5338c0240bc17aa51ba5e8c1d38",
+      "templates/application.yaml": "c0b475a9302c1f347e6a3a3b4e2e7db0d44cfa9c8e00ffa96c2fba1457db2a32"
+    },
+    "frozen_relative_path": "modules/argo_cd/charts/applications",
+    "chart_version": "0.1.0"
+  },
+  "planned_compatibility": {
+    "ebs_csi_addon_version": "v1.68.0-eksbuild.1",
+    "kubernetes_version": "1.37",
+    "architectures": [
+      "amd64",
+      "arm64"
+    ],
+    "eso_chart_version": "2.15.0",
+    "eso_chart_metadata_read": {
+      "exit_code": 0
+    }
+  },
+  "oidc_expected_scope_not_existence_proof": "arn:aws:iam::227281812993:oidc-provider/oidc.eks.us-east-2.amazonaws.com/id/DDF930235860D5B13B8F3342191ED95F",
+  "proposed_irsa_role_arns_not_deployed": [
+    "arn:aws:iam::227281812993:role/neoversity-lesson-7-ebs-csi-irsa",
+    "arn:aws:iam::227281812993:role/neoversity-lesson-7-kaniko-irsa",
+    "arn:aws:iam::227281812993:role/neoversity-lesson-7-external-secrets-irsa"
+  ],
+  "transfer_count": 39,
+  "post_transfer_counts": {
+    "lesson-5": 7,
+    "lesson-7": 0,
+    "lesson-8-9": 0,
+    "final-project": 45
+  },
+  "rejected_plan": {
+    "artifact": "final-project-reconstructed-continuity.tfplan",
+    "reason": "Omitted historical enable flags; original defaults false would delete all six retained resources. NEVER APPROVE/APPLY. Superseded by state-derived exact deployed inputs.",
+    "sha256": "9e3c73ffc3e86cabe6a14220980f8782f9555f68273b86fae69f319f614f0491"
+  },
+  "consolidated_target_and_source_retirement_plans": "BLOCKED: offline state-transfer rehearsal prohibited pending separate authorization",
+  "freeze": {
+    "application_resource_version": "825585",
+    "active_operation_present": false,
+    "operation_phase": "Succeeded",
+    "patch_submitted": false
+  },
+  "manifest_hashes": {
+    "lesson-5": "22cc96ab5686cfac9509a33ad9c7ed5fb42df569c7f91d498fb7d286433201ac",
+    "lesson-7": "ca5933a299d8f9961b1d1c8feb99cd1d268f248f15abee49190dd48039d3c18b",
+    "lesson-8-9": "0a765478b4d1b5cc2a621d0dfc8301f511545bcb24430e75e6ec38802368538c",
+    "final-project": "dc8bc76d9790c02d85728b997a8c409759464adedc6f42929763790a390a4217"
+  },
+  "live_mutations_performed": false
+}

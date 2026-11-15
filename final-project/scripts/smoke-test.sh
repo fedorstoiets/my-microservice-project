@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# TOP 1 — Application smoke test. Validates HTTP + PostgreSQL SELECT 1.
+# Read-only smoke test: /health/ checks DB and schema; /live/ checks the process.
 set -Eeuo pipefail
 NAMESPACE="${NAMESPACE:-neoversity}"
 SERVICE="${SERVICE:-django-app}"
@@ -17,6 +17,6 @@ BASE_URL="${BASE_URL%/}"
 echo "Checking $BASE_URL/health/"
 health="$(curl -fsS --retry 4 --retry-delay 3 --connect-timeout 8 --max-time "$TIMEOUT" "$BASE_URL/health/")"
 python3 -c 'import json,sys; data=json.loads(sys.argv[1]); assert data.get("status")=="ok" and data.get("connected") is True, f"Unhealthy response: {data}"; print("PASS: Django health endpoint and PostgreSQL SELECT 1")' "$health"
-echo "Checking $BASE_URL/"
-curl -fsS --retry 4 --retry-delay 3 --connect-timeout 8 --max-time "$TIMEOUT" -o /dev/null "$BASE_URL/"
-echo "PASS: Django homepage HTTP 2xx; smoke test completed"
+echo "Checking $BASE_URL/live/"
+curl -fsS --retry 4 --retry-delay 3 --connect-timeout 8 --max-time "$TIMEOUT" -o /dev/null "$BASE_URL/live/"
+echo "PASS: Django liveness HTTP 2xx; smoke test completed"

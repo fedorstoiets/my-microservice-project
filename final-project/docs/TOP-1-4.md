@@ -1,5 +1,15 @@
 # TOP 1–4 — Additional DevOps Excellence
 
+Current source results: see [remediation report](REMEDIATION-REPORT.md) and
+[security dispositions](SECURITY-DISPOSITIONS.md). Read-only smoke tests now use
+`/health/` and `/live/`; the visit-counter homepage writes to the database.
+
+> **Historical baseline only — migration HOLD remains active.** Deployment claims,
+> checked items and commands below describe earlier lesson-backed work, not
+> acceptance of the current working tree. Do not execute deployment, teardown,
+> or state-changing examples. Use `GoalDevOps.md`, `IMPLEMENTATION-V2.md`, and
+> `MIGRATION-HOLD.md` for current gates and restrictions.
+
 Four recognizable extras for the Neoversity final project. They **do not replace** the mandatory VPC, EKS, RDS, Jenkins, Argo CD and monitoring work.
 
 ## TOP 1 — Post-deployment smoke test
@@ -25,15 +35,7 @@ For local testing use a separate terminal: `kubectl -n neoversity port-forward s
 
 After full monitoring deployment (namespaces, storage and EKS resources):
 
-```bash
-helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
-helm repo update
-kubectl create namespace monitoring --dry-run=client -o yaml | kubectl apply -f -
-helm upgrade --install monitoring prometheus-community/kube-prometheus-stack \
-  -n monitoring -f final-project/monitoring/kube-prometheus-stack-values.yaml
-kubectl apply -f final-project/monitoring/dashboard-configmap.yaml
-kubectl -n monitoring get deploy,sts,pods
-```
+Monitoring installation and dashboard deployment commands are deferred to a reviewed rollout runbook. Preserve the existing Terraform-owned Helm release.
 
 The Grafana service for the Helm release above is normally `monitoring-grafana`, not `grafana`:
 

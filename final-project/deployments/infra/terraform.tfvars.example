@@ -1,0 +1,7 @@
+# NEW environment only; versions must be verified using authenticated AWS APIs.
+aws_region = "us-east-2"
+stack_name = "goaldevops-v2-review"
+kubernetes_version = "REQUIRED_AWS_VERIFIED_MINOR"
+database_engine_version = "REQUIRED_AWS_VERIFIED_VERSION"
+ebs_csi_addon_version = "REQUIRED_AWS_COMPATIBLE_VERSION"
+vpc_cni_addon_version = "REQUIRED_AWS_COMPATIBLE_VERSION"

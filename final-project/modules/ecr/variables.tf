@@ -8,3 +8,13 @@ variable "scan_on_push" {
   type        = bool
   default     = true
 }
+
+variable "immutable_tags" {
+  type    = bool
+  default = true
+}
+
+variable "kms_key_arn" {
+  type    = string
+  default = null
+}

@@ -1,3 +1,9 @@
 repoURL: "https://github.com/fedorstoiets/neoversity-django-gitops.git"
 targetRevision: main
 appNamespace: neoversity
+
+appValues: {}
+
+enableAutoSync: false
+
+enablePruning: false

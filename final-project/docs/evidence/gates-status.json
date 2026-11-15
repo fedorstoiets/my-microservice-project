@@ -1,0 +1,115 @@
+{
+  "source_commit": "35fc225495517f33b0444f1e5c0e8434721163f0",
+  "checked_at": "2026-11-15T13:13:53.722101+00:00",
+  "runtime_requested": false,
+  "gates": {
+    "G01": {
+      "status": "blocked",
+      "reason": "Requires reviewed runtime evidence and separate authorization where applicable"
+    },
+    "G02": {
+      "status": "passed",
+      "evidence": "docs/evidence/local-validation.json"
+    },
+    "G03": {
+      "status": "blocked",
+      "reason": "Requires reviewed runtime evidence and separate authorization where applicable"
+    },
+    "G04": {
+      "status": "blocked",
+      "reason": "Requires reviewed runtime evidence and separate authorization where applicable"
+    },
+    "G05": {
+      "status": "blocked",
+      "reason": "Requires reviewed runtime evidence and separate authorization where applicable"
+    },
+    "G06": {
+      "status": "blocked",
+      "reason": "Requires reviewed runtime evidence and separate authorization where applicable"
+    },
+    "G07": {
+      "status": "blocked",
+      "reason": "Requires reviewed runtime evidence and separate authorization where applicable"
+    },
+    "G08": {
+      "status": "blocked",
+      "reason": "Requires reviewed runtime evidence and separate authorization where applicable"
+    },
+    "G09": {
+      "status": "blocked",
+      "reason": "Requires reviewed runtime evidence and separate authorization where applicable"
+    },
+    "G10": {
+      "status": "blocked",
+      "reason": "Requires reviewed runtime evidence and separate authorization where applicable"
+    },
+    "G11": {
+      "status": "blocked",
+      "reason": "Requires reviewed runtime evidence and separate authorization where applicable"
+    },
+    "G12": {
+      "status": "blocked",
+      "reason": "Requires reviewed runtime evidence and separate authorization where applicable"
+    },
+    "G13": {
+      "status": "blocked",
+      "reason": "Requires reviewed runtime evidence and separate authorization where applicable"
+    },
+    "G14": {
+      "status": "blocked",
+      "reason": "Requires reviewed runtime evidence and separate authorization where applicable"
+    },
+    "G15": {
+      "status": "blocked",
+      "reason": "Source scan has unresolved findings or container image scan remains unverified",
+      "source_scan": {
+        "checked_at": "2026-11-15T13:07:02.125736+00:00",
+        "counts": {
+          "LOW": 7,
+          "MEDIUM": 11
+        },
+        "finding_ids": {
+          "DS-0026": 2,
+          "AWS-0033": 1,
+          "AWS-0038": 5,
+          "AWS-0077": 1,
+          "AWS-0133": 1,
+          "AWS-0176": 1,
+          "AWS-0177": 1,
+          "AWS-0089": 1,
+          "AWS-0178": 1,
+          "KSV-0013": 1,
+          "KSV-0020": 1,
+          "KSV-0021": 1,
+          "KSV-01010": 1
+        },
+        "strict": true,
+        "passed": true
+      }
+    },
+    "G16": {
+      "status": "blocked",
+      "reason": "Requires reviewed runtime evidence and separate authorization where applicable"
+    },
+    "G17": {
+      "status": "blocked",
+      "reason": "Requires reviewed runtime evidence and separate authorization where applicable"
+    },
+    "G18": {
+      "status": "passed",
+      "evidence": "README.md, docs/DEPLOYMENT.md, docs/MIGRATION-RUNBOOK.md"
+    },
+    "G19": {
+      "status": "blocked",
+      "reason": "Clean-environment deployment explicitly blocked; source/mocked plans do not establish a deployment"
+    },
+    "G20": {
+      "status": "blocked",
+      "reason": "Requires reviewed runtime evidence and separate authorization where applicable"
+    }
+  },
+  "source_working_tree_dirty": true,
+  "source_commit_is_base_only": true,
+  "source_code_sha256": "9ab25eaf8b5940a24f3ad4dcf87b4a70f7a812afe831f7d5f6137313c35c08bb",
+  "evidence_scope": "Source gates validated against fingerprinted working-tree bytes; base HEAD is not the deployed or final submission commit. Use archive MANIFEST.json for exact candidate commit."
+}

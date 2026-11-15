@@ -1,0 +1,4 @@
+# New additive owner only. Never replace an existing state key or bootstrap bucket.
+bucket = "fedorstoiets-neoversity-tfstate-227281812993"
+region = "us-east-2"
+key    = "goaldevops-v2/existing-addons.tfstate"

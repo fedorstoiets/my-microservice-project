@@ -30,7 +30,7 @@ resource "aws_rds_cluster_instance" "aurora" {
   engine                     = local.resolved_engine
   engine_version             = aws_rds_cluster.aurora[0].engine_version
   db_subnet_group_name       = aws_db_subnet_group.main.name
-  db_parameter_group_name    = var.engine == "mysql" ? aws_db_parameter_group.aurora_mysql[0].name : null
+  db_parameter_group_name    = var.engine == "mysql" ? aws_db_parameter_group.aurora_mysql[0].name : aws_db_parameter_group.aurora_postgresql[0].name
   publicly_accessible        = false
   auto_minor_version_upgrade = true
   apply_immediately          = var.apply_immediately

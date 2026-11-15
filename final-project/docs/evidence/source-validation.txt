@@ -1,0 +1,103 @@
+GoalDevOps source checks (NO LIVE APPLY; providers must already be initialized)
+Success! The configuration is valid.
+
+Success! The configuration is valid.
+
+Success! The configuration is valid.
+
+Success! The configuration is valid.
+
+Success! The configuration is valid.
+
+==> Linting charts/django-app
+[INFO] Chart.yaml: icon is recommended
+
+1 chart(s) linted, 0 chart(s) failed
+==> Linting modules/argo_cd/charts/applications
+[INFO] Chart.yaml: icon is recommended
+
+1 chart(s) linted, 0 chart(s) failed
+==> Linting charts/platform-secrets
+[INFO] Chart.yaml: icon is recommended
+
+1 chart(s) linted, 0 chart(s) failed
+tests/rds-modes.tftest.hcl... in progress
+  run "standard_postgresql"... pass
+  run "standard_mysql"... pass
+  run "aurora_postgresql"... pass
+  run "aurora_mysql"... pass
+tests/rds-modes.tftest.hcl... tearing down
+tests/rds-modes.tftest.hcl... pass
+tests/security-profiles.tftest.hcl... in progress
+  run "hardened_source"... pass
+  run "continuity_is_explicit"... pass
+  run "private_access_proof_required"... pass
+  run "reviewed_delivery_plan"... pass
+  run "existing_oidc_is_referenced_not_duplicated"... pass
+  run "wrong_oidc_issuer_is_rejected"... pass
+tests/security-profiles.tftest.hcl... tearing down
+tests/security-profiles.tftest.hcl... pass
+
+Success! 10 passed, 0 failed.
+tests/plan.tftest.hcl... in progress
+  run "fresh_infrastructure_plan"... pass
+tests/plan.tftest.hcl... tearing down
+tests/plan.tftest.hcl... pass
+
+Success! 1 passed, 0 failed.
+tests/plan.tftest.hcl... in progress
+  run "platform_plan"... pass
+tests/plan.tftest.hcl... tearing down
+tests/plan.tftest.hcl... pass
+
+Success! 1 passed, 0 failed.
+tests/plan.tftest.hcl... in progress
+  run "additive_storage_plan"... pass
+  run "wrong_issuer_blocks_all_roles"... pass
+tests/plan.tftest.hcl... tearing down
+tests/plan.tftest.hcl... pass
+
+Success! 2 passed, 0 failed.
+test_password_rotation_read_on_new_connection (test_application_config.ApplicationConfigTests.test_password_rotation_read_on_new_connection) ... ok
+test_production_rejects_missing_signing_secret (test_application_config.ApplicationConfigTests.test_production_rejects_missing_signing_secret) ... ok
+test_production_rejects_wildcard_hosts (test_application_config.ApplicationConfigTests.test_production_rejects_wildcard_hosts) ... ok
+test_database_is_required_for_render (test_charts.ChartTests.test_database_is_required_for_render) ... ok
+test_digest_overrides_mutable_tag (test_charts.ChartTests.test_digest_overrides_mutable_tag) ... ok
+test_eso_and_database_bootstrap_are_ordered (test_charts.ChartTests.test_eso_and_database_bootstrap_are_ordered) ... ok
+test_optional_network_policy (test_charts.ChartTests.test_optional_network_policy) ... ok
+test_order_and_security (test_charts.ChartTests.test_order_and_security) ... ok
+test_existing_privilege_ownership_or_logging_failure_prevents_writes (test_database_bootstrap.BootstrapSafetyTests.test_existing_privilege_ownership_or_logging_failure_prevents_writes) ... ok
+test_fresh_bootstrap_is_one_transaction (test_database_bootstrap.BootstrapSafetyTests.test_fresh_bootstrap_is_one_transaction) ... ok
+test_unreviewed_existing_template_is_preserved (test_gitops.GitOpsOverwriteTests.test_unreviewed_existing_template_is_preserved) ... ok
+test_alignment_preserves_environment_values (test_gitops.GitOpsTests.test_alignment_preserves_environment_values) ... ok
+test_extra_gitops_chart_files_are_not_discarded (test_gitops.GitOpsTests.test_extra_gitops_chart_files_are_not_discarded) ... ok
+test_agent_uid_and_builder_exception (test_integration.PipelineIntegrationTests.test_agent_uid_and_builder_exception) ... ok
+test_argo_installation_does_not_authorize_sync (test_integration.PipelineIntegrationTests.test_argo_installation_does_not_authorize_sync) ... ok
+test_delivery_rejects_scaled_to_zero_stale_and_partial_rollouts (test_integration.PipelineIntegrationTests.test_delivery_rejects_scaled_to_zero_stale_and_partial_rollouts) ... ok
+test_real_lookup_command_matches_cli (test_integration.PipelineIntegrationTests.test_real_lookup_command_matches_cli) ... ok
+test_immutable_ecr_change_is_scoped (test_integration.SecurityPlanReviewTests.test_immutable_ecr_change_is_scoped) ... ok
+test_replacements_and_unrelated_rds_changes_are_rejected (test_integration.SecurityPlanReviewTests.test_replacements_and_unrelated_rds_changes_are_rejected) ... ok
+test_credential_and_state_exclusions (test_packaging.PackagingTests.test_credential_and_state_exclusions) ... ok
+test_duplicate_owners_detected (test_safety.ContinuityTests.test_duplicate_owners_detected) ... ok
+test_jenkins_restore_rejects_path_traversal (test_safety.ContinuityTests.test_jenkins_restore_rejects_path_traversal) ... ok
+test_jenkins_restore_requires_credential_material (test_safety.ContinuityTests.test_jenkins_restore_requires_credential_material) ... ok
+test_managed_changes_rejected_but_reads_allowed (test_safety.ContinuityTests.test_managed_changes_rejected_but_reads_allowed) ... ok
+test_state_inventory_retains_indexed_addresses (test_safety.ContinuityTests.test_state_inventory_retains_indexed_addresses) ... ok
+test_empty_and_terminating_pod_sets_are_not_healthy (test_safety.RuntimeEvidenceTests.test_empty_and_terminating_pod_sets_are_not_healthy) ... ok
+test_one_monitoring_pod_is_not_both_services (test_safety.RuntimeEvidenceTests.test_one_monitoring_pod_is_not_both_services) ... ok
+test_unmounted_bound_claim_does_not_prove_jenkins_persistence (test_safety.RuntimeEvidenceTests.test_unmounted_bound_claim_does_not_prove_jenkins_persistence) ... ok
+
+----------------------------------------------------------------------
+Ran 28 tests in 1.916s
+
+OK
+/tmp/goaldevops-v2-venv/lib/python3.12/site-packages/django/core/handlers/base.py:61: UserWarning: No directory at: /home/fedor/Neoversity/my-microservice-project/final-project/Django/staticfiles/
+  mw_instance = middleware(adapted_handler)
+....
+----------------------------------------------------------------------
+Ran 4 tests in 0.007s
+
+OK
+Found 4 test(s).
+System check identified no issues (0 silenced).
+Source checks passed; AWS runtime G01–G20 remain independently gated.

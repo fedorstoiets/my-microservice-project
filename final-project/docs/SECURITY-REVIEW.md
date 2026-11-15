@@ -1,5 +1,15 @@
 # Security review — open items and risk acceptance
 
+Current source results: see [remediation report](REMEDIATION-REPORT.md) and
+[security dispositions](SECURITY-DISPOSITIONS.md). Read-only smoke tests now use
+`/health/` and `/live/`; the visit-counter homepage writes to the database.
+
+> **Historical baseline only — migration HOLD remains active.** Deployment claims,
+> checked items and commands below describe earlier lesson-backed work, not
+> acceptance of the current working tree. Do not execute deployment, teardown,
+> or state-changing examples. Use `GoalDevOps.md`, `IMPLEMENTATION-V2.md`, and
+> `MIGRATION-HOLD.md` for current gates and restrictions.
+
 Trivy IaC scan executed on the final-project working tree. **This scan is not clean and was non-blocking by design.** Review the adjacent sanitized evidence file for counts and finding IDs. Findings include:
 
 - **Critical — EKS API access:** Terraform reference module permits public EKS control-plane endpoint, with no restrictive CIDR list. Confirm actual live cluster settings before editing, and preserve kubectl access. Restrict for production.

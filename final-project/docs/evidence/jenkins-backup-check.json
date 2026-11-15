@@ -1,0 +1,17 @@
+{
+  "checked_at": "2026-11-15T04:00:48.204262+00:00",
+  "historical_backup": "2026-11-14T20:12:31Z running-controller backup",
+  "sha256": "ad3b3765bc6ad3b90124276eb0e0fbfbeb07583162697328c25b91fa4fba4529",
+  "archive_validation": "passed",
+  "restore_rehearsal": "passed_local_file_integrity_only",
+  "restored_file_count": 79,
+  "file_hash_mismatches": 0,
+  "jobs_config_count": 1,
+  "plugin_artifact_count": 0,
+  "required_recovery_key_files_present": true,
+  "application_consistency": "unverified; captured from running controller",
+  "jenkins_boot_and_credential_decryption": "not_tested",
+  "private_restore_directory": "/tmp/goaldevops-jenkins-rehearsal-20261115T040047Z/restored",
+  "live_jenkins_touched": false,
+  "backup_modified": false
+}

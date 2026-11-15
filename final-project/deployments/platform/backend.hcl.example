@@ -1,0 +1,4 @@
+# Same new bucket, separate platform key. Never use existing lesson keys.
+bucket = "REPLACE_WITH_NEW_BOOTSTRAP_BUCKET"
+region = "us-east-2"
+key    = "goaldevops-v2/demo/platform.tfstate"
