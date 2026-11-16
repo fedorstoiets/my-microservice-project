@@ -219,3 +219,25 @@ under HOLD. A later approved teardown must stop reconcilers, preserve verified
 Jenkins/DB backups, retire platform consumers before infrastructure, review RDS
 protection/final snapshots and retained volumes, and keep KMS/backend resources
 until every dependent state and recovery artifact has been safely retired.
+
+
+## Kubernetes Deployment Evidence
+
+The following screenshots show the Kubernetes resources
+after deployment, as requested by the mentor.
+
+### Jenkins
+`kubectl get all -n jenkins`
+
+![Jenkins resources](docs/images/jenkins.png)
+
+### Argo CD
+`kubectl get all -n argocd`
+
+![Argo CD resources](docs/images/argocd.png)
+
+### Prometheus and Grafana
+`kubectl get all -n monitoring`
+
+![Monitoring resources](docs/images/monitoring.png)
+
