@@ -1,6 +1,6 @@
 # GoalDevOps v2 — Neoversity final project
 
-**Latest CI evidence:** [Jenkins Build #17 verification](docs/CI-BUILD-17-ACCEPTANCE.md). SCM-backed delivery and remaining live infrastructure acceptance gates are still open.
+**Current submission / official rubric:** [November 15 verified live AWS deployment and official 100-point grading map](docs/OFFICIAL-RUBRIC-AND-SUBMISSION.md). Mentor Anton Shakh accepted the project on November 14. Jenkins SCM Build #3 produced the immutable image deployed through isolated Argo CD (2/2 Django replicas Ready, private RDS health OK); full CI-to-GitOps auto-promotion and one-root production Terraform apply remain unverified. [Historical Build #17 evidence](docs/CI-BUILD-17-ACCEPTANCE.md) remains preserved. Submission branch is **`final-project-v2`**.
 
 **Submission implementation uses the existing AWS environment:** account
 `227281812993`, region `us-east-2`, EKS `neoversity-lesson-7`. No second cluster
@@ -13,16 +13,18 @@ application changes still require explicit approval.
 The independent `bootstrap/` → `deployments/infra/` → `deployments/platform/`
 workflow demonstrates complete source without homework-state dependencies in
 mocked offline plans. It has **not** been successfully deployed from scratch;
-a second deployment is not proposed merely to obtain evidence. The original
-instructor rubric/message is unavailable; mentor feedback is recorded in the
-published repository README and no numeric grade is claimed.
+a second deployment is not proposed merely to obtain evidence. The official
+instructor rubric and mentor feedback have now been supplied and are mapped in
+[OFFICIAL-RUBRIC-AND-SUBMISSION.md](docs/OFFICIAL-RUBRIC-AND-SUBMISSION.md).
+Mentor acceptance does not establish a numeric grade.
 
 **Migration HOLD remains active for existing infrastructure.** This repository contains implemented source
 remediation and local validation, not a completed production migration or a
-verified 100/100 submission. The existing RDS, monitoring Helm release, state
-ownership, data, deployments and private backups have not been changed.
-`docs/GoalDevOps.md` defines G01–G20; the separately issued official rubric is
-still required for a complete official-requirements reconciliation.
+verified 100/100 submission. The existing RDS, monitoring Helm release, Terraform state
+ownership, production application, and private backups remain protected.
+The isolated `goaldevops-v2-final` app and database **have** been deployed
+additively and verified. `docs/GoalDevOps.md` defines G01–G20 as internal
+engineering gates, **not** the official course marking rubric.
 
 ## Architecture and ownership
 
@@ -141,8 +143,10 @@ aligning the chart, and updates the GitOps digest. Extra files, symlinks and cus
 review instead of being overwritten. Initial alignment requires an exact
 reviewed GitOps base commit; later canonical templates have hash provenance. Delivery verification requires
 the expected GitOps revision, image, replicas and DB/schema health through
-read-only namespace RBAC. The current submitted pipeline has not yet been executed on the existing controller.
-It now runs strict IaC/rendered-chart and dependency/secret scans before building.
+read-only namespace RBAC. The SCM-backed Jenkins Build #3 executed and published an immutable ECR image
+matching the live isolated deployment. GitOps publication/deployment were disabled
+for that build; a completely automated CI-to-GitOps promotion is not yet evidenced.
+The pipeline source includes strict IaC/rendered-chart and dependency/secret scans.
 
 ESO injects separate read/write GitOps tokens and application/admin/signing
 secrets. Terraform never stores generated app/signing passwords in state.
